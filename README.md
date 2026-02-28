@@ -16,8 +16,13 @@
 </div>
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-yt-dude is a feature-rich command-line audio/video downloader with support for [thousands of sites](supportedsites.md). The project is a fork of [youtube-dl](https://github.com/ytdl-org/youtube-dl) based on the now inactive [youtube-dlc](https://github.com/blackjack4494/yt-dlc).
+yt-dude is a reliability-focused fork of yt-dlp, explicitly designed for maximum automated uptime without 403s or throttling. It has been modified at its core to support 24/7 background downloading platforms (like Celery workers) by spoofing iOS/Android clients natively and enforcing safe sleep intervals out-of-the-box.
 
+### KEY FEATURES OF YT-DUDE
+* **Native Anti-Throttling**: Automatically injects mobile client headers (`youtube:player_client=ios,android`) into all YouTube extractions to bypass stringent desktop JS challenges.
+* **Celery/Worker Safe**: Hardcoded sleep intervals `sleep_interval=15` and `max_sleep_interval=45` to prevent batch-download bans.
+* **Resilient Extractors**: Includes custom hotfixes for GraphQL endpoints (A&E Networks, Zapiks) not found in upstream yt-dlp.
+* **B006 Patched**: Core execution engine has been scrubbed of mutable default arguments to prevent state bleed and memory leaks in persistent Python tasks.
 <!-- MANPAGE: MOVE "USAGE AND OPTIONS" SECTION HERE -->
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
