@@ -1,28 +1,28 @@
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
 <div align="center">
 
-[![YT-DLP](https://raw.githubusercontent.com/yt-dlp/yt-dlp/master/.github/banner.svg)](#readme)
+[![YT-DLP](https://raw.githubusercontent.com/yt-dude/yt-dude/master/.github/banner.svg)](#readme)
 
-[![Release version](https://img.shields.io/github/v/release/yt-dlp/yt-dlp?color=brightgreen&label=Download&style=for-the-badge)](#installation "Installation")
-[![PyPI](https://img.shields.io/badge/-PyPI-blue.svg?logo=pypi&labelColor=555555&style=for-the-badge)](https://pypi.org/project/yt-dlp "PyPI")
+[![Release version](https://img.shields.io/github/v/release/yt-dude/yt-dude?color=brightgreen&label=Download&style=for-the-badge)](#installation "Installation")
+[![PyPI](https://img.shields.io/badge/-PyPI-blue.svg?logo=pypi&labelColor=555555&style=for-the-badge)](https://pypi.org/project/yt-dude "PyPI")
 [![Donate](https://img.shields.io/badge/_-Donate-red.svg?logo=githubsponsors&labelColor=555555&style=for-the-badge)](Maintainers.md#maintainers "Donate")
 [![Discord](https://img.shields.io/discord/807245652072857610?color=blue&labelColor=555555&label=&logo=discord&style=for-the-badge)](https://discord.gg/H5MNcFW63r "Discord")
 [![Supported Sites](https://img.shields.io/badge/-Supported_Sites-brightgreen.svg?style=for-the-badge)](supportedsites.md "Supported Sites")
 [![License: Unlicense](https://img.shields.io/badge/-Unlicense-blue.svg?style=for-the-badge)](LICENSE "License")
-[![CI Status](https://img.shields.io/github/actions/workflow/status/yt-dlp/yt-dlp/core.yml?branch=master&label=Tests&style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/actions "CI Status")
-[![Commits](https://img.shields.io/github/commit-activity/m/yt-dlp/yt-dlp?label=commits&style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/commits "Commit History")
-[![Last Commit](https://img.shields.io/github/last-commit/yt-dlp/yt-dlp/master?label=&style=for-the-badge&display_timestamp=committer)](https://github.com/yt-dlp/yt-dlp/pulse/monthly "Last activity")
+[![CI Status](https://img.shields.io/github/actions/workflow/status/yt-dude/yt-dude/core.yml?branch=master&label=Tests&style=for-the-badge)](https://github.com/yt-dude/yt-dude/actions "CI Status")
+[![Commits](https://img.shields.io/github/commit-activity/m/yt-dude/yt-dude?label=commits&style=for-the-badge)](https://github.com/yt-dude/yt-dude/commits "Commit History")
+[![Last Commit](https://img.shields.io/github/last-commit/yt-dude/yt-dude/master?label=&style=for-the-badge&display_timestamp=committer)](https://github.com/yt-dude/yt-dude/pulse/monthly "Last activity")
 
 </div>
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-yt-dlp is a feature-rich command-line audio/video downloader with support for [thousands of sites](supportedsites.md). The project is a fork of [youtube-dl](https://github.com/ytdl-org/youtube-dl) based on the now inactive [youtube-dlc](https://github.com/blackjack4494/yt-dlc).
+yt-dude is a feature-rich command-line audio/video downloader with support for [thousands of sites](supportedsites.md). The project is a fork of [youtube-dl](https://github.com/ytdl-org/youtube-dl) based on the now inactive [youtube-dlc](https://github.com/blackjack4494/yt-dlc).
 
 <!-- MANPAGE: MOVE "USAGE AND OPTIONS" SECTION HERE -->
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
 * [INSTALLATION](#installation)
-    * [Detailed instructions](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
+    * [Detailed instructions](https://github.com/yt-dude/yt-dude/wiki/Installation)
     * [Release Files](#release-files)
     * [Update](#update)
     * [Dependencies](#dependencies)
@@ -61,33 +61,33 @@ yt-dlp is a feature-rich command-line audio/video downloader with support for [t
 * [PLUGINS](#plugins)
     * [Installing Plugins](#installing-plugins)
     * [Developing Plugins](#developing-plugins)
-* [EMBEDDING YT-DLP](#embedding-yt-dlp)
+* [EMBEDDING YT-DLP](#embedding-yt-dude)
     * [Embedding examples](#embedding-examples)
 * [CHANGES FROM YOUTUBE-DL](#changes-from-youtube-dl)
     * [New features](#new-features)
     * [Differences in default behavior](#differences-in-default-behavior)
     * [Deprecated options](#deprecated-options)
-* [CONTRIBUTING](CONTRIBUTING.md#contributing-to-yt-dlp)
+* [CONTRIBUTING](CONTRIBUTING.md#contributing-to-yt-dude)
     * [Opening an Issue](CONTRIBUTING.md#opening-an-issue)
     * [Developer Instructions](CONTRIBUTING.md#developer-instructions)
-* [WIKI](https://github.com/yt-dlp/yt-dlp/wiki)
-    * [FAQ](https://github.com/yt-dlp/yt-dlp/wiki/FAQ)
+* [WIKI](https://github.com/yt-dude/yt-dude/wiki)
+    * [FAQ](https://github.com/yt-dude/yt-dude/wiki/FAQ)
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
 
 # INSTALLATION
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
-[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&logo=windows)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)
-[![Unix](https://img.shields.io/badge/-Linux/BSD-red.svg?style=for-the-badge&logo=linux)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp)
-[![MacOS](https://img.shields.io/badge/-MacOS-lightblue.svg?style=for-the-badge&logo=apple)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos)
-[![PyPI](https://img.shields.io/badge/-PyPI-blue.svg?logo=pypi&labelColor=555555&style=for-the-badge)](https://pypi.org/project/yt-dlp)
-[![Source Tarball](https://img.shields.io/badge/-Source_tar-green.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz)
+[![Windows](https://img.shields.io/badge/-Windows_x64-blue.svg?style=for-the-badge&logo=windows)](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude.exe)
+[![Unix](https://img.shields.io/badge/-Linux/BSD-red.svg?style=for-the-badge&logo=linux)](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude)
+[![MacOS](https://img.shields.io/badge/-MacOS-lightblue.svg?style=for-the-badge&logo=apple)](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_macos)
+[![PyPI](https://img.shields.io/badge/-PyPI-blue.svg?logo=pypi&labelColor=555555&style=for-the-badge)](https://pypi.org/project/yt-dude)
+[![Source Tarball](https://img.shields.io/badge/-Source_tar-green.svg?style=for-the-badge)](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude.tar.gz)
 [![Other variants](https://img.shields.io/badge/-Other-grey.svg?style=for-the-badge)](#release-files)
-[![All versions](https://img.shields.io/badge/-All_Versions-lightgrey.svg?style=for-the-badge)](https://github.com/yt-dlp/yt-dlp/releases)
+[![All versions](https://img.shields.io/badge/-All_Versions-lightgrey.svg?style=for-the-badge)](https://github.com/yt-dude/yt-dude/releases)
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-You can install yt-dlp using [the binaries](#release-files), [pip](https://pypi.org/project/yt-dlp) or one using a third-party package manager. See [the wiki](https://github.com/yt-dlp/yt-dlp/wiki/Installation) for detailed instructions
+You can install yt-dude using [the binaries](#release-files), [pip](https://pypi.org/project/yt-dude) or one using a third-party package manager. See [the wiki](https://github.com/yt-dude/yt-dude/wiki/Installation) for detailed instructions
 
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
@@ -97,79 +97,79 @@ You can install yt-dlp using [the binaries](#release-files), [pip](https://pypi.
 
 File|Description
 :---|:---
-[yt-dlp](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp)|Platform-independent [zipimport](https://docs.python.org/3/library/zipimport.html) binary. Needs Python (recommended for **Linux/BSD**)
-[yt-dlp.exe](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.exe)|Windows (Win8+) standalone x64 binary (recommended for **Windows**)
-[yt-dlp_macos](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos)|Universal MacOS (10.15+) standalone executable (recommended for **MacOS**)
+[yt-dude](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude)|Platform-independent [zipimport](https://docs.python.org/3/library/zipimport.html) binary. Needs Python (recommended for **Linux/BSD**)
+[yt-dude.exe](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude.exe)|Windows (Win8+) standalone x64 binary (recommended for **Windows**)
+[yt-dude_macos](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_macos)|Universal MacOS (10.15+) standalone executable (recommended for **MacOS**)
 
 #### Alternatives
 
 File|Description
 :---|:---
-[yt-dlp_linux](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux)|Linux (glibc 2.17+) standalone x86_64 binary
-[yt-dlp_linux.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux.zip)|Unpackaged Linux (glibc 2.17+) x86_64 executable (no auto-update)
-[yt-dlp_linux_aarch64](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux_aarch64)|Linux (glibc 2.17+) standalone aarch64 binary
-[yt-dlp_linux_aarch64.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux_aarch64.zip)|Unpackaged Linux (glibc 2.17+) aarch64 executable (no auto-update)
-[yt-dlp_linux_armv7l.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_linux_armv7l.zip)|Unpackaged Linux (glibc 2.31+) armv7l executable (no auto-update)
-[yt-dlp_musllinux](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_musllinux)|Linux (musl 1.2+) standalone x86_64 binary
-[yt-dlp_musllinux.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_musllinux.zip)|Unpackaged Linux (musl 1.2+) x86_64 executable (no auto-update)
-[yt-dlp_musllinux_aarch64](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_musllinux_aarch64)|Linux (musl 1.2+) standalone aarch64 binary
-[yt-dlp_musllinux_aarch64.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_musllinux_aarch64.zip)|Unpackaged Linux (musl 1.2+) aarch64 executable (no auto-update)
-[yt-dlp_x86.exe](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_x86.exe)|Windows (Win8+) standalone x86 (32-bit) binary
-[yt-dlp_win_x86.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_win_x86.zip)|Unpackaged Windows (Win8+) x86 (32-bit) executable (no auto-update)
-[yt-dlp_arm64.exe](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_arm64.exe)|Windows (Win10+) standalone ARM64 binary
-[yt-dlp_win_arm64.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_win_arm64.zip)|Unpackaged Windows (Win10+) ARM64 executable (no auto-update)
-[yt-dlp_win.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_win.zip)|Unpackaged Windows (Win8+) x64 executable (no auto-update)
-[yt-dlp_macos.zip](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp_macos.zip)|Unpackaged MacOS (10.15+) executable (no auto-update)
+[yt-dude_linux](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_linux)|Linux (glibc 2.17+) standalone x86_64 binary
+[yt-dude_linux.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_linux.zip)|Unpackaged Linux (glibc 2.17+) x86_64 executable (no auto-update)
+[yt-dude_linux_aarch64](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_linux_aarch64)|Linux (glibc 2.17+) standalone aarch64 binary
+[yt-dude_linux_aarch64.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_linux_aarch64.zip)|Unpackaged Linux (glibc 2.17+) aarch64 executable (no auto-update)
+[yt-dude_linux_armv7l.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_linux_armv7l.zip)|Unpackaged Linux (glibc 2.31+) armv7l executable (no auto-update)
+[yt-dude_musllinux](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_musllinux)|Linux (musl 1.2+) standalone x86_64 binary
+[yt-dude_musllinux.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_musllinux.zip)|Unpackaged Linux (musl 1.2+) x86_64 executable (no auto-update)
+[yt-dude_musllinux_aarch64](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_musllinux_aarch64)|Linux (musl 1.2+) standalone aarch64 binary
+[yt-dude_musllinux_aarch64.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_musllinux_aarch64.zip)|Unpackaged Linux (musl 1.2+) aarch64 executable (no auto-update)
+[yt-dude_x86.exe](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_x86.exe)|Windows (Win8+) standalone x86 (32-bit) binary
+[yt-dude_win_x86.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_win_x86.zip)|Unpackaged Windows (Win8+) x86 (32-bit) executable (no auto-update)
+[yt-dude_arm64.exe](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_arm64.exe)|Windows (Win10+) standalone ARM64 binary
+[yt-dude_win_arm64.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_win_arm64.zip)|Unpackaged Windows (Win10+) ARM64 executable (no auto-update)
+[yt-dude_win.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_win.zip)|Unpackaged Windows (Win8+) x64 executable (no auto-update)
+[yt-dude_macos.zip](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude_macos.zip)|Unpackaged MacOS (10.15+) executable (no auto-update)
 
 #### Misc
 
 File|Description
 :---|:---
-[yt-dlp.tar.gz](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz)|Source tarball
-[SHA2-512SUMS](https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-512SUMS)|GNU-style SHA512 sums
-[SHA2-512SUMS.sig](https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-512SUMS.sig)|GPG signature file for SHA512 sums
-[SHA2-256SUMS](https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-256SUMS)|GNU-style SHA256 sums
-[SHA2-256SUMS.sig](https://github.com/yt-dlp/yt-dlp/releases/latest/download/SHA2-256SUMS.sig)|GPG signature file for SHA256 sums
+[yt-dude.tar.gz](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude.tar.gz)|Source tarball
+[SHA2-512SUMS](https://github.com/yt-dude/yt-dude/releases/latest/download/SHA2-512SUMS)|GNU-style SHA512 sums
+[SHA2-512SUMS.sig](https://github.com/yt-dude/yt-dude/releases/latest/download/SHA2-512SUMS.sig)|GPG signature file for SHA512 sums
+[SHA2-256SUMS](https://github.com/yt-dude/yt-dude/releases/latest/download/SHA2-256SUMS)|GNU-style SHA256 sums
+[SHA2-256SUMS.sig](https://github.com/yt-dude/yt-dude/releases/latest/download/SHA2-256SUMS.sig)|GPG signature file for SHA256 sums
 
-The public key that can be used to verify the GPG signatures is [available here](https://github.com/yt-dlp/yt-dlp/blob/master/public.key)
+The public key that can be used to verify the GPG signatures is [available here](https://github.com/yt-dude/yt-dude/blob/master/public.key)
 Example usage:
 ```
-curl -L https://github.com/yt-dlp/yt-dlp/raw/master/public.key | gpg --import
+curl -L https://github.com/yt-dude/yt-dude/raw/master/public.key | gpg --import
 gpg --verify SHA2-256SUMS.sig SHA2-256SUMS
 gpg --verify SHA2-512SUMS.sig SHA2-512SUMS
 ```
 
 #### Licensing
 
-While yt-dlp is licensed under the [Unlicense](LICENSE), many of the release files contain code from other projects with different licenses.
+While yt-dude is licensed under the [Unlicense](LICENSE), many of the release files contain code from other projects with different licenses.
 
 Most notably, the PyInstaller-bundled executables include GPLv3+ licensed code, and as such the combined work is licensed under [GPLv3+](https://www.gnu.org/licenses/gpl-3.0.html).
 
-The zipimport Unix executable (`yt-dlp`) contains [ISC](https://github.com/meriyah/meriyah/blob/main/LICENSE.md) licensed code from [`meriyah`](https://github.com/meriyah/meriyah) and [MIT](https://github.com/davidbonnet/astring/blob/main/LICENSE) licensed code from [`astring`](https://github.com/davidbonnet/astring).
+The zipimport Unix executable (`yt-dude`) contains [ISC](https://github.com/meriyah/meriyah/blob/main/LICENSE.md) licensed code from [`meriyah`](https://github.com/meriyah/meriyah) and [MIT](https://github.com/davidbonnet/astring/blob/main/LICENSE) licensed code from [`astring`](https://github.com/davidbonnet/astring).
 
 See [THIRD_PARTY_LICENSES.txt](THIRD_PARTY_LICENSES.txt) for more details.
 
-The git repository, the source tarball (`yt-dlp.tar.gz`), the PyPI source distribution and the PyPI built distribution (wheel) only contain code licensed under the [Unlicense](LICENSE).
+The git repository, the source tarball (`yt-dude.tar.gz`), the PyPI source distribution and the PyPI built distribution (wheel) only contain code licensed under the [Unlicense](LICENSE).
 
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-**Note**: The manpages, shell completion (autocomplete) files etc. are available inside the [source tarball](https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp.tar.gz)
+**Note**: The manpages, shell completion (autocomplete) files etc. are available inside the [source tarball](https://github.com/yt-dude/yt-dude/releases/latest/download/yt-dude.tar.gz)
 
 
 ## UPDATE
-You can use `yt-dlp -U` to update if you are using the [release binaries](#release-files)
+You can use `yt-dude -U` to update if you are using the [release binaries](#release-files)
 
-If you [installed with pip](https://github.com/yt-dlp/yt-dlp/wiki/Installation#with-pip), simply re-run the same command that was used to install the program
+If you [installed with pip](https://github.com/yt-dude/yt-dude/wiki/Installation#with-pip), simply re-run the same command that was used to install the program
 
-For other third-party package managers, see [the wiki](https://github.com/yt-dlp/yt-dlp/wiki/Installation#third-party-package-managers) or refer to their documentation
+For other third-party package managers, see [the wiki](https://github.com/yt-dude/yt-dude/wiki/Installation#third-party-package-managers) or refer to their documentation
 
 <a id="update-channels"></a>
 
 There are currently three release channels for binaries: `stable`, `nightly` and `master`.
 
 * `stable` is the default channel, and many of its changes have been tested by users of the `nightly` and `master` channels.
-* The `nightly` channel has releases scheduled to build every day around midnight UTC, for a snapshot of the project's new patches and changes. This is the **recommended channel for regular users** of yt-dlp. The `nightly` releases are available from [yt-dlp/yt-dlp-nightly-builds](https://github.com/yt-dlp/yt-dlp-nightly-builds/releases) or as development releases of the `yt-dlp` PyPI package (which can be installed with pip's `--pre` flag).
-* The `master` channel features releases that are built after each push to the master branch, and these will have the very latest fixes and additions, but may also be more prone to regressions. They are available from [yt-dlp/yt-dlp-master-builds](https://github.com/yt-dlp/yt-dlp-master-builds/releases).
+* The `nightly` channel has releases scheduled to build every day around midnight UTC, for a snapshot of the project's new patches and changes. This is the **recommended channel for regular users** of yt-dude. The `nightly` releases are available from [yt-dude/yt-dude-nightly-builds](https://github.com/yt-dude/yt-dude-nightly-builds/releases) or as development releases of the `yt-dude` PyPI package (which can be installed with pip's `--pre` flag).
+* The `master` channel features releases that are built after each push to the master branch, and these will have the very latest fixes and additions, but may also be more prone to regressions. They are available from [yt-dude/yt-dude-master-builds](https://github.com/yt-dude/yt-dude-master-builds/releases).
 
 When using `--update`/`-U`, a release binary will only update to its current channel.
 `--update-to CHANNEL` can be used to switch to a different channel when a newer version is available. `--update-to [CHANNEL@]TAG` can also be used to upgrade or downgrade to specific tags from a channel.
@@ -178,21 +178,21 @@ You may also use `--update-to <repository>` (`<owner>/<repository>`) to update t
 
 Example usage:
 
-* `yt-dlp --update-to master` switch to the `master` channel and update to its latest release
-* `yt-dlp --update-to stable@2023.07.06` upgrade/downgrade to release to `stable` channel tag `2023.07.06`
-* `yt-dlp --update-to 2023.10.07` upgrade/downgrade to tag `2023.10.07` if it exists on the current channel
-* `yt-dlp --update-to example/yt-dlp@2023.09.24` upgrade/downgrade to the release from the `example/yt-dlp` repository, tag `2023.09.24`
+* `yt-dude --update-to master` switch to the `master` channel and update to its latest release
+* `yt-dude --update-to stable@2023.07.06` upgrade/downgrade to release to `stable` channel tag `2023.07.06`
+* `yt-dude --update-to 2023.10.07` upgrade/downgrade to tag `2023.10.07` if it exists on the current channel
+* `yt-dude --update-to example/yt-dude@2023.09.24` upgrade/downgrade to the release from the `example/yt-dude` repository, tag `2023.09.24`
 
 **Important**: Any user experiencing an issue with the `stable` release should install or update to the `nightly` release before submitting a bug report:
 ```
 # To update to nightly from stable executable/binary:
-yt-dlp --update-to nightly
+yt-dude --update-to nightly
 
 # To install nightly with pip:
-python -m pip install -U --pre "yt-dlp[default]"
+python -m pip install -U --pre "yt-dude[default]"
 ```
 
-When running a yt-dlp version that is older than 90 days, you will see a warning message suggesting to update to the latest version.
+When running a yt-dude version that is older than 90 days, you will see a warning message suggesting to update to the latest version.
 You can suppress this warning by adding `--no-update` to your command or configuration file.
 
 ## DEPENDENCIES
@@ -200,22 +200,22 @@ Python versions 3.10+ (CPython) and 3.11+ (PyPy) are supported. Other versions a
 
 <!-- Python 3.5+ uses VC++14 and it is already embedded in the binary created
 <!x-- https://www.microsoft.com/en-us/download/details.aspx?id=26999 --x>
-On Windows, [Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) is also necessary to run yt-dlp. You probably already have this, but if the executable throws an error due to missing `MSVCR100.dll` you need to install it manually.
+On Windows, [Microsoft Visual C++ 2010 SP1 Redistributable Package (x86)](https://download.microsoft.com/download/1/6/5/165255E7-1014-4D0A-B094-B6A430A6BFFC/vcredist_x86.exe) is also necessary to run yt-dude. You probably already have this, but if the executable throws an error due to missing `MSVCR100.dll` you need to install it manually.
 -->
 
-While all the other dependencies are optional, `ffmpeg`, `ffprobe`, `yt-dlp-ejs` and a supported JavaScript runtime/engine are highly recommended
+While all the other dependencies are optional, `ffmpeg`, `ffprobe`, `yt-dude-ejs` and a supported JavaScript runtime/engine are highly recommended
 
 ### Strongly recommended
 
 * [**ffmpeg** and **ffprobe**](https://www.ffmpeg.org) - Required for [merging separate video and audio files](#format-selection), as well as for various [post-processing](#post-processing-options) tasks. License [depends on the build](https://www.ffmpeg.org/legal.html)
 
-    There are bugs in ffmpeg that cause various issues when used alongside yt-dlp. Since ffmpeg is such an important dependency, we provide [custom builds](https://github.com/yt-dlp/FFmpeg-Builds#ffmpeg-static-auto-builds) with patches for some of these issues at [yt-dlp/FFmpeg-Builds](https://github.com/yt-dlp/FFmpeg-Builds). See [the readme](https://github.com/yt-dlp/FFmpeg-Builds#patches-applied) for details on the specific issues solved by these builds
+    There are bugs in ffmpeg that cause various issues when used alongside yt-dude. Since ffmpeg is such an important dependency, we provide [custom builds](https://github.com/yt-dude/FFmpeg-Builds#ffmpeg-static-auto-builds) with patches for some of these issues at [yt-dude/FFmpeg-Builds](https://github.com/yt-dude/FFmpeg-Builds). See [the readme](https://github.com/yt-dude/FFmpeg-Builds#patches-applied) for details on the specific issues solved by these builds
 
     **Important**: What you need is ffmpeg *binary*, **NOT** [the Python package of the same name](https://pypi.org/project/ffmpeg)
 
-* [**yt-dlp-ejs**](https://github.com/yt-dlp/ejs) - Required for full YouTube support. Licensed under [Unlicense](https://github.com/yt-dlp/ejs/blob/main/LICENSE), bundles [MIT](https://github.com/davidbonnet/astring/blob/main/LICENSE) and [ISC](https://github.com/meriyah/meriyah/blob/main/LICENSE.md) components.
+* [**yt-dude-ejs**](https://github.com/yt-dude/ejs) - Required for full YouTube support. Licensed under [Unlicense](https://github.com/yt-dude/ejs/blob/main/LICENSE), bundles [MIT](https://github.com/davidbonnet/astring/blob/main/LICENSE) and [ISC](https://github.com/meriyah/meriyah/blob/main/LICENSE.md) components.
 
-    A JavaScript runtime/engine like [**deno**](https://deno.land) (recommended), [**node.js**](https://nodejs.org), [**bun**](https://bun.sh), or [**QuickJS**](https://bellard.org/quickjs/) is also required to run yt-dlp-ejs. See [the wiki](https://github.com/yt-dlp/yt-dlp/wiki/EJS).
+    A JavaScript runtime/engine like [**deno**](https://deno.land) (recommended), [**node.js**](https://nodejs.org), [**bun**](https://bun.sh), or [**QuickJS**](https://bellard.org/quickjs/) is also required to run yt-dude-ejs. See [the wiki](https://github.com/yt-dude/yt-dude/wiki/EJS).
 
 ### Networking
 * [**certifi**](https://github.com/certifi/python-certifi)\* - Provides Mozilla's root certificate bundle. Licensed under [MPLv2](https://github.com/certifi/python-certifi/blob/master/LICENSE)
@@ -228,8 +228,8 @@ While all the other dependencies are optional, `ffmpeg`, `ffprobe`, `yt-dlp-ejs`
 The following provide support for impersonating browser requests. This may be required for some sites that employ TLS fingerprinting.
 
 * [**curl_cffi**](https://github.com/lexiforest/curl_cffi) (recommended) - Python binding for [curl-impersonate](https://github.com/lexiforest/curl-impersonate). Provides impersonation targets for Chrome, Edge and Safari. Licensed under [MIT](https://github.com/lexiforest/curl_cffi/blob/main/LICENSE)
-  * Can be installed with the `curl-cffi` extra, e.g. `pip install "yt-dlp[default,curl-cffi]"`
-  * Currently included in most builds *except* `yt-dlp` (Unix zipimport binary), `yt-dlp_x86` (Windows 32-bit) and `yt-dlp_musllinux_aarch64`
+  * Can be installed with the `curl-cffi` extra, e.g. `pip install "yt-dude[default,curl-cffi]"`
+  * Currently included in most builds *except* `yt-dude` (Unix zipimport binary), `yt-dude_x86` (Windows 32-bit) and `yt-dude_musllinux_aarch64`
 
 
 ### Metadata
@@ -254,13 +254,13 @@ To use or redistribute the dependencies, you must agree to their respective lice
 
 The standalone release binaries are built with the Python interpreter and the packages marked with **\*** included.
 
-If you do not have the necessary dependencies for a task you are attempting, yt-dlp will warn you. All the currently available dependencies are visible at the top of the `--verbose` output
+If you do not have the necessary dependencies for a task you are attempting, yt-dude will warn you. All the currently available dependencies are visible at the top of the `--verbose` output
 
 
 ## COMPILE
 
 ### Standalone PyInstaller Builds
-To build the standalone executable, you must have Python and `pyinstaller` (plus any of yt-dlp's [optional dependencies](#dependencies) if needed). The executable will be built for the same CPU architecture as the Python used.
+To build the standalone executable, you must have Python and `pyinstaller` (plus any of yt-dude's [optional dependencies](#dependencies) if needed). The executable will be built for the same CPU architecture as the Python used.
 
 You can run the following commands:
 
@@ -283,11 +283,11 @@ You will need the build tools `python` (3.10+), `zip`, `make` (GNU), `pandoc`\* 
 
 After installing these, simply run `make`.
 
-You can also run `make yt-dlp` instead to compile only the binary without updating any of the additional files. (The build tools marked with **\*** are not needed for this)
+You can also run `make yt-dude` instead to compile only the binary without updating any of the additional files. (The build tools marked with **\*** are not needed for this)
 
 ### Related scripts
 
-* **`devscripts/install_deps.py`** - Install dependencies for yt-dlp.
+* **`devscripts/install_deps.py`** - Install dependencies for yt-dude.
 * **`devscripts/update-version.py`** - Update the version number based on the current date.
 * **`devscripts/set-variant.py`** - Set the build variant of the executable.
 * **`devscripts/make_changelog.py`** - Create a markdown changelog using short commit messages and update `CONTRIBUTORS` file.
@@ -301,7 +301,7 @@ If you fork the project on GitHub, you can run your fork's [build workflow](.git
 # USAGE AND OPTIONS
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
-    yt-dlp [OPTIONS] [--] URL [URL...]
+    yt-dude [OPTIONS] [--] URL [URL...]
 
 Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
 <!-- MANPAGE: END EXCLUDED SECTION -->
@@ -339,7 +339,7 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     --default-search PREFIX         Use this prefix for unqualified URLs. E.g.
                                     "gvsearch2:python" downloads two videos from
                                     google videos for the search term "python".
-                                    Use the value "auto" to let yt-dlp guess
+                                    Use the value "auto" to let yt-dude guess
                                     ("auto_warning" to emit a warning when
                                     guessing). "error" just throws an error. The
                                     default value "fixup_error" repairs broken
@@ -385,16 +385,16 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     --no-js-runtimes                Clear JavaScript runtimes to enable,
                                     including defaults and those provided by
                                     previous --js-runtimes
-    --remote-components COMPONENT   Remote components to allow yt-dlp to fetch
+    --remote-components COMPONENT   Remote components to allow yt-dude to fetch
                                     when required. This option is currently not
                                     needed if you are using an official
                                     executable or have the requisite version of
-                                    the yt-dlp-ejs package installed. You can
+                                    the yt-dude-ejs package installed. You can
                                     use this option multiple times to allow
                                     multiple components. Supported values:
                                     ejs:npm (external JavaScript components from
                                     npm), ejs:github (external JavaScript
-                                    components from yt-dlp-ejs GitHub). By
+                                    components from yt-dude-ejs GitHub). By
                                     default, no remote components are allowed
     --no-remote-components          Disallow fetching of all remote components,
                                     including any previously allowed by
@@ -426,7 +426,7 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     --compat-options OPTS           Options that can help keep compatibility
                                     with youtube-dl or youtube-dlc
                                     configurations by reverting some of the
-                                    changes made in yt-dlp. See "Differences in
+                                    changes made in yt-dude. See "Differences in
                                     default behavior" for details
     --alias ALIASES OPTIONS         Create aliases for an option string. Unless
                                     an alias starts with a dash "-", it is
@@ -738,10 +738,10 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
                                     keyrings are: basictext, gnomekeyring,
                                     kwallet, kwallet5, kwallet6
     --no-cookies-from-browser       Do not load cookies from browser (default)
-    --cache-dir DIR                 Location in the filesystem where yt-dlp can
+    --cache-dir DIR                 Location in the filesystem where yt-dude can
                                     store some downloaded information (such as
                                     client ids and signatures) permanently. By
-                                    default ${XDG_CACHE_HOME}/yt-dlp
+                                    default ${XDG_CACHE_HOME}/yt-dude
     --no-cache-dir                  Disable filesystem caching
     --rm-cache-dir                  Delete all filesystem cache files
 
@@ -916,7 +916,7 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
 ## Authentication Options:
     -u, --username USERNAME         Login with this account ID
     -p, --password PASSWORD         Account password. If this option is left
-                                    out, yt-dlp will ask interactively
+                                    out, yt-dude will ask interactively
     -2, --twofactor TWOFACTOR       Two-factor authentication code
     -n, --netrc                     Use .netrc authentication data
     --netrc-location PATH           Location of .netrc authentication data;
@@ -930,7 +930,7 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
                                     a list of available MSOs
     --ap-username USERNAME          Multiple-system operator account login
     --ap-password PASSWORD          Multiple-system operator account password.
-                                    If this option is left out, yt-dlp will ask
+                                    If this option is left out, yt-dude will ask
                                     interactively
     --ap-list-mso                   List all supported multiple-system operators
     --client-certificate CERTFILE   Path to client certificate file in PEM
@@ -941,7 +941,7 @@ Tip: Use `CTRL`+`F` (or `Command`+`F`)  to search by keywords
     --client-certificate-password PASSWORD
                                     Password for client certificate private key,
                                     if encrypted. If not provided, and the key
-                                    is encrypted, yt-dlp will ask interactively
+                                    is encrypted, yt-dude will ask interactively
 
 ## Post-Processing Options:
     -x, --extract-audio             Convert video files to audio-only files
@@ -1164,7 +1164,7 @@ Make chapter entries for, or remove various segments (sponsor,
 
 ## Preset Aliases:
 Predefined aliases for convenience and ease of use. Note that future
-    versions of yt-dlp may add or adjust presets, but the existing preset
+    versions of yt-dude may add or adjust presets, but the existing preset
     names will not be changed or removed
 
     -t mp3                          -f 'ba[acodec^=mp3]/ba/b' -x --audio-format
@@ -1185,35 +1185,35 @@ Predefined aliases for convenience and ease of use. Note that future
 
 # CONFIGURATION
 
-You can configure yt-dlp by placing any supported command line option in a configuration file. The configuration is loaded from the following locations:
+You can configure yt-dude by placing any supported command line option in a configuration file. The configuration is loaded from the following locations:
 
 1. **Main Configuration**:
     * The file given to `--config-locations`
 1. **Portable Configuration**: (Recommended for portable installations)
-    * If using a binary, `yt-dlp.conf` in the same directory as the binary
-    * If running from source-code, `yt-dlp.conf` in the parent directory of `yt_dlp`
+    * If using a binary, `yt-dude.conf` in the same directory as the binary
+    * If running from source-code, `yt-dude.conf` in the parent directory of `yt_dude`
 1. **Home Configuration**:
-    * `yt-dlp.conf` in the home path given to `-P`
+    * `yt-dude.conf` in the home path given to `-P`
     * If `-P` is not given, the current directory is searched
 1. **User Configuration**:
-    * `${XDG_CONFIG_HOME}/yt-dlp.conf`
-    * `${XDG_CONFIG_HOME}/yt-dlp/config` (recommended on Linux/macOS)
-    * `${XDG_CONFIG_HOME}/yt-dlp/config.txt`
-    * `${APPDATA}/yt-dlp.conf`
-    * `${APPDATA}/yt-dlp/config` (recommended on Windows)
-    * `${APPDATA}/yt-dlp/config.txt`
-    * `~/yt-dlp.conf`
-    * `~/yt-dlp.conf.txt`
-    * `~/.yt-dlp/config`
-    * `~/.yt-dlp/config.txt`
+    * `${XDG_CONFIG_HOME}/yt-dude.conf`
+    * `${XDG_CONFIG_HOME}/yt-dude/config` (recommended on Linux/macOS)
+    * `${XDG_CONFIG_HOME}/yt-dude/config.txt`
+    * `${APPDATA}/yt-dude.conf`
+    * `${APPDATA}/yt-dude/config` (recommended on Windows)
+    * `${APPDATA}/yt-dude/config.txt`
+    * `~/yt-dude.conf`
+    * `~/yt-dude.conf.txt`
+    * `~/.yt-dude/config`
+    * `~/.yt-dude/config.txt`
 
     See also: [Notes about environment variables](#notes-about-environment-variables)
 1. **System Configuration**:
-    * `/etc/yt-dlp.conf`
-    * `/etc/yt-dlp/config`
-    * `/etc/yt-dlp/config.txt`
+    * `/etc/yt-dude.conf`
+    * `/etc/yt-dude/config`
+    * `/etc/yt-dude/config.txt`
 
-E.g. with the following configuration file, yt-dlp will always extract the audio, copy the mtime, use a proxy and save all videos under `YouTube` directory in your home directory:
+E.g. with the following configuration file, yt-dude will always extract the audio, copy the mtime, use a proxy and save all videos under `YouTube` directory in your home directory:
 ```
 # Lines starting with # are comments
 
@@ -1232,7 +1232,7 @@ E.g. with the following configuration file, yt-dlp will always extract the audio
 
 **Note**: Options in a configuration file are just the same options aka switches used in regular command line calls; thus there **must be no whitespace** after `-` or `--`, e.g. `-o` or `--proxy` but not `- o` or `-- proxy`. They must also be quoted when necessary, as if it were a UNIX shell.
 
-You can use `--ignore-config` if you want to disable all configuration files for a particular yt-dlp run. If `--ignore-config` is found inside any configuration file, no further configuration will be loaded. For example, having the option in the portable configuration file prevents loading of home, user, and system configurations. Additionally, (for backward compatibility) if `--ignore-config` is found inside the system configuration file, the user configuration is not loaded.
+You can use `--ignore-config` if you want to disable all configuration files for a particular yt-dude run. If `--ignore-config` is found inside any configuration file, no further configuration will be loaded. For example, having the option in the portable configuration file prevents loading of home, user, and system configurations. Additionally, (for backward compatibility) if `--ignore-config` is found inside the system configuration file, the user configuration is not loaded.
 
 ### Configuration file encoding
 
@@ -1242,7 +1242,7 @@ If you want your file to be decoded differently, add `# coding: ENCODING` to the
 
 ### Authentication with netrc
 
-You may also want to configure automatic credentials storage for extractors that support authentication (by providing login and password with `--username` and `--password`) in order not to pass credentials as command line arguments on every yt-dlp execution and prevent tracking plain text passwords in the shell command history. You can achieve this using a [`.netrc` file](https://stackoverflow.com/tags/.netrc/info) on a per-extractor basis. For that, you will need to create a `.netrc` file in `--netrc-location` and restrict permissions to read/write by only you:
+You may also want to configure automatic credentials storage for extractors that support authentication (by providing login and password with `--username` and `--password`) in order not to pass credentials as command line arguments on every yt-dude execution and prevent tracking plain text passwords in the shell command history. You can achieve this using a [`.netrc` file](https://stackoverflow.com/tags/.netrc/info) on a per-extractor basis. For that, you will need to create a `.netrc` file in `--netrc-location` and restrict permissions to read/write by only you:
 ```
 touch ${HOME}/.netrc
 chmod a-rwx,u+rw ${HOME}/.netrc
@@ -1256,7 +1256,7 @@ E.g.
 machine youtube login myaccount@gmail.com password my_youtube_password
 machine twitch login my_twitch_account_name password my_twitch_password
 ```
-To activate authentication with the `.netrc` file you should pass `--netrc` to yt-dlp or place it in the [configuration file](#configuration).
+To activate authentication with the `.netrc` file you should pass `--netrc` to yt-dude or place it in the [configuration file](#configuration).
 
 The default location of the .netrc file is `~` (see below).
 
@@ -1264,13 +1264,13 @@ As an alternative to using the `.netrc` file, which has the disadvantage of keep
 
 E.g. To use an encrypted `.netrc` file stored as `.authinfo.gpg`
 ```
-yt-dlp --netrc-cmd 'gpg --decrypt ~/.authinfo.gpg' 'https://www.youtube.com/watch?v=BaW_jenozKc'
+yt-dude --netrc-cmd 'gpg --decrypt ~/.authinfo.gpg' 'https://www.youtube.com/watch?v=BaW_jenozKc'
 ```
 
 
 ### Notes about environment variables
 * Environment variables are normally specified as `${VARIABLE}`/`$VARIABLE` on UNIX and `%VARIABLE%` on Windows; but is always shown as `${VARIABLE}` in this documentation
-* yt-dlp also allows using UNIX-style variables on Windows for path-like options; e.g. `--output`, `--config-locations`
+* yt-dude also allows using UNIX-style variables on Windows for path-like options; e.g. `--output`, `--config-locations`
 * If unset, `${XDG_CONFIG_HOME}` defaults to `~/.config` and `${XDG_CACHE_HOME}` to `~/.cache`
 * On Windows, `~` points to `${HOME}` if present; or, `${USERPROFILE}` or `${HOMEDRIVE}${HOMEPATH}` otherwise
 * On Windows, `${USERPROFILE}` generally points to `C:\Users\<user name>` and `${APPDATA}` to `${USERPROFILE}\AppData\Roaming`
@@ -1283,7 +1283,7 @@ The `-o` option is used to indicate a template for the output file names while `
 **tl;dr:** [navigate me to examples](#output-template-examples).
 <!-- MANPAGE: END EXCLUDED SECTION -->
 
-The simplest usage of `-o` is not to set any template arguments when downloading a single file, like in `yt-dlp -o funny_video.flv "https://some/video"` (hard-coding file extension like this is _not_ recommended and could break some post-processing).
+The simplest usage of `-o` is not to set any template arguments when downloading a single file, like in `yt-dude -o funny_video.flv "https://some/video"` (hard-coding file extension like this is _not_ recommended and could break some post-processing).
 
 It may however also contain special sequences that will be replaced when downloading each video. The special sequences may be formatted according to [Python string formatting operations](https://docs.python.org/3/library/stdtypes.html#printf-style-string-formatting), e.g. `%(NAME)s` or `%(NAME)05d`. To clarify, that is a percent symbol followed by a name in parentheses, followed by formatting operations.
 
@@ -1301,7 +1301,7 @@ The field names themselves (the part inside the parenthesis) can also have some 
 
 1. **Default**: A literal default value can be specified for when the field is empty using a `|` separator. This overrides `--output-na-placeholder`. E.g. `%(uploader|Unknown)s`
 
-1. **More Conversions**: In addition to the normal format types `diouxXeEfFgGcrs`, yt-dlp additionally supports converting to `B` = **B**ytes, `j` = **j**son (flag `#` for pretty-printing, `+` for Unicode), `h` = HTML escaping, `l` = a comma-separated **l**ist (flag `#` for `\n` newline-separated), `q` = a string **q**uoted for the terminal (flag `#` to split a list into different arguments), `D` = add **D**ecimal suffixes (e.g. 10M) (flag `#` to use 1024 as factor), and `S` = **S**anitize as filename (flag `#` for restricted)
+1. **More Conversions**: In addition to the normal format types `diouxXeEfFgGcrs`, yt-dude additionally supports converting to `B` = **B**ytes, `j` = **j**son (flag `#` for pretty-printing, `+` for Unicode), `h` = HTML escaping, `l` = a comma-separated **l**ist (flag `#` for `\n` newline-separated), `q` = a string **q**uoted for the terminal (flag `#` to split a list into different arguments), `D` = add **D**ecimal suffixes (e.g. 10M) (flag `#` to use 1024 as factor), and `S` = **S**anitize as filename (flag `#` for restricted)
 
 1. **Unicode normalization**: The format type `U` can be used for NFC [Unicode normalization](https://docs.python.org/3/library/unicodedata.html#unicodedata.normalize). The alternate form flag (`#`) changes the normalization to NFD and the conversion flag `+` can be used for NFKC/NFKD compatibility equivalence normalization. E.g. `%(title)+.100U` is NFKC
 
@@ -1380,7 +1380,7 @@ The available fields are:
  - `playlist_channel` (string): Display name of the channel that uploaded the playlist
  - `playlist_channel_id` (string): Identifier of the channel that uploaded the playlist
  - `playlist_webpage_url` (string): URL of the playlist webpage
- - `webpage_url` (string): A URL to the video webpage which, if given to yt-dlp, should yield the same result again
+ - `webpage_url` (string): A URL to the video webpage which, if given to yt-dude, should yield the same result again
  - `webpage_url_basename` (string): The basename of the webpage URL
  - `webpage_url_domain` (string): The domain of the webpage URL
  - `original_url` (string): The URL given by the user (or the same as `webpage_url` for playlist entries)
@@ -1454,7 +1454,7 @@ Available only in `--sponsorblock-chapter-title`:
  - `name` (string): Friendly name of the smallest category
  - `type` (string): The [SponsorBlock action type](https://wiki.sponsor.ajay.app/w/Types#Action_Type) of the chapter
 
-Each aforementioned sequence when referenced in an output template will be replaced by the actual value corresponding to the sequence name. E.g. for `-o %(title)s-%(id)s.%(ext)s` and an mp4 video with title `yt-dlp test video` and id `BaW_jenozKc`, this will result in a `yt-dlp test video-BaW_jenozKc.mp4` file created in the current directory.
+Each aforementioned sequence when referenced in an output template will be replaced by the actual value corresponding to the sequence name. E.g. for `-o %(title)s-%(id)s.%(ext)s` and an mp4 video with title `yt-dude test video` and id `BaW_jenozKc`, this will result in a `yt-dude test video-BaW_jenozKc.mp4` file created in the current directory.
 
 **Note**: Some of the sequences are not guaranteed to be present, since they depend on the metadata obtained by a particular extractor. Such sequences will be replaced with placeholder value provided with `--output-na-placeholder` (`NA` by default).
 
@@ -1473,50 +1473,50 @@ In some cases, you don't want special characters such as 中, spaces, or &, such
 #### Output template examples
 
 ```bash
-$ yt-dlp --print filename -o "test video.%(ext)s" BaW_jenozKc
+$ yt-dude --print filename -o "test video.%(ext)s" BaW_jenozKc
 test video.webm    # Literal name with correct extension
 
-$ yt-dlp --print filename -o "%(title)s.%(ext)s" BaW_jenozKc
+$ yt-dude --print filename -o "%(title)s.%(ext)s" BaW_jenozKc
 youtube-dl test video ''_ä↭𝕐.webm    # All kinds of weird characters
 
-$ yt-dlp --print filename -o "%(title)s.%(ext)s" BaW_jenozKc --restrict-filenames
+$ yt-dude --print filename -o "%(title)s.%(ext)s" BaW_jenozKc --restrict-filenames
 youtube-dl_test_video_.webm    # Restricted file name
 
 # Download YouTube playlist videos in separate directory indexed by video order in a playlist
-$ yt-dlp -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLwiyx1dc3P2JR9N8gQaQN_BCvlSlap7re"
+$ yt-dude -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLwiyx1dc3P2JR9N8gQaQN_BCvlSlap7re"
 
 # Download YouTube playlist videos in separate directories according to their uploaded year
-$ yt-dlp -o "%(upload_date>%Y)s/%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLwiyx1dc3P2JR9N8gQaQN_BCvlSlap7re"
+$ yt-dude -o "%(upload_date>%Y)s/%(title)s.%(ext)s" "https://www.youtube.com/playlist?list=PLwiyx1dc3P2JR9N8gQaQN_BCvlSlap7re"
 
 # Prefix playlist index with " - " separator, but only if it is available
-$ yt-dlp -o "%(playlist_index&{} - |)s%(title)s.%(ext)s" BaW_jenozKc "https://www.youtube.com/user/TheLinuxFoundation/playlists"
+$ yt-dude -o "%(playlist_index&{} - |)s%(title)s.%(ext)s" BaW_jenozKc "https://www.youtube.com/user/TheLinuxFoundation/playlists"
 
 # Download all playlists of YouTube channel/user keeping each playlist in separate directory:
-$ yt-dlp -o "%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/user/TheLinuxFoundation/playlists"
+$ yt-dude -o "%(uploader)s/%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s" "https://www.youtube.com/user/TheLinuxFoundation/playlists"
 
 # Download Udemy course keeping each chapter in separate directory under MyVideos directory in your home
-$ yt-dlp -u user -p password -P "~/MyVideos" -o "%(playlist)s/%(chapter_number)s - %(chapter)s/%(title)s.%(ext)s" "https://www.udemy.com/java-tutorial"
+$ yt-dude -u user -p password -P "~/MyVideos" -o "%(playlist)s/%(chapter_number)s - %(chapter)s/%(title)s.%(ext)s" "https://www.udemy.com/java-tutorial"
 
 # Download entire series season keeping each series and each season in separate directory under C:/MyVideos
-$ yt-dlp -P "C:/MyVideos" -o "%(series)s/%(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s" "https://videomore.ru/kino_v_detalayah/5_sezon/367617"
+$ yt-dude -P "C:/MyVideos" -o "%(series)s/%(season_number)s - %(season)s/%(episode_number)s - %(episode)s.%(ext)s" "https://videomore.ru/kino_v_detalayah/5_sezon/367617"
 
 # Download video as "C:\MyVideos\uploader\title.ext", subtitles as "C:\MyVideos\subs\uploader\title.ext"
 # and put all temporary files in "C:\MyVideos\tmp"
-$ yt-dlp -P "C:/MyVideos" -P "temp:tmp" -P "subtitle:subs" -o "%(uploader)s/%(title)s.%(ext)s" BaW_jenozKc --write-subs
+$ yt-dude -P "C:/MyVideos" -P "temp:tmp" -P "subtitle:subs" -o "%(uploader)s/%(title)s.%(ext)s" BaW_jenozKc --write-subs
 
 # Download video as "C:\MyVideos\uploader\title.ext" and subtitles as "C:\MyVideos\uploader\subs\title.ext"
-$ yt-dlp -P "C:/MyVideos" -o "%(uploader)s/%(title)s.%(ext)s" -o "subtitle:%(uploader)s/subs/%(title)s.%(ext)s" BaW_jenozKc --write-subs
+$ yt-dude -P "C:/MyVideos" -o "%(uploader)s/%(title)s.%(ext)s" -o "subtitle:%(uploader)s/subs/%(title)s.%(ext)s" BaW_jenozKc --write-subs
 
 # Stream the video being downloaded to stdout
-$ yt-dlp -o - BaW_jenozKc
+$ yt-dude -o - BaW_jenozKc
 ```
 
 # FORMAT SELECTION
 
-By default, yt-dlp tries to download the best available quality if you **don't** pass any options.
-This is generally equivalent to using `-f bestvideo*+bestaudio/best`. However, if multiple audiostreams is enabled (`--audio-multistreams`), the default format changes to `-f bestvideo+bestaudio/best`. Similarly, if ffmpeg is unavailable, or if you use yt-dlp to stream to `stdout` (`-o -`), the default becomes `-f best/bestvideo+bestaudio`.
+By default, yt-dude tries to download the best available quality if you **don't** pass any options.
+This is generally equivalent to using `-f bestvideo*+bestaudio/best`. However, if multiple audiostreams is enabled (`--audio-multistreams`), the default format changes to `-f bestvideo+bestaudio/best`. Similarly, if ffmpeg is unavailable, or if you use yt-dude to stream to `stdout` (`-o -`), the default becomes `-f best/bestvideo+bestaudio`.
 
-**Deprecation warning**: Latest versions of yt-dlp can stream multiple formats to the stdout simultaneously using ffmpeg. So, in future versions, the default for this will be set to `-f bv*+ba/b` similar to normal downloads. If you want to preserve the `-f b/bv+ba` setting, it is recommended to explicitly specify it in the configuration options.
+**Deprecation warning**: Latest versions of yt-dude can stream multiple formats to the stdout simultaneously using ffmpeg. So, in future versions, the default for this will be set to `-f bv*+ba/b` similar to normal downloads. If you want to preserve the `-f b/bv+ba` setting, it is recommended to explicitly specify it in the configuration options.
 
 The general syntax for format selection is `-f FORMAT` (or `--format FORMAT`) where `FORMAT` is a *selector expression*, i.e. an expression that describes format or formats you would like to download.
 
@@ -1539,7 +1539,7 @@ You can also use special names to select particular edge case formats:
  - `bv`, `bestvideo`: Select the best quality **video-only** format. Equivalent to `best*[acodec=none]`
  - `bv*`, `bestvideo*`: Select the best quality format that **contains video**. It may also contain audio. Equivalent to `best*[vcodec!=none]`
  - `ba`, `bestaudio`: Select the best quality **audio-only** format. Equivalent to `best*[vcodec=none]`
- - `ba*`, `bestaudio*`: Select the best quality format that **contains audio**. It may also contain video. Equivalent to `best*[acodec!=none]` ([Do not use!](https://github.com/yt-dlp/yt-dlp/issues/979#issuecomment-919629354))
+ - `ba*`, `bestaudio*`: Select the best quality format that **contains audio**. It may also contain video. Equivalent to `best*[acodec!=none]` ([Do not use!](https://github.com/yt-dude/yt-dude/issues/979#issuecomment-919629354))
  - `w*`, `worst*`: Select the worst quality format that contains either a video or an audio
  - `w`, `worst`: Select the worst quality format that contains both video and audio. Equivalent to `worst*[vcodec!=none][acodec!=none]`
  - `wv`, `worstvideo`: Select the worst quality video-only format. Equivalent to `worst*[acodec=none]`
@@ -1656,102 +1656,102 @@ If you use the `-S`/`--format-sort` option multiple times, each subsequent sorti
 ```bash
 # Download and merge the best video-only format and the best audio-only format,
 # or download the best combined format if video-only format is not available
-$ yt-dlp -f "bv+ba/b"
+$ yt-dude -f "bv+ba/b"
 
 # Download best format that contains video,
 # and if it doesn't already have an audio stream, merge it with best audio-only format
-$ yt-dlp -f "bv*+ba/b"
+$ yt-dude -f "bv*+ba/b"
 
 # Same as above
-$ yt-dlp
+$ yt-dude
 
 # Download the best video-only format and the best audio-only format without merging them
 # For this case, an output template should be used since
 # by default, bestvideo and bestaudio will have the same file name.
-$ yt-dlp -f "bv,ba" -o "%(title)s.f%(format_id)s.%(ext)s"
+$ yt-dude -f "bv,ba" -o "%(title)s.f%(format_id)s.%(ext)s"
 
 # Download and merge the best format that has a video stream,
 # and all audio-only formats into one file
-$ yt-dlp -f "bv*+mergeall[vcodec=none]" --audio-multistreams
+$ yt-dude -f "bv*+mergeall[vcodec=none]" --audio-multistreams
 
 # Download and merge the best format that has a video stream,
 # and the best 2 audio-only formats into one file
-$ yt-dlp -f "bv*+ba+ba.2" --audio-multistreams
+$ yt-dude -f "bv*+ba+ba.2" --audio-multistreams
 
 
 # The following examples show the old method (without -S) of format selection
 # and how to use -S to achieve a similar but (generally) better result
 
 # Download the worst video available (old method)
-$ yt-dlp -f "wv*+wa/w"
+$ yt-dude -f "wv*+wa/w"
 
 # Download the best video available but with the smallest resolution
-$ yt-dlp -S "+res"
+$ yt-dude -S "+res"
 
 # Download the smallest video available
-$ yt-dlp -S "+size,+br"
+$ yt-dude -S "+size,+br"
 
 
 
 # Download the best mp4 video available, or the best video if no mp4 available
-$ yt-dlp -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b"
+$ yt-dude -f "bv*[ext=mp4]+ba[ext=m4a]/b[ext=mp4] / bv*+ba/b"
 
 # Download the best video with the best extension
 # (For video, mp4 > mov > webm > flv. For audio, m4a > aac > mp3 ...)
-$ yt-dlp -S "ext"
+$ yt-dude -S "ext"
 
 
 
 # Download the best video available but no better than 480p,
 # or the worst video if there is no video under 480p
-$ yt-dlp -f "bv*[height<=480]+ba/b[height<=480] / wv*+ba/w"
+$ yt-dude -f "bv*[height<=480]+ba/b[height<=480] / wv*+ba/w"
 
 # Download the best video available with the largest height but no better than 480p,
 # or the best video with the smallest resolution if there is no video under 480p
-$ yt-dlp -S "height:480"
+$ yt-dude -S "height:480"
 
 # Download the best video available with the largest resolution but no better than 480p,
 # or the best video with the smallest resolution if there is no video under 480p
 # Resolution is determined by using the smallest dimension.
 # So this works correctly for vertical videos as well
-$ yt-dlp -S "res:480"
+$ yt-dude -S "res:480"
 
 
 
 # Download the best video (that also has audio) but no bigger than 50 MB,
 # or the worst video (that also has audio) if there is no video under 50 MB
-$ yt-dlp -f "b[filesize<50M] / w"
+$ yt-dude -f "b[filesize<50M] / w"
 
 # Download the largest video (that also has audio) but no bigger than 50 MB,
 # or the smallest video (that also has audio) if there is no video under 50 MB
-$ yt-dlp -f "b" -S "filesize:50M"
+$ yt-dude -f "b" -S "filesize:50M"
 
 # Download the best video (that also has audio) that is closest in size to 50 MB
-$ yt-dlp -f "b" -S "filesize~50M"
+$ yt-dude -f "b" -S "filesize~50M"
 
 
 
 # Download best video available via direct link over HTTP/HTTPS protocol,
 # or the best video available via any protocol if there is no such video
-$ yt-dlp -f "(bv*+ba/b)[protocol^=http][protocol!*=dash] / (bv*+ba/b)"
+$ yt-dude -f "(bv*+ba/b)[protocol^=http][protocol!*=dash] / (bv*+ba/b)"
 
 # Download best video available via the best protocol
 # (https/ftps > http/ftp > m3u8_native > m3u8 > http_dash_segments ...)
-$ yt-dlp -S "proto"
+$ yt-dude -S "proto"
 
 
 
 # Download the best video with either h264 or h265 codec,
 # or the best video if there is no such video
-$ yt-dlp -f "(bv*[vcodec~='^((he|a)vc|h26[45])']+ba) / (bv*+ba/b)"
+$ yt-dude -f "(bv*[vcodec~='^((he|a)vc|h26[45])']+ba) / (bv*+ba/b)"
 
 # Download the best video with best codec no better than h264,
 # or the best video with worst codec if there is no such video
-$ yt-dlp -S "codec:h264"
+$ yt-dude -S "codec:h264"
 
 # Download the best video with worst codec no worse than h264,
 # or the best video with best codec if there is no such video
-$ yt-dlp -S "+codec:h264"
+$ yt-dude -S "+codec:h264"
 
 
 
@@ -1759,19 +1759,19 @@ $ yt-dlp -S "+codec:h264"
 
 # Download the best video no better than 720p preferring framerate greater than 30,
 # or the worst video (still preferring framerate greater than 30) if there is no such video
-$ yt-dlp -f "((bv*[fps>30]/bv*)[height<=720]/(wv*[fps>30]/wv*)) + ba / (b[fps>30]/b)[height<=720]/(w[fps>30]/w)"
+$ yt-dude -f "((bv*[fps>30]/bv*)[height<=720]/(wv*[fps>30]/wv*)) + ba / (b[fps>30]/b)[height<=720]/(w[fps>30]/w)"
 
 # Download the video with the largest resolution no better than 720p,
 # or the video with the smallest resolution available if there is no such video,
 # preferring larger framerate for formats with the same resolution
-$ yt-dlp -S "res:720,fps"
+$ yt-dude -S "res:720,fps"
 
 
 
 # Download the video with smallest resolution no worse than 480p,
 # or the video with the largest resolution available if there is no such video,
 # preferring better codec and then larger total bitrate for the same resolution
-$ yt-dlp -S "+res:480,codec,br"
+$ yt-dude -S "+res:480,codec,br"
 ```
 
 # MODIFYING METADATA
@@ -1792,7 +1792,7 @@ This option also has a few special uses:
 
 **Note**: Metadata modification happens before format selection, post-extraction and other post-processing operations. Some fields may be added or changed during these steps, overriding your changes.
 
-For reference, these are the fields yt-dlp adds by default to the file metadata:
+For reference, these are the fields yt-dude adds by default to the file metadata:
 
 Metadata fields            | From
 :--------------------------|:------------------------------------------------
@@ -1820,32 +1820,32 @@ Metadata fields            | From
 
 ```bash
 # Interpret the title as "Artist - Title"
-$ yt-dlp --parse-metadata "title:%(artist)s - %(title)s"
+$ yt-dude --parse-metadata "title:%(artist)s - %(title)s"
 
 # Regex example
-$ yt-dlp --parse-metadata "description:Artist - (?P<artist>.+)"
+$ yt-dude --parse-metadata "description:Artist - (?P<artist>.+)"
 
 # Copy the episode field to the title field (with FROM and TO as single fields)
-$ yt-dlp --parse-metadata "episode:title"
+$ yt-dude --parse-metadata "episode:title"
 
 # Set title as "Series name S01E05"
-$ yt-dlp --parse-metadata "%(series)s S%(season_number)02dE%(episode_number)02d:%(title)s"
+$ yt-dude --parse-metadata "%(series)s S%(season_number)02dE%(episode_number)02d:%(title)s"
 
 # Prioritize uploader as the "artist" field in video metadata
-$ yt-dlp --parse-metadata "%(uploader|)s:%(meta_artist)s" --embed-metadata
+$ yt-dude --parse-metadata "%(uploader|)s:%(meta_artist)s" --embed-metadata
 
 # Set "comment" field in video metadata using description instead of webpage_url,
 # handling multiple lines correctly
-$ yt-dlp --parse-metadata "description:(?s)(?P<meta_comment>.+)" --embed-metadata
+$ yt-dude --parse-metadata "description:(?s)(?P<meta_comment>.+)" --embed-metadata
 
 # Do not set any "synopsis" in the video metadata
-$ yt-dlp --parse-metadata ":(?P<meta_synopsis>)"
+$ yt-dude --parse-metadata ":(?P<meta_synopsis>)"
 
 # Remove "formats" field from the infojson by setting it to an empty string
-$ yt-dlp --parse-metadata "video::(?P<formats>)" --write-info-json
+$ yt-dude --parse-metadata "video::(?P<formats>)" --write-info-json
 
 # Replace all spaces and "_" in title and uploader with a `-`
-$ yt-dlp --replace-in-metadata "title,uploader" "[ _]" "-"
+$ yt-dude --replace-in-metadata "title,uploader" "[ _]" "-"
 
 ```
 
@@ -1858,12 +1858,12 @@ Note: In CLI, `ARG` can use `-` instead of `_`; e.g. `youtube:player-client"` be
 The following extractors use this feature:
 
 #### youtube
-* `lang`: Prefer translated metadata (`title`, `description` etc) of this language code (case-sensitive). By default, the video primary language metadata is preferred, with a fallback to `en` translated. See [youtube/_base.py](https://github.com/yt-dlp/yt-dlp/blob/415b4c9f955b1a0391204bd24a7132590e7b3bdb/yt_dlp/extractor/youtube/_base.py#L402-L409) for the list of supported content language codes
-* `skip`: One or more of `hls`, `dash` or `translated_subs` to skip extraction of the m3u8 manifests, dash manifests and [auto-translated subtitles](https://github.com/yt-dlp/yt-dlp/issues/4090#issuecomment-1158102032) respectively
-* `player_client`: Clients to extract video data from. The currently available clients are `web`, `web_safari`, `web_embedded`, `web_music`, `web_creator`, `mweb`, `ios`, `android`, `android_vr`, `tv`, `tv_downgraded`, and `tv_simply`. By default, `android_vr,web,web_safari` is used. If no JavaScript runtime/engine is available, then only `android_vr` is used. If logged-in cookies are passed to yt-dlp, then `tv_downgraded,web,web_safari` is used for free accounts and `tv_downgraded,web_creator,web` is used for premium accounts. The `web_music` client is added for `music.youtube.com` URLs when logged-in cookies are used. The `web_embedded` client is added for age-restricted videos but only successfully works around the age-restriction sometimes (e.g. if the video is embeddable), and may be added as a fallback if `android_vr` is unable to access a video. The `web_creator` client is added for age-restricted videos if account age-verification is required. Some clients, such as `web_creator` and `web_music`, require a `po_token` for their formats to be downloadable. Some clients, such as `web_creator`, will only work with authentication. Not all clients support authentication via cookies. You can use `default` for the default clients, or you can use `all` for all clients (not recommended). You can prefix a client with `-` to exclude it, e.g. `youtube:player_client=default,-web`
-* `player_skip`: Skip some network requests that are generally needed for robust extraction. One or more of `configs` (skip client configs), `webpage` (skip initial webpage), `js` (skip js player), `initial_data` (skip initial data/next ep request). While these options can help reduce the number of requests needed or avoid some rate-limiting, they could cause issues such as missing formats or metadata.  See [#860](https://github.com/yt-dlp/yt-dlp/pull/860) and [#12826](https://github.com/yt-dlp/yt-dlp/issues/12826) for more details
+* `lang`: Prefer translated metadata (`title`, `description` etc) of this language code (case-sensitive). By default, the video primary language metadata is preferred, with a fallback to `en` translated. See [youtube/_base.py](https://github.com/yt-dude/yt-dude/blob/415b4c9f955b1a0391204bd24a7132590e7b3bdb/yt_dude/extractor/youtube/_base.py#L402-L409) for the list of supported content language codes
+* `skip`: One or more of `hls`, `dash` or `translated_subs` to skip extraction of the m3u8 manifests, dash manifests and [auto-translated subtitles](https://github.com/yt-dude/yt-dude/issues/4090#issuecomment-1158102032) respectively
+* `player_client`: Clients to extract video data from. The currently available clients are `web`, `web_safari`, `web_embedded`, `web_music`, `web_creator`, `mweb`, `ios`, `android`, `android_vr`, `tv`, `tv_downgraded`, and `tv_simply`. By default, `android_vr,web,web_safari` is used. If no JavaScript runtime/engine is available, then only `android_vr` is used. If logged-in cookies are passed to yt-dude, then `tv_downgraded,web,web_safari` is used for free accounts and `tv_downgraded,web_creator,web` is used for premium accounts. The `web_music` client is added for `music.youtube.com` URLs when logged-in cookies are used. The `web_embedded` client is added for age-restricted videos but only successfully works around the age-restriction sometimes (e.g. if the video is embeddable), and may be added as a fallback if `android_vr` is unable to access a video. The `web_creator` client is added for age-restricted videos if account age-verification is required. Some clients, such as `web_creator` and `web_music`, require a `po_token` for their formats to be downloadable. Some clients, such as `web_creator`, will only work with authentication. Not all clients support authentication via cookies. You can use `default` for the default clients, or you can use `all` for all clients (not recommended). You can prefix a client with `-` to exclude it, e.g. `youtube:player_client=default,-web`
+* `player_skip`: Skip some network requests that are generally needed for robust extraction. One or more of `configs` (skip client configs), `webpage` (skip initial webpage), `js` (skip js player), `initial_data` (skip initial data/next ep request). While these options can help reduce the number of requests needed or avoid some rate-limiting, they could cause issues such as missing formats or metadata.  See [#860](https://github.com/yt-dude/yt-dude/pull/860) and [#12826](https://github.com/yt-dude/yt-dude/issues/12826) for more details
 * `webpage_skip`: Skip extraction of embedded webpage data. One or both of `player_response`, `initial_data`. These options are for testing purposes and don't skip any network requests
-* `player_params`: YouTube player parameters to use for player requests. Will overwrite any default ones set by yt-dlp.
+* `player_params`: YouTube player parameters to use for player requests. Will overwrite any default ones set by yt-dude.
 * `player_js_variant`: The player javascript variant to use for n/sig deciphering. The known variants are: `main`, `tcc`, `tce`, `es5`, `es6`, `es6_tcc`, `es6_tce`, `tv`, `tv_es6`, `phone`, `house`. The default is `tv`, and the others are for debugging purposes. You can use `actual` to go with what is prescribed by the site
 * `player_js_version`: The player javascript version to use for n/sig deciphering, in the format of `signature_timestamp@hash` (e.g. `20348@0004de42`). The default is to use what is prescribed by the site, and can be selected with `actual`
 * `comment_sort`: `top` or `new` (default) - choose comment sorting mode (on YouTube's side)
@@ -1880,7 +1880,7 @@ The following extractors use this feature:
 * `pot_trace`: Enable debug logging for PO Token fetching. Either `true` or `false` (default)
 * `fetch_pot`: Policy to use for fetching a PO Token from providers. One of `always` (always try fetch a PO Token regardless if the client requires one for the given context), `never` (never fetch a PO Token), or `auto` (default; only fetch a PO Token if the client requires one for the given context)
 * `jsc_trace`: Enable debug logging for JS Challenge fetching. Either `true` or `false` (default)
-* `use_ad_playback_context`: Skip preroll ads to eliminate the mandatory wait period before download. Do NOT use this when passing premium account cookies to yt-dlp, as it will result in a loss of premium formats. Only effective with the `web`, `web_safari`, `web_music` and `mweb` player clients. Either `true` or `false` (default)
+* `use_ad_playback_context`: Skip preroll ads to eliminate the mandatory wait period before download. Do NOT use this when passing premium account cookies to yt-dude, as it will result in a loss of premium formats. Only effective with the `web`, `web_safari`, `web_music` and `mweb` player clients. Either `true` or `false` (default)
 
 #### youtube-ejs
 * `jitless`: Run supported Javascript engines in JIT-less mode. Supported runtimes are `deno`, `node` and `bun`. Provides better security at the cost of performance/speed. Do note that `node` and `bun` are still considered insecure. Either `true` or `false` (default)
@@ -1889,7 +1889,7 @@ The following extractors use this feature:
 * `bind_to_visitor_id`: Whether to use the Visitor ID instead of Visitor Data for caching WebPO tokens. Either `true` (default) or `false`
 
 #### youtubetab (YouTube playlists, channels, feeds, etc.)
-* `skip`: One or more of `webpage` (skip initial webpage download), `authcheck` (allow the download of playlists requiring authentication when no initial webpage is downloaded. This may cause unwanted behavior, see [#1122](https://github.com/yt-dlp/yt-dlp/pull/1122) for more details)
+* `skip`: One or more of `webpage` (skip initial webpage download), `authcheck` (allow the download of playlists requiring authentication when no initial webpage is downloaded. This may cause unwanted behavior, see [#1122](https://github.com/yt-dude/yt-dude/pull/1122) for more details)
 * `approximate_date`: Extract approximate `upload_date` and `timestamp` in flat-playlist. This may cause date-based filters to be slightly off
 
 #### generic
@@ -1990,85 +1990,85 @@ Plugins can be of `<type>`s `extractor` or `postprocessor`.
 - Postprocessor plugins can be invoked using `--use-postprocessor NAME`.
 
 
-Plugins are loaded from the namespace packages `yt_dlp_plugins.extractor` and `yt_dlp_plugins.postprocessor`.
+Plugins are loaded from the namespace packages `yt_dude_plugins.extractor` and `yt_dude_plugins.postprocessor`.
 
 In other words, the file structure on the disk looks something like:
 
-        yt_dlp_plugins/
+        yt_dude_plugins/
             extractor/
                 myplugin.py
             postprocessor/
                 myplugin.py
 
-yt-dlp looks for these `yt_dlp_plugins` namespace folders in many locations (see below) and loads in plugins from **all** of them.
+yt-dude looks for these `yt_dude_plugins` namespace folders in many locations (see below) and loads in plugins from **all** of them.
 Set the environment variable `YTDLP_NO_PLUGINS` to something nonempty to disable loading plugins entirely.
 
-See the [wiki for some known plugins](https://github.com/yt-dlp/yt-dlp/wiki/Plugins)
+See the [wiki for some known plugins](https://github.com/yt-dude/yt-dude/wiki/Plugins)
 
 ## Installing Plugins
 
 Plugins can be installed using various methods and locations.
 
 1. **Configuration directories**:
-   Plugin packages (containing a `yt_dlp_plugins` namespace folder) can be dropped into the following standard [configuration locations](#configuration):
+   Plugin packages (containing a `yt_dude_plugins` namespace folder) can be dropped into the following standard [configuration locations](#configuration):
     * **User Plugins**
-      * `${XDG_CONFIG_HOME}/yt-dlp/plugins/<package name>/yt_dlp_plugins/` (recommended on Linux/macOS)
-      * `${XDG_CONFIG_HOME}/yt-dlp-plugins/<package name>/yt_dlp_plugins/`
-      * `${APPDATA}/yt-dlp/plugins/<package name>/yt_dlp_plugins/` (recommended on Windows)
-      * `${APPDATA}/yt-dlp-plugins/<package name>/yt_dlp_plugins/`
-      * `~/.yt-dlp/plugins/<package name>/yt_dlp_plugins/`
-      * `~/yt-dlp-plugins/<package name>/yt_dlp_plugins/`
+      * `${XDG_CONFIG_HOME}/yt-dude/plugins/<package name>/yt_dude_plugins/` (recommended on Linux/macOS)
+      * `${XDG_CONFIG_HOME}/yt-dude-plugins/<package name>/yt_dude_plugins/`
+      * `${APPDATA}/yt-dude/plugins/<package name>/yt_dude_plugins/` (recommended on Windows)
+      * `${APPDATA}/yt-dude-plugins/<package name>/yt_dude_plugins/`
+      * `~/.yt-dude/plugins/<package name>/yt_dude_plugins/`
+      * `~/yt-dude-plugins/<package name>/yt_dude_plugins/`
     * **System Plugins**
-      * `/etc/yt-dlp/plugins/<package name>/yt_dlp_plugins/`
-      * `/etc/yt-dlp-plugins/<package name>/yt_dlp_plugins/`
-2. **Executable location**: Plugin packages can similarly be installed in a `yt-dlp-plugins` directory under the executable location (recommended for portable installations):
-    * Binary: where `<root-dir>/yt-dlp.exe`, `<root-dir>/yt-dlp-plugins/<package name>/yt_dlp_plugins/`
-    * Source: where `<root-dir>/yt_dlp/__main__.py`, `<root-dir>/yt-dlp-plugins/<package name>/yt_dlp_plugins/`
+      * `/etc/yt-dude/plugins/<package name>/yt_dude_plugins/`
+      * `/etc/yt-dude-plugins/<package name>/yt_dude_plugins/`
+2. **Executable location**: Plugin packages can similarly be installed in a `yt-dude-plugins` directory under the executable location (recommended for portable installations):
+    * Binary: where `<root-dir>/yt-dude.exe`, `<root-dir>/yt-dude-plugins/<package name>/yt_dude_plugins/`
+    * Source: where `<root-dir>/yt_dude/__main__.py`, `<root-dir>/yt-dude-plugins/<package name>/yt_dude_plugins/`
 
 3. **pip and other locations in `PYTHONPATH`**
-    * Plugin packages can be installed and managed using `pip`. See [yt-dlp-sample-plugins](https://github.com/yt-dlp/yt-dlp-sample-plugins) for an example.
+    * Plugin packages can be installed and managed using `pip`. See [yt-dude-sample-plugins](https://github.com/yt-dude/yt-dude-sample-plugins) for an example.
       * Note: plugin files between plugin packages installed with pip must have unique filenames.
-    * Any path in `PYTHONPATH` is searched in for the `yt_dlp_plugins` namespace folder.
+    * Any path in `PYTHONPATH` is searched in for the `yt_dude_plugins` namespace folder.
       * Note: This does not apply for Pyinstaller builds.
 
 
-`.zip`, `.egg` and `.whl` archives containing a `yt_dlp_plugins` namespace folder in their root are also supported as plugin packages.
+`.zip`, `.egg` and `.whl` archives containing a `yt_dude_plugins` namespace folder in their root are also supported as plugin packages.
 
-* e.g. `${XDG_CONFIG_HOME}/yt-dlp/plugins/mypluginpkg.zip` where `mypluginpkg.zip` contains `yt_dlp_plugins/<type>/myplugin.py`
+* e.g. `${XDG_CONFIG_HOME}/yt-dude/plugins/mypluginpkg.zip` where `mypluginpkg.zip` contains `yt_dude_plugins/<type>/myplugin.py`
 
-Run yt-dlp with `--verbose` to check if the plugin has been loaded.
+Run yt-dude with `--verbose` to check if the plugin has been loaded.
 
 ## Developing Plugins
 
-See the [yt-dlp-sample-plugins](https://github.com/yt-dlp/yt-dlp-sample-plugins) repo for a template plugin package and the [Plugin Development](https://github.com/yt-dlp/yt-dlp/wiki/Plugin-Development) section of the wiki for a plugin development guide.
+See the [yt-dude-sample-plugins](https://github.com/yt-dude/yt-dude-sample-plugins) repo for a template plugin package and the [Plugin Development](https://github.com/yt-dude/yt-dude/wiki/Plugin-Development) section of the wiki for a plugin development guide.
 
 All public classes with a name ending in `IE`/`PP` are imported from each file for extractors and postprocessors respectively. This respects underscore prefix (e.g. `_MyBasePluginIE` is private) and `__all__`. Modules can similarly be excluded by prefixing the module name with an underscore (e.g. `_myplugin.py`).
 
 To replace an existing extractor with a subclass of one, set the `plugin_name` class keyword argument (e.g. `class MyPluginIE(ABuiltInIE, plugin_name='myplugin')` will replace `ABuiltInIE` with `MyPluginIE`). Since the extractor replaces the parent, you should exclude the subclass extractor from being imported separately by making it private using one of the methods described above.
 
-If you are a plugin author, add [yt-dlp-plugins](https://github.com/topics/yt-dlp-plugins) as a topic to your repository for discoverability.
+If you are a plugin author, add [yt-dude-plugins](https://github.com/topics/yt-dude-plugins) as a topic to your repository for discoverability.
 
-See the [Developer Instructions](https://github.com/yt-dlp/yt-dlp/blob/master/CONTRIBUTING.md#developer-instructions) on how to write and test an extractor.
+See the [Developer Instructions](https://github.com/yt-dude/yt-dude/blob/master/CONTRIBUTING.md#developer-instructions) on how to write and test an extractor.
 
 # EMBEDDING YT-DLP
 
-yt-dlp makes the best effort to be a good command-line program, and thus should be callable from any programming language.
+yt-dude makes the best effort to be a good command-line program, and thus should be callable from any programming language.
 
 Your program should avoid parsing the normal stdout since they may change in future versions. Instead, they should use options such as `-J`, `--print`, `--progress-template`, `--exec` etc to create console output that you can reliably reproduce and parse.
 
-From a Python program, you can embed yt-dlp in a more powerful fashion, like this:
+From a Python program, you can embed yt-dude in a more powerful fashion, like this:
 
 ```python
-from yt_dlp import YoutubeDL
+from yt_dude import YoutubeDL
 
 URLS = ['https://www.youtube.com/watch?v=BaW_jenozKc']
 with YoutubeDL() as ydl:
     ydl.download(URLS)
 ```
 
-Most likely, you'll want to use various options. For a list of options available, have a look at [`yt_dlp/YoutubeDL.py`](yt_dlp/YoutubeDL.py#L183) or `help(yt_dlp.YoutubeDL)` in a Python shell. If you are already familiar with the CLI, you can use [`devscripts/cli_to_api.py`](https://github.com/yt-dlp/yt-dlp/blob/master/devscripts/cli_to_api.py) to translate any CLI switches to `YoutubeDL` params.
+Most likely, you'll want to use various options. For a list of options available, have a look at [`yt_dude/YoutubeDL.py`](yt_dude/YoutubeDL.py#L183) or `help(yt_dude.YoutubeDL)` in a Python shell. If you are already familiar with the CLI, you can use [`devscripts/cli_to_api.py`](https://github.com/yt-dude/yt-dude/blob/master/devscripts/cli_to_api.py) to translate any CLI switches to `YoutubeDL` params.
 
-**Tip**: If you are porting your code from youtube-dl to yt-dlp, one important point to look out for is that we do not guarantee the return value of `YoutubeDL.extract_info` to be json serializable, or even be a dictionary. It will be dictionary-like, but if you want to ensure it is a serializable dictionary, pass it through `YoutubeDL.sanitize_info` as shown in the [example below](#extracting-information)
+**Tip**: If you are porting your code from youtube-dl to yt-dude, one important point to look out for is that we do not guarantee the return value of `YoutubeDL.extract_info` to be json serializable, or even be a dictionary. It will be dictionary-like, but if you want to ensure it is a serializable dictionary, pass it through `YoutubeDL.sanitize_info` as shown in the [example below](#extracting-information)
 
 ## Embedding examples
 
@@ -2076,13 +2076,13 @@ Most likely, you'll want to use various options. For a list of options available
 
 ```python
 import json
-import yt_dlp
+import yt_dude
 
 URL = 'https://www.youtube.com/watch?v=BaW_jenozKc'
 
-# ℹ️ See help(yt_dlp.YoutubeDL) for a list of available options and public functions
+# ℹ️ See help(yt_dude.YoutubeDL) for a list of available options and public functions
 ydl_opts = {}
-with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+with yt_dude.YoutubeDL(ydl_opts) as ydl:
     info = ydl.extract_info(URL, download=False)
 
     # ℹ️ ydl.sanitize_info makes the info json-serializable
@@ -2091,11 +2091,11 @@ with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 #### Download using an info-json
 
 ```python
-import yt_dlp
+import yt_dude
 
 INFO_FILE = 'path/to/video.info.json'
 
-with yt_dlp.YoutubeDL() as ydl:
+with yt_dude.YoutubeDL() as ydl:
     error_code = ydl.download_with_info_file(INFO_FILE)
 
 print('Some videos failed to download' if error_code
@@ -2105,27 +2105,27 @@ print('Some videos failed to download' if error_code
 #### Extract audio
 
 ```python
-import yt_dlp
+import yt_dude
 
 URLS = ['https://www.youtube.com/watch?v=BaW_jenozKc']
 
 ydl_opts = {
     'format': 'm4a/bestaudio/best',
-    # ℹ️ See help(yt_dlp.postprocessor) for a list of available Postprocessors and their arguments
+    # ℹ️ See help(yt_dude.postprocessor) for a list of available Postprocessors and their arguments
     'postprocessors': [{  # Extract audio using ffmpeg
         'key': 'FFmpegExtractAudio',
         'preferredcodec': 'm4a',
     }]
 }
 
-with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+with yt_dude.YoutubeDL(ydl_opts) as ydl:
     error_code = ydl.download(URLS)
 ```
 
 #### Filter videos
 
 ```python
-import yt_dlp
+import yt_dude
 
 URLS = ['https://www.youtube.com/watch?v=BaW_jenozKc']
 
@@ -2139,14 +2139,14 @@ ydl_opts = {
     'match_filter': longer_than_a_minute,
 }
 
-with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+with yt_dude.YoutubeDL(ydl_opts) as ydl:
     error_code = ydl.download(URLS)
 ```
 
 #### Adding logger and progress hook
 
 ```python
-import yt_dlp
+import yt_dude
 
 URLS = ['https://www.youtube.com/watch?v=BaW_jenozKc']
 
@@ -2169,7 +2169,7 @@ class MyLogger:
         print(msg)
 
 
-# ℹ️ See "progress_hooks" in help(yt_dlp.YoutubeDL)
+# ℹ️ See "progress_hooks" in help(yt_dude.YoutubeDL)
 def my_hook(d):
     if d['status'] == 'finished':
         print('Done downloading, now post-processing ...')
@@ -2180,26 +2180,26 @@ ydl_opts = {
     'progress_hooks': [my_hook],
 }
 
-with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+with yt_dude.YoutubeDL(ydl_opts) as ydl:
     ydl.download(URLS)
 ```
 
 #### Add a custom PostProcessor
 
 ```python
-import yt_dlp
+import yt_dude
 
 URLS = ['https://www.youtube.com/watch?v=BaW_jenozKc']
 
-# ℹ️ See help(yt_dlp.postprocessor.PostProcessor)
-class MyCustomPP(yt_dlp.postprocessor.PostProcessor):
+# ℹ️ See help(yt_dude.postprocessor.PostProcessor)
+class MyCustomPP(yt_dude.postprocessor.PostProcessor):
     def run(self, info):
         self.to_screen('Doing stuff')
         return [], info
 
 
-with yt_dlp.YoutubeDL() as ydl:
-    # ℹ️ "when" can take any value in yt_dlp.utils.POSTPROCESS_WHEN
+with yt_dude.YoutubeDL() as ydl:
+    # ℹ️ "when" can take any value in yt_dude.utils.POSTPROCESS_WHEN
     ydl.add_post_processor(MyCustomPP(), when='pre_process')
     ydl.download(URLS)
 ```
@@ -2208,7 +2208,7 @@ with yt_dlp.YoutubeDL() as ydl:
 #### Use a custom format selector
 
 ```python
-import yt_dlp
+import yt_dude
 
 URLS = ['https://www.youtube.com/watch?v=BaW_jenozKc']
 
@@ -2243,7 +2243,7 @@ ydl_opts = {
     'format': format_selector,
 }
 
-with yt_dlp.YoutubeDL(ydl_opts) as ydl:
+with yt_dude.YoutubeDL(ydl_opts) as ydl:
     ydl.download(URLS)
 ```
 
@@ -2252,13 +2252,13 @@ with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
 ### New features
 
-* Forked from [**yt-dlc@f9401f2**](https://github.com/blackjack4494/yt-dlc/commit/f9401f2a91987068139c5f757b12fc711d4c0cee) and merged with [**youtube-dl@a08f2b7**](https://github.com/ytdl-org/youtube-dl/commit/a08f2b7e4567cdc50c0614ee0a4ffdff49b8b6e6) ([exceptions](https://github.com/yt-dlp/yt-dlp/issues/21))
+* Forked from [**yt-dlc@f9401f2**](https://github.com/blackjack4494/yt-dlc/commit/f9401f2a91987068139c5f757b12fc711d4c0cee) and merged with [**youtube-dl@a08f2b7**](https://github.com/ytdl-org/youtube-dl/commit/a08f2b7e4567cdc50c0614ee0a4ffdff49b8b6e6) ([exceptions](https://github.com/yt-dude/yt-dude/issues/21))
 
 * **[SponsorBlock Integration](#sponsorblock-options)**: You can mark/remove sponsor sections in YouTube videos by utilizing the [SponsorBlock](https://sponsor.ajay.app) API
 
 * **[Format Sorting](#sorting-formats)**: The default format sorting options have been changed so that higher resolution and better codecs will be now preferred instead of simply using larger bitrate. Furthermore, you can now specify the sort order using `-S`. This allows for much easier format selection than what is possible by simply using `--format` ([examples](#format-selection-examples))
 
-* **Merged with animelover1984/youtube-dl**: You get most of the features and improvements from [animelover1984/youtube-dl](https://github.com/animelover1984/youtube-dl) including `--write-comments`, `BiliBiliSearch`, `BilibiliChannel`, Embedding thumbnail in mp4/ogg/opus, playlist infojson etc. See [#31](https://github.com/yt-dlp/yt-dlp/pull/31) for details.
+* **Merged with animelover1984/youtube-dl**: You get most of the features and improvements from [animelover1984/youtube-dl](https://github.com/animelover1984/youtube-dl) including `--write-comments`, `BiliBiliSearch`, `BilibiliChannel`, Embedding thumbnail in mp4/ogg/opus, playlist infojson etc. See [#31](https://github.com/yt-dude/yt-dude/pull/31) for details.
 
 * **YouTube improvements**:
     * Supports Clips, Stories (`ytstories:<channel UCID>`), Search (including filters)**\***, YouTube Music Search, Channel-specific search, Search prefix (`ytsearch:`)**\***, Mixes, and Feeds (`:ytfav`, `:ytwatchlater`, `:ytsubs`, `:ythistory`, `:ytrec`, `:ytnotif`)
@@ -2280,7 +2280,7 @@ with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
 * **New MSOs**: Philo, Spectrum, SlingTV, Cablevision, RCN etc.
 
-* **Subtitle extraction from manifests**: Subtitles can be extracted from streaming media manifests. See [commit/be6202f](https://github.com/yt-dlp/yt-dlp/commit/be6202f12b97858b9d716e608394b51065d0419f) for details
+* **Subtitle extraction from manifests**: Subtitles can be extracted from streaming media manifests. See [commit/be6202f](https://github.com/yt-dude/yt-dude/commit/be6202f12b97858b9d716e608394b51065d0419f) for details
 
 * **Multiple paths and output templates**: You can give different [output templates](#output-template) and download paths for different types of files. You can also set a temporary path where intermediary files are downloaded to using `--paths` (`-P`)
 
@@ -2294,31 +2294,31 @@ with yt_dlp.YoutubeDL(ydl_opts) as ydl:
 
 * **Plugins**: Extractors and PostProcessors can be loaded from an external file. See [plugins](#plugins) for details
 
-* **Self updater**: The releases can be updated using `yt-dlp -U`, and downgraded using `--update-to` if required
+* **Self updater**: The releases can be updated using `yt-dude -U`, and downgraded using `--update-to` if required
 
 * **Automated builds**: [Nightly/master builds](#update-channels) can be used with `--update-to nightly` and `--update-to master`
 
-See [changelog](Changelog.md) or [commits](https://github.com/yt-dlp/yt-dlp/commits) for the full list of changes
+See [changelog](Changelog.md) or [commits](https://github.com/yt-dude/yt-dude/commits) for the full list of changes
 
 Features marked with a **\*** have been back-ported to youtube-dl
 
 ### Differences in default behavior
 
-Some of yt-dlp's default options are different from that of youtube-dl and youtube-dlc:
+Some of yt-dude's default options are different from that of youtube-dl and youtube-dlc:
 
-* yt-dlp supports only [Python 3.10+](## "Windows 8"), and will remove support for more versions as they [become EOL](https://devguide.python.org/versions/#python-release-cycle); while [youtube-dl still supports Python 2.6+ and 3.2+](https://github.com/ytdl-org/youtube-dl/issues/30568#issue-1118238743)
+* yt-dude supports only [Python 3.10+](## "Windows 8"), and will remove support for more versions as they [become EOL](https://devguide.python.org/versions/#python-release-cycle); while [youtube-dl still supports Python 2.6+ and 3.2+](https://github.com/ytdl-org/youtube-dl/issues/30568#issue-1118238743)
 * The options `--auto-number` (`-A`), `--title` (`-t`) and `--literal` (`-l`), no longer work. See [removed options](#Removed) for details
 * `avconv` is not supported as an alternative to `ffmpeg`
-* yt-dlp stores config files in slightly different locations to youtube-dl. See [CONFIGURATION](#configuration) for a list of correct locations
-* The default [output template](#output-template) is `%(title)s [%(id)s].%(ext)s`. There is no real reason for this change. This was changed before yt-dlp was ever made public and now there are no plans to change it back to `%(title)s-%(id)s.%(ext)s`. Instead, you may use `--compat-options filename`
-* The default [format sorting](#sorting-formats) is different from youtube-dl and prefers higher resolution and better codecs rather than higher bitrates. You can use the `--format-sort` option to change this to any order you prefer, or use `--compat-options format-sort` to use youtube-dl's sorting order. Older versions of yt-dlp preferred VP9 due to its broader compatibility; you can use `--compat-options prefer-vp9-sort` to revert to that format sorting preference. These two compat options cannot be used together
+* yt-dude stores config files in slightly different locations to youtube-dl. See [CONFIGURATION](#configuration) for a list of correct locations
+* The default [output template](#output-template) is `%(title)s [%(id)s].%(ext)s`. There is no real reason for this change. This was changed before yt-dude was ever made public and now there are no plans to change it back to `%(title)s-%(id)s.%(ext)s`. Instead, you may use `--compat-options filename`
+* The default [format sorting](#sorting-formats) is different from youtube-dl and prefers higher resolution and better codecs rather than higher bitrates. You can use the `--format-sort` option to change this to any order you prefer, or use `--compat-options format-sort` to use youtube-dl's sorting order. Older versions of yt-dude preferred VP9 due to its broader compatibility; you can use `--compat-options prefer-vp9-sort` to revert to that format sorting preference. These two compat options cannot be used together
 * The default format selector is `bv*+ba/b`. This means that if a combined video + audio format that is better than the best video-only format is found, the former will be preferred. Use `-f bv+ba/b` or `--compat-options format-spec` to revert this
-* Unlike youtube-dlc, yt-dlp does not allow merging multiple audio/video streams into one file by default (since this conflicts with the use of `-f bv*+ba`). If needed, this feature must be enabled using `--audio-multistreams` and `--video-multistreams`. You can also use `--compat-options multistreams` to enable both
+* Unlike youtube-dlc, yt-dude does not allow merging multiple audio/video streams into one file by default (since this conflicts with the use of `-f bv*+ba`). If needed, this feature must be enabled using `--audio-multistreams` and `--video-multistreams`. You can also use `--compat-options multistreams` to enable both
 * `--no-abort-on-error` is enabled by default. Use `--abort-on-error` or `--compat-options abort-on-error` to abort on errors instead
 * When writing metadata files such as thumbnails, description or infojson, the same information (if available) is also written for playlists. Use `--no-write-playlist-metafiles` or `--compat-options no-playlist-metafiles` to not write these files
 * `--add-metadata` attaches the `infojson` to `mkv` files in addition to writing the metadata when used with `--write-info-json`. Use `--no-embed-info-json` or `--compat-options no-attach-info-json` to revert this
 * Some metadata are embedded into different fields when using `--add-metadata` as compared to youtube-dl. Most notably, `comment` field contains the `webpage_url` and `synopsis` contains the `description`. You can [use `--parse-metadata`](#modifying-metadata) to modify this to your liking or use `--compat-options embed-metadata` to revert this
-* `playlist_index` behaves differently when used with options like `--playlist-reverse` and `--playlist-items`. See [#302](https://github.com/yt-dlp/yt-dlp/issues/302) for details. You can use `--compat-options playlist-index` if you want to keep the earlier behavior
+* `playlist_index` behaves differently when used with options like `--playlist-reverse` and `--playlist-items`. See [#302](https://github.com/yt-dude/yt-dude/issues/302) for details. You can use `--compat-options playlist-index` if you want to keep the earlier behavior
 * The output of `-F` is listed in a new format. Use `--compat-options list-formats` to revert this
 * Live chats (if available) are considered as subtitles. Use `--sub-langs all,-live_chat` to download all subtitles except live chat. You can also use `--compat-options no-live-chat` to prevent any live chat/danmaku from downloading
 * YouTube channel URLs download all uploads of the channel. To download only the videos in a specific tab, pass the tab's URL. If the channel does not show the requested tab, an error will be raised. Also, `/live` URLs raise an error if there are no live videos instead of silently downloading the entire channel. You may use `--compat-options no-youtube-channel-redirect` to revert all these redirections
@@ -2327,16 +2327,16 @@ Some of yt-dlp's default options are different from that of youtube-dl and youtu
 * If `ffmpeg` is used as the downloader, the downloading and merging of formats happen in a single step when possible. Use `--compat-options no-direct-merge` to revert this
 * Thumbnail embedding in `mp4` is done with mutagen if possible. Use `--compat-options embed-thumbnail-atomicparsley` to force the use of AtomicParsley instead
 * Some internal metadata such as filenames are removed by default from the infojson. Use `--no-clean-infojson` or `--compat-options no-clean-infojson` to revert this
-* When `--embed-subs` and `--write-subs` are used together, the subtitles are written to disk and also embedded in the media file. You can use just `--embed-subs` to embed the subs and automatically delete the separate file. See [#630 (comment)](https://github.com/yt-dlp/yt-dlp/issues/630#issuecomment-893659460) for more info. `--compat-options no-keep-subs` can be used to revert this
+* When `--embed-subs` and `--write-subs` are used together, the subtitles are written to disk and also embedded in the media file. You can use just `--embed-subs` to embed the subs and automatically delete the separate file. See [#630 (comment)](https://github.com/yt-dude/yt-dude/issues/630#issuecomment-893659460) for more info. `--compat-options no-keep-subs` can be used to revert this
 * `certifi` will be used for SSL root certificates, if installed. If you want to use system certificates (e.g. self-signed), use `--compat-options no-certifi`
-* yt-dlp's sanitization of invalid characters in filenames is different/smarter than in youtube-dl. You can use `--compat-options filename-sanitization` to revert to youtube-dl's behavior
-* ~~yt-dlp tries to parse the external downloader outputs into the standard progress output if possible (Currently implemented: [aria2c](https://github.com/yt-dlp/yt-dlp/issues/5931)). You can use `--compat-options no-external-downloader-progress` to get the downloader output as-is~~
-* yt-dlp versions between 2021.09.01 and 2023.01.02 applies `--match-filters` to nested playlists. This was an unintentional side-effect of [8f18ac](https://github.com/yt-dlp/yt-dlp/commit/8f18aca8717bb0dd49054555af8d386e5eda3a88) and is fixed in [d7b460](https://github.com/yt-dlp/yt-dlp/commit/d7b460d0e5fc710950582baed2e3fc616ed98a80). Use `--compat-options playlist-match-filter` to revert this
-* yt-dlp versions between 2021.11.10 and 2023.06.21 estimated `filesize_approx` values for fragmented/manifest formats. This was added for convenience in [f2fe69](https://github.com/yt-dlp/yt-dlp/commit/f2fe69c7b0d208bdb1f6292b4ae92bc1e1a7444a), but was reverted in [0dff8e](https://github.com/yt-dlp/yt-dlp/commit/0dff8e4d1e6e9fb938f4256ea9af7d81f42fd54f) due to the potentially extreme inaccuracy of the estimated values. Use `--compat-options manifest-filesize-approx` to keep extracting the estimated values
-* yt-dlp uses modern http client backends such as `requests`. Use `--compat-options prefer-legacy-http-handler` to prefer the legacy http handler (`urllib`) to be used for standard http requests.
+* yt-dude's sanitization of invalid characters in filenames is different/smarter than in youtube-dl. You can use `--compat-options filename-sanitization` to revert to youtube-dl's behavior
+* ~~yt-dude tries to parse the external downloader outputs into the standard progress output if possible (Currently implemented: [aria2c](https://github.com/yt-dude/yt-dude/issues/5931)). You can use `--compat-options no-external-downloader-progress` to get the downloader output as-is~~
+* yt-dude versions between 2021.09.01 and 2023.01.02 applies `--match-filters` to nested playlists. This was an unintentional side-effect of [8f18ac](https://github.com/yt-dude/yt-dude/commit/8f18aca8717bb0dd49054555af8d386e5eda3a88) and is fixed in [d7b460](https://github.com/yt-dude/yt-dude/commit/d7b460d0e5fc710950582baed2e3fc616ed98a80). Use `--compat-options playlist-match-filter` to revert this
+* yt-dude versions between 2021.11.10 and 2023.06.21 estimated `filesize_approx` values for fragmented/manifest formats. This was added for convenience in [f2fe69](https://github.com/yt-dude/yt-dude/commit/f2fe69c7b0d208bdb1f6292b4ae92bc1e1a7444a), but was reverted in [0dff8e](https://github.com/yt-dude/yt-dude/commit/0dff8e4d1e6e9fb938f4256ea9af7d81f42fd54f) due to the potentially extreme inaccuracy of the estimated values. Use `--compat-options manifest-filesize-approx` to keep extracting the estimated values
+* yt-dude uses modern http client backends such as `requests`. Use `--compat-options prefer-legacy-http-handler` to prefer the legacy http handler (`urllib`) to be used for standard http requests.
 * The sub-modules `swfinterp`, `casefold` are removed.
-* Passing `--simulate` (or calling `extract_info` with `download=False`) no longer alters the default format selection. See [#9843](https://github.com/yt-dlp/yt-dlp/issues/9843) for details.
-* yt-dlp no longer applies the server modified time to downloaded files by default. Use `--mtime` or `--compat-options mtime-by-default` to revert this.
+* Passing `--simulate` (or calling `extract_info` with `download=False`) no longer alters the default format selection. See [#9843](https://github.com/yt-dude/yt-dude/issues/9843) for details.
+* yt-dude no longer applies the server modified time to downloaded files by default. Use `--mtime` or `--compat-options mtime-by-default` to revert this.
 
 For convenience, there are some compat option aliases available to use:
 
@@ -2349,15 +2349,15 @@ For convenience, there are some compat option aliases available to use:
 * `--compat-options 2024`: Same as `--compat-options 2025,mtime-by-default`
 * `--compat-options 2025`: Currently does nothing. Use this to enable all future compat options
 
-Using one of the yearly compat option aliases will pin yt-dlp's default behavior to what it was at the *end* of that calendar year.
+Using one of the yearly compat option aliases will pin yt-dude's default behavior to what it was at the *end* of that calendar year.
 
 The following compat options restore vulnerable behavior from before security patches:
 
-* `--compat-options allow-unsafe-ext`: Allow files with any extension (including unsafe ones) to be downloaded ([GHSA-79w7-vh3h-8g4j](<https://github.com/yt-dlp/yt-dlp/security/advisories/GHSA-79w7-vh3h-8g4j>))
+* `--compat-options allow-unsafe-ext`: Allow files with any extension (including unsafe ones) to be downloaded ([GHSA-79w7-vh3h-8g4j](<https://github.com/yt-dude/yt-dude/security/advisories/GHSA-79w7-vh3h-8g4j>))
 
     > :warning: Only use if a valid file download is rejected because its extension is detected as uncommon
     >
-    > **This option can enable remote code execution! Consider [opening an issue](<https://github.com/yt-dlp/yt-dlp/issues/new/choose>) instead!**
+    > **This option can enable remote code execution! Consider [opening an issue](<https://github.com/yt-dude/yt-dude/issues/new/choose>) instead!**
 
 ### Deprecated options
 
@@ -2456,7 +2456,7 @@ Support for [SponSkrub](https://github.com/faissaloo/SponSkrub) has been removed
 #### No longer supported
 These options may no longer work as intended
 
-    --prefer-avconv                  avconv is not officially supported by yt-dlp (Alias: --no-prefer-ffmpeg)
+    --prefer-avconv                  avconv is not officially supported by yt-dude (Alias: --no-prefer-ffmpeg)
     --prefer-ffmpeg                  Default (Alias: --no-prefer-avconv)
     -C, --call-home                  Not implemented
     --no-call-home                   Default
@@ -2486,7 +2486,7 @@ These options were deprecated since 2014 and have now been entirely removed
 
 
 # CONTRIBUTING
-See [CONTRIBUTING.md](CONTRIBUTING.md#contributing-to-yt-dlp) for instructions on [Opening an Issue](CONTRIBUTING.md#opening-an-issue) and [Contributing code to the project](CONTRIBUTING.md#developer-instructions)
+See [CONTRIBUTING.md](CONTRIBUTING.md#contributing-to-yt-dude) for instructions on [Opening an Issue](CONTRIBUTING.md#opening-an-issue) and [Contributing code to the project](CONTRIBUTING.md#developer-instructions)
 
 # WIKI
-See the [Wiki](https://github.com/yt-dlp/yt-dlp/wiki) for more information
+See the [Wiki](https://github.com/yt-dude/yt-dude/wiki) for more information

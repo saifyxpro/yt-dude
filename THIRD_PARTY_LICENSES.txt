@@ -1,7 +1,7 @@
 THIRD-PARTY LICENSES
 
-This file aggregates license texts of third-party components included with the yt-dlp PyInstaller-bundled executables.
-yt-dlp itself is licensed under the Unlicense (see LICENSE file).
+This file aggregates license texts of third-party components included with the yt-dude PyInstaller-bundled executables.
+yt-dude itself is licensed under the Unlicense (see LICENSE file).
 Source code for bundled third-party components is available from the original projects.
 If you cannot obtain it, the maintainers will provide it as per license obligation; maintainer emails are listed in pyproject.toml.
 
@@ -3296,7 +3296,7 @@ THE SOFTWARE.
 
 --------------------------------------------------------------------------------
 curl_cffi | MIT
-Note: Not included in `yt-dlp_x86` and `yt-dlp_musllinux_aarch64` builds
+Note: Not included in `yt-dude_x86` and `yt-dude_musllinux_aarch64` builds
 URL: https://curl-cffi.readthedocs.io/
 --------------------------------------------------------------------------------
 MIT License
@@ -3327,7 +3327,7 @@ SOFTWARE.
 
 --------------------------------------------------------------------------------
 curl-impersonate | MIT
-Note: Not included in `yt-dlp_x86` and `yt-dlp_musllinux_aarch64` builds
+Note: Not included in `yt-dude_x86` and `yt-dude_musllinux_aarch64` builds
 URL: https://github.com/lexiforest/curl-impersonate
 --------------------------------------------------------------------------------
 MIT License

@@ -3,26 +3,26 @@
 As part of the YouTube extractor, we have a framework for solving n/sig JS Challenges programmatically. This can be used by plugins.
 
 > [!TIP]
-> If publishing a JS Challenge Provider plugin to GitHub, add the [yt-dlp-jsc-provider](https://github.com/topics/yt-dlp-jsc-provider) topic to your repository to help users find it.
+> If publishing a JS Challenge Provider plugin to GitHub, add the [yt-dude-jsc-provider](https://github.com/topics/yt-dude-jsc-provider) topic to your repository to help users find it.
 
 
 ## Public APIs
 
-- `yt_dlp.extractor.youtube.jsc.provider`
+- `yt_dude.extractor.youtube.jsc.provider`
 
 Everything else is **internal-only** and no guarantees are made about the API stability.
 
 > [!WARNING]
 > We will try our best to maintain stability with the public APIs.
 > However, due to the nature of extractors and YouTube, we may need to remove or change APIs in the future.
-> If you are using these APIs outside yt-dlp plugins, please account for this by importing them safely.
+> If you are using these APIs outside yt-dude plugins, please account for this by importing them safely.
 
 ## JS Challenge Provider
 
-`yt_dlp.extractor.youtube.jsc.provider`
+`yt_dude.extractor.youtube.jsc.provider`
 
 ```python
-from yt_dlp.extractor.youtube.jsc.provider import (
+from yt_dude.extractor.youtube.jsc.provider import (
     register_provider,
     register_preference,
     JsChallengeProvider,
@@ -34,7 +34,7 @@ from yt_dlp.extractor.youtube.jsc.provider import (
     JsChallengeProviderResponse,
     NChallengeOutput,
 )
-from yt_dlp.utils import traverse_obj, Popen
+from yt_dude.utils import traverse_obj, Popen
 import json
 import subprocess
 import typing
@@ -67,12 +67,12 @@ class MyJsChallengeProviderJCP(JsChallengeProvider):  # Provider class name must
 
     def _real_bulk_solve(self, requests: list[JsChallengeRequest]) -> typing.Generator[JsChallengeProviderResponse, None, None]:
         # ℹ️ If you need to do additional validation on the requests.
-        # Raise yt_dlp.extractor.youtube.jsc.provider.JsChallengeProviderRejectedRequest if the request is not supported.
+        # Raise yt_dude.extractor.youtube.jsc.provider.JsChallengeProviderRejectedRequest if the request is not supported.
         if len("something") > 255:
             raise JsChallengeProviderRejectedRequest('Challenges longer than 255 are not supported', expected=True)
             
 
-        # ℹ️ Settings are pulled from extractor args passed to yt-dlp with the key `youtubejsc-<PROVIDER_KEY>`.
+        # ℹ️ Settings are pulled from extractor args passed to yt-dude with the key `youtubejsc-<PROVIDER_KEY>`.
         # For this example, the extractor arg would be:
         # `--extractor-args "youtubejsc-myjschallengeprovider:bin_path=/path/to/bin"`
         bin_path = self._configuration_arg(

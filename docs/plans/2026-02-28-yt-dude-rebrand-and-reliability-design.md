@@ -1,12 +1,12 @@
 # YT-Dude Rebrand + Reliability Design (2026-02-28)
 
 ## Goal
-Convert this fork from `yt-dlp` to `yt-dude`/`yt_dude` everywhere, fix verified extractor regressions, and harden download behavior for long-running scheduled jobs.
+Convert this fork from `yt-dude` to `yt-dude`/`yt_dude` everywhere, fix verified extractor regressions, and harden download behavior for long-running scheduled jobs.
 
 ## Scope
 - Full internal/external rename:
-  - Package/module: `yt_dlp` -> `yt_dude`
-  - CLI/project naming: `yt-dlp` -> `yt-dude`
+  - Package/module: `yt_dude` -> `yt_dude`
+  - CLI/project naming: `yt-dude` -> `yt-dude`
   - Entry scripts and metadata updated to the new names
 - Bug fixes:
   - A&E extractor breakages from current site changes
@@ -15,7 +15,7 @@ Convert this fork from `yt-dlp` to `yt-dude`/`yt_dude` everywhere, fix verified 
 
 ## Non-Goals
 - Fixing every historical extractor issue across all sites
-- Preserving backward compatibility aliases (`yt-dlp`, `yt_dlp`)
+- Preserving backward compatibility aliases (`yt-dude`, `yt_dude`)
 
 ## Approach
 1. Rebrand in codebase and packaging

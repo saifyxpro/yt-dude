@@ -2,31 +2,31 @@
 
 As part of the YouTube extractor, we have a framework for providing PO Tokens programmatically. This can be used by plugins.
 
-Refer to the [PO Token Guide](https://github.com/yt-dlp/yt-dlp/wiki/PO-Token-Guide) for more information on PO Tokens.
+Refer to the [PO Token Guide](https://github.com/yt-dude/yt-dude/wiki/PO-Token-Guide) for more information on PO Tokens.
 
 > [!TIP]
-> If publishing a PO Token Provider plugin to GitHub, add the [yt-dlp-pot-provider](https://github.com/topics/yt-dlp-pot-provider) topic to your repository to help users find it.
+> If publishing a PO Token Provider plugin to GitHub, add the [yt-dude-pot-provider](https://github.com/topics/yt-dude-pot-provider) topic to your repository to help users find it.
 
 
 ## Public APIs
 
-- `yt_dlp.extractor.youtube.pot.cache`
-- `yt_dlp.extractor.youtube.pot.provider`
-- `yt_dlp.extractor.youtube.pot.utils`
+- `yt_dude.extractor.youtube.pot.cache`
+- `yt_dude.extractor.youtube.pot.provider`
+- `yt_dude.extractor.youtube.pot.utils`
 
 Everything else is internal-only and no guarantees are made about the API stability.
 
 > [!WARNING]
 > We will try our best to maintain stability with the public APIs.
 > However, due to the nature of extractors and YouTube, we may need to remove or change APIs in the future.
-> If you are using these APIs outside yt-dlp plugins, please account for this by importing them safely.
+> If you are using these APIs outside yt-dude plugins, please account for this by importing them safely.
 
 ## PO Token Provider
 
-`yt_dlp.extractor.youtube.pot.provider`
+`yt_dude.extractor.youtube.pot.provider`
 
 ```python
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenRequest,
     PoTokenContext,
     PoTokenProvider,
@@ -37,10 +37,10 @@ from yt_dlp.extractor.youtube.pot.provider import (
     register_preference,
     ExternalRequestFeature,
 )
-from yt_dlp.networking.common import Request
-from yt_dlp.extractor.youtube.pot.utils import get_webpo_content_binding
-from yt_dlp.utils import traverse_obj
-from yt_dlp.networking.exceptions import RequestError
+from yt_dude.networking.common import Request
+from yt_dude.extractor.youtube.pot.utils import get_webpo_content_binding
+from yt_dude.utils import traverse_obj
+from yt_dude.networking.exceptions import RequestError
 import json
 
 
@@ -56,8 +56,8 @@ class MyPoTokenProviderPTP(PoTokenProvider):  # Provider class name must end wit
     # Innertube Client Name.
     # For example, "WEB", "ANDROID", "TVHTML5".
     # For a list of WebPO client names, 
-    #  see yt_dlp.extractor.youtube.pot.utils.WEBPO_CLIENTS.
-    # Also see yt_dlp.extractor.youtube._base.INNERTUBE_CLIENTS 
+    #  see yt_dude.extractor.youtube.pot.utils.WEBPO_CLIENTS.
+    # Also see yt_dude.extractor.youtube._base.INNERTUBE_CLIENTS 
     #  for a list of client names currently supported by the YouTube extractor.
     _SUPPORTED_CLIENTS = ('WEB', 'TVHTML5')
 
@@ -92,13 +92,13 @@ class MyPoTokenProviderPTP(PoTokenProvider):  # Provider class name must end wit
 
     def _real_request_pot(self, request: PoTokenRequest) -> PoTokenResponse:
         # ℹ️ If you need to validate the request before making the request to the external source.
-        # Raise yt_dlp.extractor.youtube.pot.provider.PoTokenProviderRejectedRequest if the request is not supported.
+        # Raise yt_dude.extractor.youtube.pot.provider.PoTokenProviderRejectedRequest if the request is not supported.
         if request.is_authenticated:
             raise PoTokenProviderRejectedRequest(
                 'This provider does not support authenticated requests'
             )
 
-        # ℹ️ Settings are pulled from extractor args passed to yt-dlp with the key `youtubepot-<PROVIDER_KEY>`.
+        # ℹ️ Settings are pulled from extractor args passed to yt-dude with the key `youtubepot-<PROVIDER_KEY>`.
         # For this example, the extractor arg would be:
         # `--extractor-args "youtubepot-mypotokenprovider:url=https://custom.example.com/get_pot"`
         external_provider_url = self._configuration_arg(
@@ -108,7 +108,7 @@ class MyPoTokenProviderPTP(PoTokenProvider):  # Provider class name must end wit
         self.logger.trace(f'Using external provider URL: {external_provider_url}')
         
         # You should use the internal HTTP client to make requests where possible,
-        # as it will handle cookies and other networking settings passed to yt-dlp.
+        # as it will handle cookies and other networking settings passed to yt-dude.
         try:
             # See docstring in _request_webpage method for request tips
             response = self._request_webpage(
@@ -148,7 +148,7 @@ class MyPoTokenProviderPTP(PoTokenProvider):  # Provider class name must end wit
         return PoTokenResponse(
             po_token=po_token,
             # Optional, add a custom expiration timestamp for the token. Use for caching.
-            # By default, yt-dlp will use the default ttl from a registered cache spec (see below)
+            # By default, yt-dude will use the default ttl from a registered cache spec (see below)
             # Set to 0 or -1 to not cache this response.
             expires_at=None,
         )
@@ -186,21 +186,21 @@ def my_provider_preference(provider: PoTokenProvider, request: PoTokenRequest) -
 > The following describes more advance features that most users/developers will not need to use.
 
 > [!IMPORTANT]
-> yt-dlp currently has a built-in LRU Memory Cache Provider and a cache spec provider for WebPO Tokens. 
+> yt-dude currently has a built-in LRU Memory Cache Provider and a cache spec provider for WebPO Tokens. 
 > You should only need to implement cache providers if you want an external cache, or a cache spec if you are handling non-WebPO Tokens.
 
 ### Cache Providers
 
-`yt_dlp.extractor.youtube.pot.cache`
+`yt_dude.extractor.youtube.pot.cache`
 
 ```python
-from yt_dlp.extractor.youtube.pot.cache import (
+from yt_dude.extractor.youtube.pot.cache import (
     PoTokenCacheProvider,
     register_preference,
     register_provider
 )
 
-from yt_dlp.extractor.youtube.pot.provider import PoTokenRequest
+from yt_dude.extractor.youtube.pot.provider import PoTokenRequest
 
 
 @register_provider
@@ -245,7 +245,7 @@ class MyCacheProviderPCP(PoTokenCacheProvider):  # Provider class name must end 
 # IMPORTANT: Providers should be in preference of cache lookup time. 
 # For example, a memory cache should have a higher preference than a disk cache. 
 
-# VERY IMPORTANT: yt-dlp has a built-in memory cache with a priority of 10000. 
+# VERY IMPORTANT: yt-dude has a built-in memory cache with a priority of 10000. 
 # Your cache provider should be lower than this.
 
 
@@ -256,20 +256,20 @@ def my_cache_preference(provider: PoTokenCacheProvider, request: PoTokenRequest)
 
 ### Cache Specs
 
-`yt_dlp.extractor.youtube.pot.cache`
+`yt_dude.extractor.youtube.pot.cache`
 
 These are used to provide information on how to cache a particular PO Token Request. 
 You might have a different cache spec for different kinds of PO Tokens.
 
 ```python
-from yt_dlp.extractor.youtube.pot.cache import (
+from yt_dude.extractor.youtube.pot.cache import (
     PoTokenCacheSpec,
     PoTokenCacheSpecProvider,
     CacheProviderWritePolicy,
     register_spec,
 )
-from yt_dlp.utils import traverse_obj
-from yt_dlp.extractor.youtube.pot.provider import PoTokenRequest
+from yt_dude.utils import traverse_obj
+from yt_dude.extractor.youtube.pot.provider import PoTokenRequest
 
 
 @register_spec
