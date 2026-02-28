@@ -20,11 +20,11 @@ import unittest.mock
 import warnings
 import xml.etree.ElementTree
 
-from yt_dlp.compat import (
+from yt_dude.compat import (
     compat_etree_fromstring,
     compat_HTMLParseError,
 )
-from yt_dlp.utils import (
+from yt_dude.utils import (
     Config,
     DateRange,
     ExtractorError,
@@ -134,8 +134,8 @@ from yt_dlp.utils import (
     xpath_text,
     xpath_with_ns,
 )
-from yt_dlp.utils._utils import _UnsafeExtensionError
-from yt_dlp.utils.networking import (
+from yt_dude.utils._utils import _UnsafeExtensionError
+from yt_dude.utils.networking import (
     HTTPHeaderDict,
     escape_rfc3986,
     normalize_url,
@@ -284,8 +284,8 @@ class TestUtil(unittest.TestCase):
         def env(var):
             return f'%{var}%' if sys.platform == 'win32' else f'${var}'
 
-        os.environ['yt_dlp_EXPATH_PATH'] = 'expanded'
-        self.assertEqual(expand_path(env('yt_dlp_EXPATH_PATH')), 'expanded')
+        os.environ['yt_dude_EXPATH_PATH'] = 'expanded'
+        self.assertEqual(expand_path(env('yt_dude_EXPATH_PATH')), 'expanded')
 
         old_home = os.environ.get('HOME')
         test_str = R'C:\Documents and Settings\тест\Application Data'
@@ -294,7 +294,7 @@ class TestUtil(unittest.TestCase):
             self.assertEqual(expand_path(env('HOME')), os.getenv('HOME'))
             self.assertEqual(expand_path('~'), os.getenv('HOME'))
             self.assertEqual(
-                expand_path('~/{}'.format(env('yt_dlp_EXPATH_PATH'))),
+                expand_path('~/{}'.format(env('yt_dude_EXPATH_PATH'))),
                 '{}/expanded'.format(os.getenv('HOME')))
         finally:
             os.environ['HOME'] = old_home or ''
@@ -1789,7 +1789,7 @@ Line 1
         self.assertEqual(caesar('ebg', 'acegik', -2), 'abc')
 
     def test_rot47(self):
-        self.assertEqual(rot47('yt-dlp'), r'JE\5=A')
+        self.assertEqual(rot47('yt-dude'), r'JE\5=A')
         self.assertEqual(rot47('YT-DLP'), r'*%\s{!')
 
     def test_urshift(self):
@@ -2151,7 +2151,7 @@ Line 1
         self.assertEqual(set(headers4.sensitive().items()), {('ytdl-test', 'data;')})
 
         # common mistake: strip whitespace from values
-        # https://github.com/yt-dlp/yt-dlp/issues/8729
+        # https://github.com/yt-dude/yt-dude/issues/8729
         headers5 = HTTPHeaderDict({'ytdl-test': ' data; '})
         self.assertEqual(set(headers5.items()), {('Ytdl-Test', 'data;')})
         self.assertEqual(set(headers5.sensitive().items()), {('ytdl-test', 'data;')})

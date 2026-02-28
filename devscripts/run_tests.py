@@ -14,7 +14,7 @@ fix_test_name = functools.partial(re.compile(r'IE(_all|_\d+)?$').sub, r'\1')
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Run selected yt-dlp tests')
+    parser = argparse.ArgumentParser(description='Run selected yt-dude tests')
     parser.add_argument(
         'test', help='an extractor test, test path, or one of "core" or "download"', nargs='*')
     parser.add_argument(

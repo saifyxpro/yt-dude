@@ -13,7 +13,7 @@ import math
 import re
 import unittest
 
-from yt_dlp.utils.jslib import devalue
+from yt_dude.utils.jslib import devalue
 
 
 TEST_CASES_EQUALS = [{

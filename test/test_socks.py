@@ -26,9 +26,9 @@ from socketserver import (
 )
 
 from test.helper import http_server_port, verify_address_availability
-from yt_dlp.networking import Request
-from yt_dlp.networking.exceptions import ProxyError, TransportError
-from yt_dlp.socks import (
+from yt_dude.networking import Request
+from yt_dude.networking.exceptions import ProxyError, TransportError
+from yt_dude.socks import (
     SOCKS4_REPLY_VERSION,
     SOCKS4_VERSION,
     SOCKS5_USER_AUTH_SUCCESS,

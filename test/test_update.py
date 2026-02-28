@@ -9,70 +9,70 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
 from test.helper import FakeYDL, report_warning
-from yt_dlp.update import UpdateInfo, Updater, UPDATE_SOURCES, _make_label
+from yt_dude.update import UpdateInfo, Updater, UPDATE_SOURCES, _make_label
 
 
-# XXX: Keep in sync with yt_dlp.update.UPDATE_SOURCES
+# XXX: Keep in sync with yt_dude.update.UPDATE_SOURCES
 TEST_UPDATE_SOURCES = {
-    'stable': 'yt-dlp/yt-dlp',
-    'nightly': 'yt-dlp/yt-dlp-nightly-builds',
-    'master': 'yt-dlp/yt-dlp-master-builds',
+    'stable': 'yt-dude/yt-dude',
+    'nightly': 'yt-dude/yt-dude-nightly-builds',
+    'master': 'yt-dude/yt-dude-master-builds',
 }
 
 TEST_API_DATA = {
-    'yt-dlp/yt-dlp/latest': {
+    'yt-dude/yt-dude/latest': {
         'tag_name': '2023.12.31',
         'target_commitish': 'bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb',
-        'name': 'yt-dlp 2023.12.31',
+        'name': 'yt-dude 2023.12.31',
         'body': 'BODY',
     },
-    'yt-dlp/yt-dlp-nightly-builds/latest': {
+    'yt-dude/yt-dude-nightly-builds/latest': {
         'tag_name': '2023.12.31.123456',
         'target_commitish': 'master',
-        'name': 'yt-dlp nightly 2023.12.31.123456',
-        'body': 'Generated from: https://github.com/yt-dlp/yt-dlp/commit/cccccccccccccccccccccccccccccccccccccccc',
+        'name': 'yt-dude nightly 2023.12.31.123456',
+        'body': 'Generated from: https://github.com/yt-dude/yt-dude/commit/cccccccccccccccccccccccccccccccccccccccc',
     },
-    'yt-dlp/yt-dlp-master-builds/latest': {
+    'yt-dude/yt-dude-master-builds/latest': {
         'tag_name': '2023.12.31.987654',
         'target_commitish': 'master',
-        'name': 'yt-dlp master 2023.12.31.987654',
-        'body': 'Generated from: https://github.com/yt-dlp/yt-dlp/commit/dddddddddddddddddddddddddddddddddddddddd',
+        'name': 'yt-dude master 2023.12.31.987654',
+        'body': 'Generated from: https://github.com/yt-dude/yt-dude/commit/dddddddddddddddddddddddddddddddddddddddd',
     },
-    'yt-dlp/yt-dlp/tags/testing': {
+    'yt-dude/yt-dude/tags/testing': {
         'tag_name': 'testing',
         'target_commitish': '9999999999999999999999999999999999999999',
         'name': 'testing',
         'body': 'BODY',
     },
-    'fork/yt-dlp/latest': {
+    'fork/yt-dude/latest': {
         'tag_name': '2050.12.31',
         'target_commitish': 'eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee',
         'name': '2050.12.31',
         'body': 'BODY',
     },
-    'fork/yt-dlp/tags/pr0000': {
+    'fork/yt-dude/tags/pr0000': {
         'tag_name': 'pr0000',
         'target_commitish': 'ffffffffffffffffffffffffffffffffffffffff',
         'name': 'pr1234 2023.11.11.000000',
         'body': 'BODY',
     },
-    'fork/yt-dlp/tags/pr1234': {
+    'fork/yt-dude/tags/pr1234': {
         'tag_name': 'pr1234',
         'target_commitish': '0000000000000000000000000000000000000000',
         'name': 'pr1234 2023.12.31.555555',
         'body': 'BODY',
     },
-    'fork/yt-dlp/tags/pr9999': {
+    'fork/yt-dude/tags/pr9999': {
         'tag_name': 'pr9999',
         'target_commitish': '1111111111111111111111111111111111111111',
         'name': 'pr9999',
         'body': 'BODY',
     },
-    'fork/yt-dlp-satellite/tags/pr987': {
+    'fork/yt-dude-satellite/tags/pr987': {
         'tag_name': 'pr987',
         'target_commitish': 'master',
         'name': 'pr987',
-        'body': 'Generated from: https://github.com/yt-dlp/yt-dlp/commit/2222222222222222222222222222222222222222',
+        'body': 'Generated from: https://github.com/yt-dude/yt-dude/commit/2222222222222222222222222222222222222222',
     },
 }
 
@@ -90,28 +90,28 @@ lock 2025.08.11 darwin_legacy_exe .+
 '''
 
 TEST_LOCKFILE_V2_TMPL = r'''%s
-lockV2 yt-dlp/yt-dlp 2022.08.18.36 .+ Python 3\.6
-lockV2 yt-dlp/yt-dlp 2023.11.16 (?!win_x86_exe).+ Python 3\.7
-lockV2 yt-dlp/yt-dlp 2023.11.16 win_x86_exe .+ Windows-(?:Vista|2008Server)
-lockV2 yt-dlp/yt-dlp 2024.10.22 py2exe .+
-lockV2 yt-dlp/yt-dlp 2024.10.22 linux_(?:armv7l|aarch64)_exe .+-glibc2\.(?:[12]?\d|30)\b
-lockV2 yt-dlp/yt-dlp 2024.10.22 zip Python 3\.8
-lockV2 yt-dlp/yt-dlp 2024.10.22 win(?:_x86)?_exe Python 3\.[78].+ Windows-(?:7-|2008ServerR2)
-lockV2 yt-dlp/yt-dlp 2025.08.11 darwin_legacy_exe .+
-lockV2 yt-dlp/yt-dlp-nightly-builds 2023.11.15.232826 (?!win_x86_exe).+ Python 3\.7
-lockV2 yt-dlp/yt-dlp-nightly-builds 2023.11.15.232826 win_x86_exe .+ Windows-(?:Vista|2008Server)
-lockV2 yt-dlp/yt-dlp-nightly-builds 2024.10.22.051025 py2exe .+
-lockV2 yt-dlp/yt-dlp-nightly-builds 2024.10.22.051025 linux_(?:armv7l|aarch64)_exe .+-glibc2\.(?:[12]?\d|30)\b
-lockV2 yt-dlp/yt-dlp-nightly-builds 2024.10.22.051025 zip Python 3\.8
-lockV2 yt-dlp/yt-dlp-nightly-builds 2024.10.22.051025 win(?:_x86)?_exe Python 3\.[78].+ Windows-(?:7-|2008ServerR2)
-lockV2 yt-dlp/yt-dlp-nightly-builds 2025.08.12.233030 darwin_legacy_exe .+
-lockV2 yt-dlp/yt-dlp-master-builds 2023.11.15.232812 (?!win_x86_exe).+ Python 3\.7
-lockV2 yt-dlp/yt-dlp-master-builds 2023.11.15.232812 win_x86_exe .+ Windows-(?:Vista|2008Server)
-lockV2 yt-dlp/yt-dlp-master-builds 2024.10.22.045052 py2exe .+
-lockV2 yt-dlp/yt-dlp-master-builds 2024.10.22.060347 linux_(?:armv7l|aarch64)_exe .+-glibc2\.(?:[12]?\d|30)\b
-lockV2 yt-dlp/yt-dlp-master-builds 2024.10.22.060347 zip Python 3\.8
-lockV2 yt-dlp/yt-dlp-master-builds 2024.10.22.060347 win(?:_x86)?_exe Python 3\.[78].+ Windows-(?:7-|2008ServerR2)
-lockV2 yt-dlp/yt-dlp-master-builds 2025.08.12.232447 darwin_legacy_exe .+
+lockV2 yt-dude/yt-dude 2022.08.18.36 .+ Python 3\.6
+lockV2 yt-dude/yt-dude 2023.11.16 (?!win_x86_exe).+ Python 3\.7
+lockV2 yt-dude/yt-dude 2023.11.16 win_x86_exe .+ Windows-(?:Vista|2008Server)
+lockV2 yt-dude/yt-dude 2024.10.22 py2exe .+
+lockV2 yt-dude/yt-dude 2024.10.22 linux_(?:armv7l|aarch64)_exe .+-glibc2\.(?:[12]?\d|30)\b
+lockV2 yt-dude/yt-dude 2024.10.22 zip Python 3\.8
+lockV2 yt-dude/yt-dude 2024.10.22 win(?:_x86)?_exe Python 3\.[78].+ Windows-(?:7-|2008ServerR2)
+lockV2 yt-dude/yt-dude 2025.08.11 darwin_legacy_exe .+
+lockV2 yt-dude/yt-dude-nightly-builds 2023.11.15.232826 (?!win_x86_exe).+ Python 3\.7
+lockV2 yt-dude/yt-dude-nightly-builds 2023.11.15.232826 win_x86_exe .+ Windows-(?:Vista|2008Server)
+lockV2 yt-dude/yt-dude-nightly-builds 2024.10.22.051025 py2exe .+
+lockV2 yt-dude/yt-dude-nightly-builds 2024.10.22.051025 linux_(?:armv7l|aarch64)_exe .+-glibc2\.(?:[12]?\d|30)\b
+lockV2 yt-dude/yt-dude-nightly-builds 2024.10.22.051025 zip Python 3\.8
+lockV2 yt-dude/yt-dude-nightly-builds 2024.10.22.051025 win(?:_x86)?_exe Python 3\.[78].+ Windows-(?:7-|2008ServerR2)
+lockV2 yt-dude/yt-dude-nightly-builds 2025.08.12.233030 darwin_legacy_exe .+
+lockV2 yt-dude/yt-dude-master-builds 2023.11.15.232812 (?!win_x86_exe).+ Python 3\.7
+lockV2 yt-dude/yt-dude-master-builds 2023.11.15.232812 win_x86_exe .+ Windows-(?:Vista|2008Server)
+lockV2 yt-dude/yt-dude-master-builds 2024.10.22.045052 py2exe .+
+lockV2 yt-dude/yt-dude-master-builds 2024.10.22.060347 linux_(?:armv7l|aarch64)_exe .+-glibc2\.(?:[12]?\d|30)\b
+lockV2 yt-dude/yt-dude-master-builds 2024.10.22.060347 zip Python 3\.8
+lockV2 yt-dude/yt-dude-master-builds 2024.10.22.060347 win(?:_x86)?_exe Python 3\.[78].+ Windows-(?:7-|2008ServerR2)
+lockV2 yt-dude/yt-dude-master-builds 2025.08.12.232447 darwin_legacy_exe .+
 '''
 
 TEST_LOCKFILE_V2 = TEST_LOCKFILE_V2_TMPL % TEST_LOCKFILE_COMMENT
@@ -119,10 +119,10 @@ TEST_LOCKFILE_V2 = TEST_LOCKFILE_V2_TMPL % TEST_LOCKFILE_COMMENT
 TEST_LOCKFILE_ACTUAL = TEST_LOCKFILE_V2_TMPL % TEST_LOCKFILE_V1.rstrip('\n')
 
 TEST_LOCKFILE_FORK = rf'''{TEST_LOCKFILE_ACTUAL}# Test if a fork blocks updates to non-numeric tags
-lockV2 fork/yt-dlp pr0000 .+ Python 3.6
-lockV2 fork/yt-dlp pr1234 (?!win_x86_exe).+ Python 3\.7
-lockV2 fork/yt-dlp pr1234 win_x86_exe .+ Windows-(?:Vista|2008Server)
-lockV2 fork/yt-dlp pr9999 .+ Python 3.11
+lockV2 fork/yt-dude pr0000 .+ Python 3.6
+lockV2 fork/yt-dude pr1234 (?!win_x86_exe).+ Python 3\.7
+lockV2 fork/yt-dude pr1234 win_x86_exe .+ Windows-(?:Vista|2008Server)
+lockV2 fork/yt-dude pr9999 .+ Python 3.11
 '''
 
 
@@ -131,7 +131,7 @@ class FakeUpdater(Updater):
     current_commit = 'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa'
 
     _channel = 'stable'
-    _origin = 'yt-dlp/yt-dlp'
+    _origin = 'yt-dude/yt-dude'
     _update_sources = TEST_UPDATE_SOURCES
 
     def _download_update_spec(self, *args, **kwargs):
@@ -152,7 +152,7 @@ class TestUpdate(unittest.TestCase):
         ydl = FakeYDL()
         updater = FakeUpdater(ydl, 'stable')
 
-        def test(lockfile, identifier, input_tag, expect_tag, exact=False, repo='yt-dlp/yt-dlp'):
+        def test(lockfile, identifier, input_tag, expect_tag, exact=False, repo='yt-dude/yt-dude'):
             updater._identifier = identifier
             updater._exact = exact
             updater.requested_repo = repo
@@ -227,18 +227,18 @@ class TestUpdate(unittest.TestCase):
             test(lockfile, 'darwin_legacy_exe Python 3.10.5', '2025.08.12', None, exact=True)
 
         # Forks can block updates to non-numeric tags rather than lock
-        test(TEST_LOCKFILE_FORK, 'zip Python 3.6.3', 'pr0000', None, repo='fork/yt-dlp')
-        test(TEST_LOCKFILE_FORK, 'zip Python 3.7.4', 'pr0000', 'pr0000', repo='fork/yt-dlp')
-        test(TEST_LOCKFILE_FORK, 'zip Python 3.7.4', 'pr1234', None, repo='fork/yt-dlp')
-        test(TEST_LOCKFILE_FORK, 'zip Python 3.8.1', 'pr1234', 'pr1234', repo='fork/yt-dlp', exact=True)
+        test(TEST_LOCKFILE_FORK, 'zip Python 3.6.3', 'pr0000', None, repo='fork/yt-dude')
+        test(TEST_LOCKFILE_FORK, 'zip Python 3.7.4', 'pr0000', 'pr0000', repo='fork/yt-dude')
+        test(TEST_LOCKFILE_FORK, 'zip Python 3.7.4', 'pr1234', None, repo='fork/yt-dude')
+        test(TEST_LOCKFILE_FORK, 'zip Python 3.8.1', 'pr1234', 'pr1234', repo='fork/yt-dude', exact=True)
         test(
             TEST_LOCKFILE_FORK, 'win_x86_exe Python 3.7.9 (CPython x86 32bit) - Windows-Vista-6.0.6003-SP2',
-            'pr1234', None, repo='fork/yt-dlp')
+            'pr1234', None, repo='fork/yt-dude')
         test(
             TEST_LOCKFILE_FORK, 'win_x86_exe Python 3.7.9 (CPython x86 32bit) - Windows-7-6.1.7601-SP1',
-            '2023.12.31', '2023.12.31', repo='fork/yt-dlp')
-        test(TEST_LOCKFILE_FORK, 'zip Python 3.11.2', 'pr9999', None, repo='fork/yt-dlp', exact=True)
-        test(TEST_LOCKFILE_FORK, 'zip Python 3.12.0', 'pr9999', 'pr9999', repo='fork/yt-dlp')
+            '2023.12.31', '2023.12.31', repo='fork/yt-dude')
+        test(TEST_LOCKFILE_FORK, 'zip Python 3.11.2', 'pr9999', None, repo='fork/yt-dude', exact=True)
+        test(TEST_LOCKFILE_FORK, 'zip Python 3.12.0', 'pr9999', 'pr9999', repo='fork/yt-dude')
 
     def test_query_update(self):
         ydl = FakeYDL()
@@ -254,23 +254,23 @@ class TestUpdate(unittest.TestCase):
             self.assertDictEqual(
                 update_info.__dict__ if update_info else {}, expected.__dict__ if expected else {})
 
-        test('yt-dlp/yt-dlp@latest', UpdateInfo(
+        test('yt-dude/yt-dude@latest', UpdateInfo(
             '2023.12.31', version='2023.12.31', requested_version='2023.12.31', commit='b' * 40))
-        test('yt-dlp/yt-dlp-nightly-builds@latest', UpdateInfo(
+        test('yt-dude/yt-dude-nightly-builds@latest', UpdateInfo(
             '2023.12.31.123456', version='2023.12.31.123456', requested_version='2023.12.31.123456', commit='c' * 40))
-        test('yt-dlp/yt-dlp-master-builds@latest', UpdateInfo(
+        test('yt-dude/yt-dude-master-builds@latest', UpdateInfo(
             '2023.12.31.987654', version='2023.12.31.987654', requested_version='2023.12.31.987654', commit='d' * 40))
-        test('fork/yt-dlp@latest', UpdateInfo(
+        test('fork/yt-dude@latest', UpdateInfo(
             '2050.12.31', version='2050.12.31', requested_version='2050.12.31', commit='e' * 40))
-        test('fork/yt-dlp@pr0000', UpdateInfo(
+        test('fork/yt-dude@pr0000', UpdateInfo(
             'pr0000', version='2023.11.11.000000', requested_version='2023.11.11.000000', commit='f' * 40))
-        test('fork/yt-dlp@pr1234', UpdateInfo(
+        test('fork/yt-dude@pr1234', UpdateInfo(
             'pr1234', version='2023.12.31.555555', requested_version='2023.12.31.555555', commit='0' * 40))
-        test('fork/yt-dlp@pr9999', UpdateInfo(
+        test('fork/yt-dude@pr9999', UpdateInfo(
             'pr9999', version=None, requested_version=None, commit='1' * 40))
-        test('fork/yt-dlp-satellite@pr987', UpdateInfo(
+        test('fork/yt-dude-satellite@pr987', UpdateInfo(
             'pr987', version=None, requested_version=None, commit='2' * 40))
-        test('yt-dlp/yt-dlp', None, current_version='2024.01.01')
+        test('yt-dude/yt-dude', None, current_version='2024.01.01')
         test('stable', UpdateInfo(
             '2023.12.31', version='2023.12.31', requested_version='2023.12.31', commit='b' * 40))
         test('nightly', UpdateInfo(
@@ -289,11 +289,11 @@ class TestUpdate(unittest.TestCase):
             ([STABLE_REPO, '2025.09.02', '2025.09.02'], f'stable@2025.09.02 from {STABLE_REPO}'),
             ([NIGHTLY_REPO, '2025.09.02.123456', '2025.09.02.123456'], f'nightly@2025.09.02.123456 from {NIGHTLY_REPO}'),
             ([MASTER_REPO, '2025.09.02.987654', '2025.09.02.987654'], f'master@2025.09.02.987654 from {MASTER_REPO}'),
-            (['fork/yt-dlp', 'experimental', '2025.12.31.000000'], 'fork/yt-dlp@experimental build 2025.12.31.000000'),
-            (['fork/yt-dlp', '2025.09.02', '2025.09.02'], 'fork/yt-dlp@2025.09.02'),
+            (['fork/yt-dude', 'experimental', '2025.12.31.000000'], 'fork/yt-dude@experimental build 2025.12.31.000000'),
+            (['fork/yt-dude', '2025.09.02', '2025.09.02'], 'fork/yt-dude@2025.09.02'),
             ([STABLE_REPO, 'experimental', '2025.12.31.000000'], f'{STABLE_REPO}@experimental build 2025.12.31.000000'),
             ([STABLE_REPO, 'experimental'], f'{STABLE_REPO}@experimental'),
-            (['fork/yt-dlp', 'experimental'], 'fork/yt-dlp@experimental'),
+            (['fork/yt-dude', 'experimental'], 'fork/yt-dude@experimental'),
         ]:
             result = _make_label(*inputs)
             self.assertEqual(

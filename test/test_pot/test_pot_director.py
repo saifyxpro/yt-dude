@@ -7,15 +7,15 @@ import json
 import time
 import pytest
 
-from yt_dlp.extractor.youtube.pot._provider import BuiltinIEContentProvider, IEContentProvider
+from yt_dude.extractor.youtube.pot._provider import BuiltinIEContentProvider, IEContentProvider
 
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenRequest,
     PoTokenContext,
     PoTokenProviderError,
     PoTokenProviderRejectedRequest,
 )
-from yt_dlp.extractor.youtube.pot._director import (
+from yt_dude.extractor.youtube.pot._director import (
     PoTokenCache,
     validate_cache_spec,
     clean_pot,
@@ -24,7 +24,7 @@ from yt_dlp.extractor.youtube.pot._director import (
     provider_display_list,
 )
 
-from yt_dlp.extractor.youtube.pot.cache import (
+from yt_dude.extractor.youtube.pot.cache import (
     PoTokenCacheSpec,
     PoTokenCacheSpecProvider,
     PoTokenCacheProvider,
@@ -33,7 +33,7 @@ from yt_dlp.extractor.youtube.pot.cache import (
 )
 
 
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenResponse,
     PoTokenProvider,
 )

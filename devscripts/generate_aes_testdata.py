@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import codecs
 import subprocess
 
-from yt_dlp.aes import aes_encrypt, key_expansion
+from yt_dude.aes import aes_encrypt, key_expansion
 
 secret_msg = b'Secret message goes here'
 

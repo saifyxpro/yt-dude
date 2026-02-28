@@ -10,7 +10,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import base64
 
-from yt_dlp.aes import (
+from yt_dude.aes import (
     aes_cbc_decrypt,
     aes_cbc_decrypt_bytes,
     aes_cbc_encrypt,
@@ -26,7 +26,7 @@ from yt_dlp.aes import (
     key_expansion,
     pad_block,
 )
-from yt_dlp.dependencies import Cryptodome
+from yt_dude.dependencies import Cryptodome
 
 # the encrypted data can be generate with 'devscripts/generate_aes_testdata.py'
 

@@ -7,7 +7,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from yt_dlp.networking.common import Features, DEFAULT_TIMEOUT
+from yt_dude.networking.common import Features, DEFAULT_TIMEOUT
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -35,9 +35,9 @@ from test.helper import (
     validate_and_send,
     verify_address_availability,
 )
-from yt_dlp.cookies import YoutubeDLCookieJar
-from yt_dlp.dependencies import brotli, curl_cffi, requests, urllib3
-from yt_dlp.networking import (
+from yt_dude.cookies import YoutubeDLCookieJar
+from yt_dude.dependencies import brotli, curl_cffi, requests, urllib3
+from yt_dude.networking import (
     HEADRequest,
     PATCHRequest,
     PUTRequest,
@@ -46,8 +46,8 @@ from yt_dlp.networking import (
     RequestHandler,
     Response,
 )
-from yt_dlp.networking._urllib import UrllibRH
-from yt_dlp.networking.exceptions import (
+from yt_dude.networking._urllib import UrllibRH
+from yt_dude.networking.exceptions import (
     CertificateVerifyError,
     HTTPError,
     IncompleteRead,
@@ -58,13 +58,13 @@ from yt_dlp.networking.exceptions import (
     TransportError,
     UnsupportedRequest,
 )
-from yt_dlp.networking.impersonate import (
+from yt_dude.networking.impersonate import (
     ImpersonateRequestHandler,
     ImpersonateTarget,
 )
-from yt_dlp.utils import YoutubeDLError
-from yt_dlp.utils._utils import _YDLLogger as FakeLogger
-from yt_dlp.utils.networking import HTTPHeaderDict, std_headers
+from yt_dude.utils import YoutubeDLError
+from yt_dude.utils._utils import _YDLLogger as FakeLogger
+from yt_dude.utils.networking import HTTPHeaderDict, std_headers
 
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -294,7 +294,7 @@ class TestRequestHandlerBase:
         cls.http_port = http_server_port(cls.http_httpd)
         cls.http_server_thread = threading.Thread(target=cls.http_httpd.serve_forever)
         # FIXME: we should probably stop the http server thread after each test
-        # See: https://github.com/yt-dlp/yt-dlp/pull/7094#discussion_r1199746041
+        # See: https://github.com/yt-dude/yt-dude/pull/7094#discussion_r1199746041
         cls.http_server_thread.daemon = True
         cls.http_server_thread.start()
 
@@ -402,7 +402,7 @@ class TestHTTPRequestHandler(TestRequestHandlerBase):
     @pytest.mark.parametrize('path', [
         '/a/b/./../../headers',
         '/redirect_dotsegments',
-        # https://github.com/yt-dlp/yt-dlp/issues/9020
+        # https://github.com/yt-dude/yt-dude/issues/9020
         '/redirect_dotsegments_absolute',
     ])
     def test_remove_dot_segments(self, handler, path):
@@ -606,7 +606,7 @@ class TestHTTPRequestHandler(TestRequestHandlerBase):
     def test_source_address(self, handler):
         source_address = f'127.0.0.{random.randint(5, 255)}'
         # on some systems these loopback addresses we need for testing may not be available
-        # see: https://github.com/yt-dlp/yt-dlp/issues/8890
+        # see: https://github.com/yt-dude/yt-dude/issues/8890
         verify_address_availability(source_address)
         with handler(source_address=source_address) as rh:
             data = validate_and_send(
@@ -861,7 +861,7 @@ class TestRequestHandlerMisc:
     def test_remove_logging_handler(self, handler, logger_name):
         # Ensure any logging handlers, which may contain a YoutubeDL instance,
         # are removed when we close the request handler
-        # See: https://github.com/yt-dlp/yt-dlp/issues/8922
+        # See: https://github.com/yt-dude/yt-dude/issues/8922
         logging_handlers = logging.getLogger(logger_name).handlers
         before_count = len(logging_handlers)
         rh = handler()
@@ -1061,7 +1061,7 @@ class TestRequestsRequestHandler(TestRequestHandlerBase):
         from requests.models import Response as RequestsResponse
         from urllib3.response import HTTPResponse as Urllib3Response
 
-        from yt_dlp.networking._requests import RequestsResponseAdapter
+        from yt_dude.networking._requests import RequestsResponseAdapter
         requests_res = RequestsResponse()
         requests_res.raw = Urllib3Response(body=b'', status=200)
         res = RequestsResponseAdapter(requests_res)
@@ -1146,7 +1146,7 @@ class TestCurlCFFIRequestHandler(TestRequestHandlerBase):
     def test_response_error_mapping(self, handler, monkeypatch, raised, expected, match):
         import curl_cffi.requests
 
-        from yt_dlp.networking._curlcffi import CurlCFFIResponseAdapter
+        from yt_dude.networking._curlcffi import CurlCFFIResponseAdapter
         curl_res = curl_cffi.requests.Response()
         res = CurlCFFIResponseAdapter(curl_res)
 
@@ -1218,7 +1218,7 @@ class TestCurlCFFIRequestHandler(TestRequestHandlerBase):
             def close(self):
                 self.closed = True
 
-        from yt_dlp.networking._curlcffi import CurlCFFIResponseReader
+        from yt_dude.networking._curlcffi import CurlCFFIResponseReader
 
         res = CurlCFFIResponseReader(FakeResponse())
         assert res.readable

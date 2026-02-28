@@ -1,4 +1,4 @@
-from yt_dlp.postprocessor.common import PostProcessor
+from yt_dude.postprocessor.common import PostProcessor
 
 
 class ZippedPluginPP(PostProcessor):

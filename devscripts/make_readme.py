@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 
 """
-yt-dlp --help | make_readme.py
+yt-dude --help | make_readme.py
 This must be run in a console of correct width
 """
 

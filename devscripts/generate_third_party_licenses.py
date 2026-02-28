@@ -7,8 +7,8 @@ DEFAULT_OUTPUT = 'THIRD_PARTY_LICENSES.txt'
 CACHE_LOCATION = '.license_cache'
 HEADER = '''THIRD-PARTY LICENSES
 
-This file aggregates license texts of third-party components included with the yt-dlp PyInstaller-bundled executables.
-yt-dlp itself is licensed under the Unlicense (see LICENSE file).
+This file aggregates license texts of third-party components included with the yt-dude PyInstaller-bundled executables.
+yt-dude itself is licensed under the Unlicense (see LICENSE file).
 Source code for bundled third-party components is available from the original projects.
 If you cannot obtain it, the maintainers will provide it as per license obligation; maintainer emails are listed in pyproject.toml.'''
 
@@ -174,7 +174,7 @@ DEPENDENCIES: list[Dependency] = [
         name='curl_cffi',
         license='MIT',
         license_url='https://raw.githubusercontent.com/lexiforest/curl_cffi/refs/heads/main/LICENSE',
-        comment='Not included in `yt-dlp_x86` and `yt-dlp_musllinux_aarch64` builds',
+        comment='Not included in `yt-dude_x86` and `yt-dude_musllinux_aarch64` builds',
         project_url='https://curl-cffi.readthedocs.io/',
     ),
     # Dependency of curl_cffi
@@ -182,7 +182,7 @@ DEPENDENCIES: list[Dependency] = [
         name='curl-impersonate',
         license='MIT',
         license_url='https://raw.githubusercontent.com/lexiforest/curl-impersonate/refs/heads/main/LICENSE',
-        comment='Not included in `yt-dlp_x86` and `yt-dlp_musllinux_aarch64` builds',
+        comment='Not included in `yt-dude_x86` and `yt-dude_musllinux_aarch64` builds',
         project_url='https://github.com/lexiforest/curl-impersonate',
     ),
     Dependency(
@@ -271,7 +271,7 @@ DEPENDENCIES: list[Dependency] = [
         license_url='https://raw.githubusercontent.com/python-websockets/websockets/refs/heads/main/LICENSE',
         project_url='https://websockets.readthedocs.io/',
     ),
-    # Dependencies of yt-dlp-ejs
+    # Dependencies of yt-dude-ejs
     Dependency(
         name='Meriyah',
         license='ISC',
@@ -297,7 +297,7 @@ def fetch_text(dep: Dependency) -> str:
         return cache_file.read_text()
 
     # UA needed since some domains block requests default UA
-    req = requests.get(dep.license_url, headers={'User-Agent': 'yt-dlp license fetcher'})
+    req = requests.get(dep.license_url, headers={'User-Agent': 'yt-dude license fetcher'})
     req.raise_for_status()
     text = req.text
     cache_file.write_text(text)

@@ -3,9 +3,9 @@ import pathlib
 
 import pytest
 
-import yt_dlp.globals
-from yt_dlp import YoutubeDL
-from yt_dlp.extractor.common import InfoExtractor
+import yt_dude.globals
+from yt_dude import YoutubeDL
+from yt_dude.extractor.common import InfoExtractor
 
 
 _TESTDATA_PATH = pathlib.Path(__file__).parent.parent / 'testdata/sigs'
@@ -15,7 +15,7 @@ _player_id_trans = str.maketrans(dict.fromkeys('/.-', '_'))
 
 @pytest.fixture
 def ie() -> InfoExtractor:
-    runtime_names = yt_dlp.globals.supported_js_runtimes.value
+    runtime_names = yt_dude.globals.supported_js_runtimes.value
     ydl = YoutubeDL({'js_runtimes': {key: {} for key in runtime_names}})
     ie = ydl.get_info_extractor('Youtube')
 

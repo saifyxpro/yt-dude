@@ -63,17 +63,17 @@ def test_setup_variables():
     DEFAULT_VERSION_WITH_REVISION = dt.datetime.now(tz=dt.timezone.utc).strftime('%Y.%m.%d.%H%M%S')
     DEFAULT_VERSION = calculate_version()
     BASE_REPO_VARS = {
-        'MASTER_ARCHIVE_REPO': 'yt-dlp/yt-dlp-master-builds',
-        'NIGHTLY_ARCHIVE_REPO': 'yt-dlp/yt-dlp-nightly-builds',
-        'NIGHTLY_PYPI_PROJECT': 'yt-dlp',
+        'MASTER_ARCHIVE_REPO': 'yt-dude/yt-dude-master-builds',
+        'NIGHTLY_ARCHIVE_REPO': 'yt-dude/yt-dude-nightly-builds',
+        'NIGHTLY_PYPI_PROJECT': 'yt-dude',
         'NIGHTLY_PYPI_SUFFIX': 'dev',
         'PUSH_VERSION_COMMIT': '1',
-        'PYPI_PROJECT': 'yt-dlp',
+        'PYPI_PROJECT': 'yt-dude',
     }
     BASE_REPO_SECRETS = {
         'ARCHIVE_REPO_TOKEN': '1',
     }
-    FORK_REPOSITORY = 'fork/yt-dlp'
+    FORK_REPOSITORY = 'fork/yt-dude'
     FORK_ORG = FORK_REPOSITORY.partition('/')[0]
 
     _test(
@@ -83,7 +83,7 @@ def test_setup_variables():
             'version': DEFAULT_VERSION,
             'target_repo': STABLE_REPOSITORY,
             'target_tag': DEFAULT_VERSION,
-            'pypi_project': 'yt-dlp',
+            'pypi_project': 'yt-dude',
             'pypi_suffix': None,
         })
     _test(
@@ -94,9 +94,9 @@ def test_setup_variables():
         }, {
             'channel': 'nightly',
             'version': DEFAULT_VERSION_WITH_REVISION,
-            'target_repo': 'yt-dlp/yt-dlp-nightly-builds',
+            'target_repo': 'yt-dude/yt-dude-nightly-builds',
             'target_tag': DEFAULT_VERSION_WITH_REVISION,
-            'pypi_project': 'yt-dlp',
+            'pypi_project': 'yt-dude',
             'pypi_suffix': 'dev',
         }, ignore_revision=True)
     _test(
@@ -108,9 +108,9 @@ def test_setup_variables():
         }, {
             'channel': 'nightly',
             'version': DEFAULT_VERSION_WITH_REVISION,
-            'target_repo': 'yt-dlp/yt-dlp-nightly-builds',
+            'target_repo': 'yt-dude/yt-dude-nightly-builds',
             'target_tag': DEFAULT_VERSION_WITH_REVISION,
-            'pypi_project': 'yt-dlp',
+            'pypi_project': 'yt-dude',
             'pypi_suffix': 'dev',
         }, ignore_revision=True)
     _test(
@@ -121,7 +121,7 @@ def test_setup_variables():
         }, {
             'channel': 'master',
             'version': DEFAULT_VERSION_WITH_REVISION,
-            'target_repo': 'yt-dlp/yt-dlp-master-builds',
+            'target_repo': 'yt-dude/yt-dude-master-builds',
             'target_tag': DEFAULT_VERSION_WITH_REVISION,
             'pypi_project': None,
             'pypi_suffix': None,
@@ -135,7 +135,7 @@ def test_setup_variables():
         }, {
             'channel': 'master',
             'version': DEFAULT_VERSION_WITH_REVISION,
-            'target_repo': 'yt-dlp/yt-dlp-master-builds',
+            'target_repo': 'yt-dude/yt-dude-master-builds',
             'target_tag': DEFAULT_VERSION_WITH_REVISION,
             'pypi_project': None,
             'pypi_suffix': None,
@@ -249,35 +249,35 @@ def test_setup_variables():
 
     _test(
         FORK_REPOSITORY, 'fork, nightly', {
-            'NIGHTLY_ARCHIVE_REPO': f'{FORK_ORG}/yt-dlp-nightly-builds',
-            'PYPI_PROJECT': 'yt-dlp-test',
+            'NIGHTLY_ARCHIVE_REPO': f'{FORK_ORG}/yt-dude-nightly-builds',
+            'PYPI_PROJECT': 'yt-dude-test',
         }, BASE_REPO_SECRETS, {
-            'source': f'{FORK_ORG}/yt-dlp-nightly-builds',
+            'source': f'{FORK_ORG}/yt-dude-nightly-builds',
             'target': 'nightly',
             'prerelease': True,
         }, {
-            'channel': f'{FORK_ORG}/yt-dlp-nightly-builds',
+            'channel': f'{FORK_ORG}/yt-dude-nightly-builds',
             'version': DEFAULT_VERSION_WITH_REVISION,
-            'target_repo': f'{FORK_ORG}/yt-dlp-nightly-builds',
+            'target_repo': f'{FORK_ORG}/yt-dude-nightly-builds',
             'target_tag': DEFAULT_VERSION_WITH_REVISION,
             'pypi_project': None,
             'pypi_suffix': None,
         }, ignore_revision=True)
     _test(
         FORK_REPOSITORY, 'fork, master', {
-            'MASTER_ARCHIVE_REPO': f'{FORK_ORG}/yt-dlp-master-builds',
-            'MASTER_PYPI_PROJECT': 'yt-dlp-test',
+            'MASTER_ARCHIVE_REPO': f'{FORK_ORG}/yt-dude-master-builds',
+            'MASTER_PYPI_PROJECT': 'yt-dude-test',
             'MASTER_PYPI_SUFFIX': 'dev',
         }, BASE_REPO_SECRETS, {
-            'source': f'{FORK_ORG}/yt-dlp-master-builds',
+            'source': f'{FORK_ORG}/yt-dude-master-builds',
             'target': 'master',
             'prerelease': True,
         }, {
-            'channel': f'{FORK_ORG}/yt-dlp-master-builds',
+            'channel': f'{FORK_ORG}/yt-dude-master-builds',
             'version': DEFAULT_VERSION_WITH_REVISION,
-            'target_repo': f'{FORK_ORG}/yt-dlp-master-builds',
+            'target_repo': f'{FORK_ORG}/yt-dude-master-builds',
             'target_tag': DEFAULT_VERSION_WITH_REVISION,
-            'pypi_project': 'yt-dlp-test',
+            'pypi_project': 'yt-dude-test',
             'pypi_suffix': 'dev',
         }, ignore_revision=True)
 

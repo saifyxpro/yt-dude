@@ -7,7 +7,7 @@ import json
 
 import pytest
 
-from yt_dlp.extractor.youtube.jsc.provider import (
+from yt_dude.extractor.youtube.jsc.provider import (
     JsChallengeRequest,
     JsChallengeType,
     JsChallengeProviderResponse,
@@ -17,14 +17,14 @@ from yt_dlp.extractor.youtube.jsc.provider import (
     SigChallengeInput,
     SigChallengeOutput,
 )
-from yt_dlp.extractor.youtube.jsc._builtin.bun import BunJCP
-from yt_dlp.extractor.youtube.jsc._builtin.deno import DenoJCP
-from yt_dlp.extractor.youtube.jsc._builtin.node import NodeJCP
-from yt_dlp.extractor.youtube.jsc._builtin.quickjs import QuickJSJCP
+from yt_dude.extractor.youtube.jsc._builtin.bun import BunJCP
+from yt_dude.extractor.youtube.jsc._builtin.deno import DenoJCP
+from yt_dude.extractor.youtube.jsc._builtin.node import NodeJCP
+from yt_dude.extractor.youtube.jsc._builtin.quickjs import QuickJSJCP
 
 
-_has_ejs = bool(importlib.util.find_spec('yt_dlp_ejs'))
-pytestmark = pytest.mark.skipif(not _has_ejs, reason='yt-dlp-ejs not available')
+_has_ejs = bool(importlib.util.find_spec('yt_dude_ejs'))
+pytestmark = pytest.mark.skipif(not _has_ejs, reason='yt-dude-ejs not available')
 
 
 class Variant(enum.Enum):

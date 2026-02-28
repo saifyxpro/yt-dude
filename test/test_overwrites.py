@@ -25,7 +25,7 @@ class TestOverwrites(unittest.TestCase):
     def test_default_overwrites(self):
         outp = subprocess.Popen(
             [
-                sys.executable, 'yt_dlp/__main__.py',
+                sys.executable, 'yt_dude/__main__.py',
                 '-o', 'test.webm',
                 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
             ], cwd=root_dir, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
@@ -37,7 +37,7 @@ class TestOverwrites(unittest.TestCase):
     def test_yes_overwrites(self):
         outp = subprocess.Popen(
             [
-                sys.executable, 'yt_dlp/__main__.py', '--yes-overwrites',
+                sys.executable, 'yt_dude/__main__.py', '--yes-overwrites',
                 '-o', 'test.webm',
                 'https://www.youtube.com/watch?v=jNQXAC9IVRw',
             ], cwd=root_dir, stdout=subprocess.PIPE, stderr=subprocess.PIPE)

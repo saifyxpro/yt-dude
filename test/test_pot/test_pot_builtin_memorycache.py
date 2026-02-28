@@ -2,11 +2,11 @@ import threading
 import time
 from collections import OrderedDict
 import pytest
-from yt_dlp.extractor.youtube.pot._provider import IEContentProvider, BuiltinIEContentProvider
-from yt_dlp.utils import bug_reports_message
-from yt_dlp.extractor.youtube.pot._builtin.memory_cache import MemoryLRUPCP, memorylru_preference, initialize_global_cache
-from yt_dlp.version import __version__
-from yt_dlp.extractor.youtube.pot._registry import _pot_cache_providers, _pot_memory_cache
+from yt_dude.extractor.youtube.pot._provider import IEContentProvider, BuiltinIEContentProvider
+from yt_dude.utils import bug_reports_message
+from yt_dude.extractor.youtube.pot._builtin.memory_cache import MemoryLRUPCP, memorylru_preference, initialize_global_cache
+from yt_dude.version import __version__
+from yt_dude.extractor.youtube.pot._registry import _pot_cache_providers, _pot_memory_cache
 
 
 class TestMemoryLRUPCS:

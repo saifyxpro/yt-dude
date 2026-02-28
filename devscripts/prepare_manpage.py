@@ -20,7 +20,7 @@ from devscripts.utils import (
 ROOT_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 README_FILE = os.path.join(ROOT_DIR, 'README.md')
 
-PREFIX = r'''%yt-dlp(1)
+PREFIX = r'''%yt-dude(1)
 
 # NAME
 
@@ -28,7 +28,7 @@ yt\-dlp \- A feature\-rich command\-line audio/video downloader
 
 # SYNOPSIS
 
-**yt-dlp** \[OPTIONS\] URL [URL...]
+**yt-dude** \[OPTIONS\] URL [URL...]
 
 # DESCRIPTION
 

@@ -11,7 +11,7 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import shutil
 
 from test.helper import FakeYDL
-from yt_dlp.cache import Cache
+from yt_dude.cache import Cache
 
 
 def _is_empty(d):

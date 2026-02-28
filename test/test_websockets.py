@@ -8,7 +8,7 @@ import time
 import pytest
 
 from test.helper import verify_address_availability
-from yt_dlp.networking.common import Features, DEFAULT_TIMEOUT
+from yt_dude.networking.common import Features, DEFAULT_TIMEOUT
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -20,11 +20,11 @@ import random
 import ssl
 import threading
 
-from yt_dlp import socks
-from yt_dlp.cookies import YoutubeDLCookieJar
-from yt_dlp.dependencies import websockets
-from yt_dlp.networking import Request
-from yt_dlp.networking.exceptions import (
+from yt_dude import socks
+from yt_dude.cookies import YoutubeDLCookieJar
+from yt_dude.dependencies import websockets
+from yt_dude.networking import Request
+from yt_dude.networking.exceptions import (
     CertificateVerifyError,
     HTTPError,
     ProxyError,
@@ -32,8 +32,8 @@ from yt_dlp.networking.exceptions import (
     SSLError,
     TransportError,
 )
-from yt_dlp.utils.traversal import traverse_obj
-from yt_dlp.utils.networking import HTTPHeaderDict
+from yt_dude.utils.traversal import traverse_obj
+from yt_dude.utils.networking import HTTPHeaderDict
 
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 
@@ -471,11 +471,11 @@ class TestWebsocketsRequestHandler:
     def test_request_error_mapping(self, handler, monkeypatch, raised, expected):
         import websockets.sync.client
 
-        import yt_dlp.networking._websockets
+        import yt_dude.networking._websockets
         with handler() as rh:
             def fake_connect(*args, **kwargs):
                 raise raised()
-            monkeypatch.setattr(yt_dlp.networking._websockets, 'create_connection', lambda *args, **kwargs: None)
+            monkeypatch.setattr(yt_dude.networking._websockets, 'create_connection', lambda *args, **kwargs: None)
             monkeypatch.setattr(websockets.sync.client, 'connect', fake_connect)
             with pytest.raises(expected) as exc_info:
                 rh.send(Request('ws://fake-url'))
@@ -493,7 +493,7 @@ class TestWebsocketsRequestHandler:
         (lambda: websockets.exceptions.WebSocketException(), TransportError, None),
     ])
     def test_ws_send_error_mapping(self, handler, monkeypatch, raised, expected, match):
-        from yt_dlp.networking._websockets import WebsocketsResponseAdapter
+        from yt_dude.networking._websockets import WebsocketsResponseAdapter
         ws = WebsocketsResponseAdapter(create_fake_ws_connection(raised), url='ws://fake-url')
         with pytest.raises(expected, match=match) as exc_info:
             ws.send('test')
@@ -510,7 +510,7 @@ class TestWebsocketsRequestHandler:
         (lambda: websockets.exceptions.WebSocketException(), TransportError, None),
     ])
     def test_ws_recv_error_mapping(self, handler, monkeypatch, raised, expected, match):
-        from yt_dlp.networking._websockets import WebsocketsResponseAdapter
+        from yt_dude.networking._websockets import WebsocketsResponseAdapter
         ws = WebsocketsResponseAdapter(create_fake_ws_connection(raised), url='ws://fake-url')
         with pytest.raises(expected, match=match) as exc_info:
             ws.recv()

@@ -2,9 +2,9 @@ import inspect
 
 import pytest
 
-from yt_dlp.networking import RequestHandler
-from yt_dlp.networking.common import _REQUEST_HANDLERS
-from yt_dlp.utils._utils import _YDLLogger as FakeLogger
+from yt_dude.networking import RequestHandler
+from yt_dude.networking.common import _REQUEST_HANDLERS
+from yt_dude.utils._utils import _YDLLogger as FakeLogger
 
 
 @pytest.fixture

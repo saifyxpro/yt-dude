@@ -18,11 +18,11 @@ HASHES = {{
 {hash_mapping}
 }}
 '''
-PREFIX = '    "yt-dlp-ejs=='
+PREFIX = '    "yt-dude-ejs=='
 BASE_PATH = pathlib.Path(__file__).parent.parent
 PYPROJECT_PATH = BASE_PATH / 'pyproject.toml'
-PACKAGE_PATH = BASE_PATH / 'yt_dlp/extractor/youtube/jsc/_builtin/vendor'
-RELEASE_URL = 'https://api.github.com/repos/yt-dlp/ejs/releases/latest'
+PACKAGE_PATH = BASE_PATH / 'yt_dude/extractor/youtube/jsc/_builtin/vendor'
+RELEASE_URL = 'https://api.github.com/repos/yt-dude/ejs/releases/latest'
 ASSETS = {
     'yt.solver.lib.js': False,
     'yt.solver.lib.min.js': False,
@@ -69,7 +69,7 @@ def list_wheel_contents(
     with zipfile.ZipFile(io.BytesIO(wheel_data)) as zipf:
         path_gen = (zinfo.filename for zinfo in zipf.infolist())
 
-    filtered = filter(lambda path: path.startswith('yt_dlp_ejs/'), path_gen)
+    filtered = filter(lambda path: path.startswith('yt_dude_ejs/'), path_gen)
     if suffix:
         filtered = filter(lambda path: path.endswith(f'.{suffix}'), filtered)
 
@@ -93,7 +93,7 @@ def main():
             current_version, _, _ = line.removeprefix(PREFIX).partition('"')
 
     if not current_version:
-        print('yt-dlp-ejs dependency line could not be found')
+        print('yt-dude-ejs dependency line could not be found')
         return
 
     makefile_info = makefile_variables(keys_only=True)
@@ -110,15 +110,15 @@ def main():
 
     version = info['tag_name']
     if version == current_version:
-        print(f'yt-dlp-ejs is up to date! ({version})')
+        print(f'yt-dude-ejs is up to date! ({version})')
         return
 
-    print(f'Updating yt-dlp-ejs from {current_version} to {version}')
+    print(f'Updating yt-dude-ejs from {current_version} to {version}')
     hashes = []
     wheel_info = {}
     for asset in info['assets']:
         name = asset['name']
-        is_wheel = name.startswith('yt_dlp_ejs-') and name.endswith('.whl')
+        is_wheel = name.startswith('yt_dude_ejs-') and name.endswith('.whl')
         if not is_wheel and name not in ASSETS:
             continue
         with request(asset['browser_download_url']) as resp:

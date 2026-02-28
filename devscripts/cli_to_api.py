@@ -6,10 +6,10 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-import yt_dlp
-import yt_dlp.options
+import yt_dude
+import yt_dude.options
 
-create_parser = yt_dlp.options.create_parser
+create_parser = yt_dude.options.create_parser
 
 
 def parse_patched_options(opts):
@@ -22,18 +22,18 @@ def parse_patched_options(opts):
         'concat_playlist': 'never',
         'update_self': False,
     })
-    yt_dlp.options.create_parser = lambda: patched_parser
+    yt_dude.options.create_parser = lambda: patched_parser
     try:
-        return yt_dlp.parse_options(opts)
+        return yt_dude.parse_options(opts)
     finally:
-        yt_dlp.options.create_parser = create_parser
+        yt_dude.options.create_parser = create_parser
 
 
 default_opts = parse_patched_options([]).ydl_opts
 
 
 def cli_to_api(opts, cli_defaults=False):
-    opts = (yt_dlp.parse_options if cli_defaults else parse_patched_options)(opts).ydl_opts
+    opts = (yt_dude.parse_options if cli_defaults else parse_patched_options)(opts).ydl_opts
 
     diff = {k: v for k, v in opts.items() if default_opts[k] != v}
     if 'postprocessors' in diff:

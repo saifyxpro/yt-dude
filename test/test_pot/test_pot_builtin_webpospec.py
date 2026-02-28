@@ -1,17 +1,17 @@
 import pytest
 
-from yt_dlp.extractor.youtube.pot._provider import IEContentProvider, BuiltinIEContentProvider
-from yt_dlp.extractor.youtube.pot.cache import CacheProviderWritePolicy
-from yt_dlp.utils import bug_reports_message
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.extractor.youtube.pot._provider import IEContentProvider, BuiltinIEContentProvider
+from yt_dude.extractor.youtube.pot.cache import CacheProviderWritePolicy
+from yt_dude.utils import bug_reports_message
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenRequest,
     PoTokenContext,
 
 )
-from yt_dlp.version import __version__
+from yt_dude.version import __version__
 
-from yt_dlp.extractor.youtube.pot._builtin.webpo_cachespec import WebPoPCSP
-from yt_dlp.extractor.youtube.pot._registry import _pot_pcs_providers
+from yt_dude.extractor.youtube.pot._builtin.webpo_cachespec import WebPoPCSP
+from yt_dude.extractor.youtube.pot._registry import _pot_pcs_providers
 
 
 @pytest.fixture()

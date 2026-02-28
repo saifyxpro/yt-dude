@@ -7,9 +7,9 @@ import ssl
 import sys
 import types
 
-import yt_dlp.extractor
-from yt_dlp import YoutubeDL
-from yt_dlp.utils import preferredencoding, try_call, write_string, find_available_port
+import yt_dude.extractor
+from yt_dude import YoutubeDL
+from yt_dude.utils import preferredencoding, try_call, write_string, find_available_port
 
 if 'pytest' in sys.modules:
     import pytest
@@ -87,12 +87,12 @@ class FakeYDL(YoutubeDL):
 
 
 def gettestcases(include_onlymatching=False):
-    for ie in yt_dlp.extractor.gen_extractors():
+    for ie in yt_dude.extractor.gen_extractors():
         yield from ie.get_testcases(include_onlymatching)
 
 
 def getwebpagetestcases():
-    for ie in yt_dlp.extractor.gen_extractors():
+    for ie in yt_dude.extractor.gen_extractors():
         for tc in ie.get_webpage_testcases():
             tc.setdefault('add_ie', []).append('Generic')
             yield tc

@@ -11,14 +11,14 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import contextlib
 import subprocess
 
-from yt_dlp.utils import Popen
+from yt_dude.utils import Popen
 
 rootDir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-LAZY_EXTRACTORS = 'yt_dlp/extractor/lazy_extractors.py'
+LAZY_EXTRACTORS = 'yt_dude/extractor/lazy_extractors.py'
 
 
 class TestExecution(unittest.TestCase):
-    def run_yt_dlp(self, exe=(sys.executable, 'yt_dlp/__main__.py'), opts=('--version', )):
+    def run_yt_dude(self, exe=(sys.executable, 'yt_dude/__main__.py'), opts=('--version', )):
         stdout, stderr, returncode = Popen.run(
             [*exe, '--ignore-config', *opts], cwd=rootDir, text=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
         print(stderr, file=sys.stderr)
@@ -26,16 +26,16 @@ class TestExecution(unittest.TestCase):
         return stdout.strip(), stderr.strip()
 
     def test_main_exec(self):
-        self.run_yt_dlp()
+        self.run_yt_dude()
 
     def test_import(self):
-        self.run_yt_dlp(exe=(sys.executable, '-c', 'import yt_dlp'))
+        self.run_yt_dude(exe=(sys.executable, '-c', 'import yt_dude'))
 
     def test_module_exec(self):
-        self.run_yt_dlp(exe=(sys.executable, '-m', 'yt_dlp'))
+        self.run_yt_dude(exe=(sys.executable, '-m', 'yt_dude'))
 
     def test_cmdline_umlauts(self):
-        _, stderr = self.run_yt_dlp(opts=('ä', '--version'))
+        _, stderr = self.run_yt_dude(opts=('ä', '--version'))
         self.assertFalse(stderr)
 
     def test_lazy_extractors(self):
@@ -44,7 +44,7 @@ class TestExecution(unittest.TestCase):
                                   cwd=rootDir, stdout=subprocess.DEVNULL)
             self.assertTrue(os.path.exists(LAZY_EXTRACTORS))
 
-            _, stderr = self.run_yt_dlp(opts=('-s', 'test:'))
+            _, stderr = self.run_yt_dude(opts=('-s', 'test:'))
             # `MIN_RECOMMENDED` emits a deprecated feature warning for deprecated Python versions
             if stderr and stderr.startswith('Deprecated Feature: Support for Python'):
                 stderr = ''

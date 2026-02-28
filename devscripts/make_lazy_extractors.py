@@ -10,9 +10,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 from inspect import getsource
 
 from devscripts.utils import get_filename_args, read_file, write_file
-from yt_dlp.extractor import import_extractors
-from yt_dlp.extractor.common import InfoExtractor, SearchInfoExtractor
-from yt_dlp.globals import extractors
+from yt_dude.extractor import import_extractors
+from yt_dude.extractor.common import InfoExtractor, SearchInfoExtractor
+from yt_dude.globals import extractors
 
 NO_ATTR = object()
 STATIC_CLASS_PROPERTIES = [
@@ -39,7 +39,7 @@ def main():
     os.environ['YTDLP_NO_PLUGINS'] = 'true'
     os.environ['YTDLP_NO_LAZY_EXTRACTORS'] = 'true'
 
-    lazy_extractors_filename = get_filename_args(default_outfile='yt_dlp/extractor/lazy_extractors.py')
+    lazy_extractors_filename = get_filename_args(default_outfile='yt_dude/extractor/lazy_extractors.py')
 
     import_extractors()
 

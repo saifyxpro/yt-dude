@@ -10,9 +10,9 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import subprocess
 
-from yt_dlp import YoutubeDL
-from yt_dlp.utils import shell_quote
-from yt_dlp.postprocessor import (
+from yt_dude import YoutubeDL
+from yt_dude.utils import shell_quote
+from yt_dude.postprocessor import (
     ExecPP,
     FFmpegThumbnailsConvertorPP,
     MetadataFromFieldPP,

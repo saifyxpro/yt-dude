@@ -3,12 +3,12 @@ requires = ["hatchling>=1.27.0"]
 build-backend = "hatchling.build"
 
 [project]
-name = "yt-dlp"
+name = "yt-dude"
 authors = [
     {name = "pukkandan", email = "pukkandan.ytdlp@gmail.com"},
 ]
 maintainers = [
-    {email = "maintainers@yt-dlp.org"},
+    {email = "maintainers@yt-dude.org"},
     {name = "Grub4K", email = "contact@grub4k.dev"},
     {name = "bashonly", email = "bashonly@protonmail.com"},
     {name = "coletdjnz", email = "coletdjnz@protonmail.com"},
@@ -22,7 +22,7 @@ keywords = [
     "youtube-dl",
     "youtube-downloader",
     "sponsorblock",
-    "yt-dlp",
+    "yt-dude",
 ]
 license = "Unlicense"
 license-files = ["LICENSE"]
@@ -55,7 +55,7 @@ default = [
     "requests>=2.32.2,<3",
     "urllib3>=2.0.2,<3",
     "websockets>=13.0",
-    "yt-dlp-ejs==0.5.0",
+    "yt-dude-ejs==0.5.0",
 ]
 curl-cffi = [
     "curl-cffi>=0.5.10,!=0.6.*,!=0.7.*,!=0.8.*,!=0.9.*,<0.15; implementation_name=='cpython'",
@@ -80,8 +80,8 @@ build = [
 ]
 dev = [
     "pre-commit",
-    "yt-dlp[static-analysis]",
-    "yt-dlp[test]",
+    "yt-dude[static-analysis]",
+    "yt-dude[test]",
 ]
 static-analysis = [
     "autopep8~=2.0",
@@ -96,20 +96,20 @@ pyinstaller = [
 ]
 
 [project.urls]
-Documentation = "https://github.com/yt-dlp/yt-dlp#readme"
-Repository = "https://github.com/yt-dlp/yt-dlp"
-Tracker = "https://github.com/yt-dlp/yt-dlp/issues"
-Funding = "https://github.com/yt-dlp/yt-dlp/blob/master/Maintainers.md#maintainers"
+Documentation = "https://github.com/yt-dude/yt-dude#readme"
+Repository = "https://github.com/yt-dude/yt-dude"
+Tracker = "https://github.com/yt-dude/yt-dude/issues"
+Funding = "https://github.com/yt-dude/yt-dude/blob/master/Maintainers.md#maintainers"
 
 [project.scripts]
-yt-dlp = "yt_dlp:main"
+yt-dude = "yt_dude:main"
 
 [project.entry-points.pyinstaller40]
-hook-dirs = "yt_dlp.__pyinstaller:get_hook_dirs"
+hook-dirs = "yt_dude.__pyinstaller:get_hook_dirs"
 
 [tool.hatch.build.targets.sdist]
 include = [
-    "/yt_dlp",
+    "/yt_dude",
     "/devscripts",
     "/test",
     "/.gitignore",  # included by default, needed for auto-excludes
@@ -120,31 +120,31 @@ include = [
     "/supportedsites.md",
 ]
 artifacts = [
-    "/yt_dlp/extractor/lazy_extractors.py",
+    "/yt_dude/extractor/lazy_extractors.py",
     "/completions",
     "/AUTHORS",  # included by default
     "/README.txt",
-    "/yt-dlp.1",
+    "/yt-dude.1",
 ]
 
 [tool.hatch.build.targets.wheel]
-packages = ["yt_dlp"]
+packages = ["yt_dude"]
 artifacts = [
-    "/yt_dlp/extractor/lazy_extractors.py",
+    "/yt_dude/extractor/lazy_extractors.py",
 ]
 exclude = [
-    "/yt_dlp/**/*.md",
+    "/yt_dude/**/*.md",
 ]
 
 [tool.hatch.build.targets.wheel.shared-data]
-"completions/bash/yt-dlp" = "share/bash-completion/completions/yt-dlp"
-"completions/zsh/_yt-dlp" = "share/zsh/site-functions/_yt-dlp"
-"completions/fish/yt-dlp.fish" = "share/fish/vendor_completions.d/yt-dlp.fish"
-"README.txt" = "share/doc/yt_dlp/README.txt"
-"yt-dlp.1" = "share/man/man1/yt-dlp.1"
+"completions/bash/yt-dude" = "share/bash-completion/completions/yt-dude"
+"completions/zsh/_yt-dude" = "share/zsh/site-functions/_yt-dude"
+"completions/fish/yt-dude.fish" = "share/fish/vendor_completions.d/yt-dude.fish"
+"README.txt" = "share/doc/yt_dude/README.txt"
+"yt-dude.1" = "share/man/man1/yt-dude.1"
 
 [tool.hatch.version]
-path = "yt_dlp/version.py"
+path = "yt_dude/version.py"
 pattern = "_pkg_version = '(?P<version>[^']+)'"
 
 [tool.hatch.envs.default]
@@ -155,7 +155,7 @@ installer = "uv"
 
 [tool.hatch.envs.default.scripts]
 setup = "pre-commit install --config .pre-commit-hatch.yaml"
-yt-dlp = "python -Werror -Xdev -m yt_dlp {args}"
+yt-dude = "python -Werror -Xdev -m yt_dude {args}"
 
 [tool.hatch.envs.hatch-static-analysis]
 detached = true
@@ -268,7 +268,7 @@ select = [
 "devscripts/lazy_load_template.py" = [
     "F401",   # unused-import
 ]
-"!yt_dlp/extractor/**.py" = [
+"!yt_dude/extractor/**.py" = [
     "I",      # isort
     "ICN003", # banned-import-from
     "T20",    # flake8-print
@@ -292,7 +292,7 @@ avoid-escape = false
 
 [tool.ruff.lint.pep8-naming]
 classmethod-decorators = [
-    "yt_dlp.utils.classproperty",
+    "yt_dude.utils.classproperty",
 ]
 
 [tool.ruff.lint.flake8-import-conventions]
@@ -318,26 +318,26 @@ banned-from = [
 ]
 
 [tool.ruff.lint.flake8-tidy-imports.banned-api]
-"yt_dlp.compat.compat_str".msg = "Use `str` instead."
-"yt_dlp.compat.compat_b64decode".msg = "Use `base64.b64decode` instead."
-"yt_dlp.compat.compat_urlparse".msg = "Use `urllib.parse` instead."
-"yt_dlp.compat.compat_parse_qs".msg = "Use `urllib.parse.parse_qs` instead."
-"yt_dlp.compat.compat_urllib_parse_unquote".msg = "Use `urllib.parse.unquote` instead."
-"yt_dlp.compat.compat_urllib_parse_urlencode".msg = "Use `urllib.parse.urlencode` instead."
-"yt_dlp.compat.compat_urllib_parse_urlparse".msg = "Use `urllib.parse.urlparse` instead."
-"yt_dlp.compat.compat_shlex_quote".msg = "Use `yt_dlp.utils.shell_quote` instead."
-"yt_dlp.utils.error_to_compat_str".msg = "Use `str` instead."
-"yt_dlp.utils.bytes_to_intlist".msg = "Use `list` instead."
-"yt_dlp.utils.intlist_to_bytes".msg = "Use `bytes` instead."
-"yt_dlp.utils.jwt_encode_hs256".msg = "Use `yt_dlp.utils.jwt_encode` instead."
-"yt_dlp.utils.decodeArgument".msg = "Do not use"
-"yt_dlp.utils.decodeFilename".msg = "Do not use"
-"yt_dlp.utils.encodeFilename".msg = "Do not use"
-"yt_dlp.compat.compat_os_name".msg = "Use `os.name` instead."
-"yt_dlp.compat.compat_realpath".msg = "Use `os.path.realpath` instead."
-"yt_dlp.compat.functools".msg = "Use `functools` instead."
-"yt_dlp.utils.decodeOption".msg = "Do not use"
-"yt_dlp.utils.compiled_regex_type".msg = "Use `re.Pattern` instead."
+"yt_dude.compat.compat_str".msg = "Use `str` instead."
+"yt_dude.compat.compat_b64decode".msg = "Use `base64.b64decode` instead."
+"yt_dude.compat.compat_urlparse".msg = "Use `urllib.parse` instead."
+"yt_dude.compat.compat_parse_qs".msg = "Use `urllib.parse.parse_qs` instead."
+"yt_dude.compat.compat_urllib_parse_unquote".msg = "Use `urllib.parse.unquote` instead."
+"yt_dude.compat.compat_urllib_parse_urlencode".msg = "Use `urllib.parse.urlencode` instead."
+"yt_dude.compat.compat_urllib_parse_urlparse".msg = "Use `urllib.parse.urlparse` instead."
+"yt_dude.compat.compat_shlex_quote".msg = "Use `yt_dude.utils.shell_quote` instead."
+"yt_dude.utils.error_to_compat_str".msg = "Use `str` instead."
+"yt_dude.utils.bytes_to_intlist".msg = "Use `list` instead."
+"yt_dude.utils.intlist_to_bytes".msg = "Use `bytes` instead."
+"yt_dude.utils.jwt_encode_hs256".msg = "Use `yt_dude.utils.jwt_encode` instead."
+"yt_dude.utils.decodeArgument".msg = "Do not use"
+"yt_dude.utils.decodeFilename".msg = "Do not use"
+"yt_dude.utils.encodeFilename".msg = "Do not use"
+"yt_dude.compat.compat_os_name".msg = "Use `os.name` instead."
+"yt_dude.compat.compat_realpath".msg = "Use `os.path.realpath` instead."
+"yt_dude.compat.functools".msg = "Use `functools` instead."
+"yt_dude.utils.decodeOption".msg = "Do not use"
+"yt_dude.utils.compiled_regex_type".msg = "Use `re.Pattern` instead."
 
 [tool.autopep8]
 max_line_length = 120

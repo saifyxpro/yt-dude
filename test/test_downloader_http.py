@@ -13,9 +13,9 @@ import re
 import threading
 
 from test.helper import http_server_port, try_rm
-from yt_dlp import YoutubeDL
-from yt_dlp.downloader.http import HttpFD
-from yt_dlp.utils._utils import _YDLLogger as FakeLogger
+from yt_dude import YoutubeDL
+from yt_dude.downloader.http import HttpFD
+from yt_dude.utils._utils import _YDLLogger as FakeLogger
 
 TEST_DIR = os.path.dirname(os.path.abspath(__file__))
 

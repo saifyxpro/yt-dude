@@ -12,9 +12,9 @@ import contextlib
 import itertools
 from pathlib import Path
 
-from yt_dlp.compat import compat_expanduser
-from yt_dlp.options import create_parser, parseOpts
-from yt_dlp.utils import Config, get_executable_path
+from yt_dude.compat import compat_expanduser
+from yt_dude.options import create_parser, parseOpts
+from yt_dude.utils import Config, get_executable_path
 
 ENVIRON_DEFAULTS = {
     'HOME': None,
@@ -48,29 +48,29 @@ def _generate_expected_groups():
     home_dir = compat_expanduser('~')
     return {
         'Portable': [
-            Path(get_executable_path(), 'yt-dlp.conf'),
+            Path(get_executable_path(), 'yt-dude.conf'),
         ],
         'Home': [
-            Path('yt-dlp.conf'),
+            Path('yt-dude.conf'),
         ],
         'User': [
-            Path(xdg_config_home, 'yt-dlp.conf'),
-            Path(xdg_config_home, 'yt-dlp', 'config'),
-            Path(xdg_config_home, 'yt-dlp', 'config.txt'),
+            Path(xdg_config_home, 'yt-dude.conf'),
+            Path(xdg_config_home, 'yt-dude', 'config'),
+            Path(xdg_config_home, 'yt-dude', 'config.txt'),
             *((
-                Path(appdata_dir, 'yt-dlp.conf'),
-                Path(appdata_dir, 'yt-dlp', 'config'),
-                Path(appdata_dir, 'yt-dlp', 'config.txt'),
+                Path(appdata_dir, 'yt-dude.conf'),
+                Path(appdata_dir, 'yt-dude', 'config'),
+                Path(appdata_dir, 'yt-dude', 'config.txt'),
             ) if appdata_dir else ()),
-            Path(home_dir, 'yt-dlp.conf'),
-            Path(home_dir, 'yt-dlp.conf.txt'),
-            Path(home_dir, '.yt-dlp', 'config'),
-            Path(home_dir, '.yt-dlp', 'config.txt'),
+            Path(home_dir, 'yt-dude.conf'),
+            Path(home_dir, 'yt-dude.conf.txt'),
+            Path(home_dir, '.yt-dude', 'config'),
+            Path(home_dir, '.yt-dude', 'config.txt'),
         ],
         'System': [
-            Path('/etc/yt-dlp.conf'),
-            Path('/etc/yt-dlp/config'),
-            Path('/etc/yt-dlp/config.txt'),
+            Path('/etc/yt-dude.conf'),
+            Path('/etc/yt-dude/config'),
+            Path('/etc/yt-dude/config.txt'),
         ],
     }
 
@@ -185,7 +185,7 @@ class TestConfig(unittest.TestCase):
 
 @contextlib.contextmanager
 def ConfigMock(read_file=None):
-    with unittest.mock.patch('yt_dlp.options.Config') as mock:
+    with unittest.mock.patch('yt_dude.options.Config') as mock:
         mock.return_value = Config(create_parser())
         if read_file is not None:
             mock.read_file = read_file

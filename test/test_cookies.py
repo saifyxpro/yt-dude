@@ -1,8 +1,8 @@
 import datetime as dt
 import unittest
 
-from yt_dlp import cookies
-from yt_dlp.cookies import (
+from yt_dude import cookies
+from yt_dude.cookies import (
     LenientSimpleCookie,
     LinuxChromeCookieDecryptor,
     MacChromeCookieDecryptor,

@@ -1,10 +1,10 @@
 import pytest
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenContext,
 
 )
 
-from yt_dlp.extractor.youtube.pot.utils import get_webpo_content_binding, ContentBindingType
+from yt_dude.extractor.youtube.pot.utils import get_webpo_content_binding, ContentBindingType
 
 
 class TestGetWebPoContentBinding:

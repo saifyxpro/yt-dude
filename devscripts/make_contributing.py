@@ -5,7 +5,7 @@ import re
 
 
 def main():
-    return  # This is unused in yt-dlp
+    return  # This is unused in yt-dude
 
     parser = optparse.OptionParser(usage='%prog INFILE OUTFILE')
     _, args = parser.parse_args()
@@ -20,7 +20,7 @@ def main():
     bug_text = re.search(
         r'(?s)#\s*BUGS\s*[^\n]*\s*(.*?)#\s*COPYRIGHT', readme).group(1)
     dev_text = re.search(
-        r'(?s)(#\s*DEVELOPER INSTRUCTIONS.*?)#\s*EMBEDDING yt-dlp', readme).group(1)
+        r'(?s)(#\s*DEVELOPER INSTRUCTIONS.*?)#\s*EMBEDDING yt-dude', readme).group(1)
 
     out = bug_text + dev_text
 

@@ -508,7 +508,7 @@ def create_parser():
         '--default-author', default='pukkandan',
         help='the author to use without a author indicator (default: %(default)s)')
     parser.add_argument(
-        '--repo', default='yt-dlp/yt-dlp',
+        '--repo', default='yt-dude/yt-dude',
         help='the github repository to use for the operations (default: %(default)s)')
     parser.add_argument(
         '--collapsible', action='store_true',

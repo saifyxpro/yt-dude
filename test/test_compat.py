@@ -11,10 +11,10 @@ sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 import struct
 
-from yt_dlp import compat
-from yt_dlp.compat import urllib  # isort: split
-from yt_dlp.compat import compat_etree_fromstring, compat_expanduser, compat_datetime_from_timestamp
-from yt_dlp.compat.urllib.request import getproxies
+from yt_dude import compat
+from yt_dude.compat import urllib  # isort: split
+from yt_dude.compat import compat_etree_fromstring, compat_expanduser, compat_datetime_from_timestamp
+from yt_dude.compat.urllib.request import getproxies
 
 
 class TestCompat(unittest.TestCase):

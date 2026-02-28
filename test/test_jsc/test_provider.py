@@ -1,7 +1,7 @@
 
 import pytest
 
-from yt_dlp.extractor.youtube.jsc.provider import (
+from yt_dude.extractor.youtube.jsc.provider import (
     JsChallengeProvider,
     JsChallengeRequest,
     JsChallengeProviderResponse,
@@ -14,9 +14,9 @@ from yt_dlp.extractor.youtube.jsc.provider import (
     register_provider,
     register_preference,
 )
-from yt_dlp.extractor.youtube.pot._provider import IEContentProvider
-from yt_dlp.utils import ExtractorError
-from yt_dlp.extractor.youtube.jsc._registry import _jsc_preferences, _jsc_providers
+from yt_dude.extractor.youtube.pot._provider import IEContentProvider
+from yt_dude.utils import ExtractorError
+from yt_dude.extractor.youtube.jsc._registry import _jsc_preferences, _jsc_providers
 
 
 class ExampleJCP(JsChallengeProvider):

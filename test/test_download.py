@@ -24,10 +24,10 @@ from test.helper import (
     try_rm,
 )
 
-import yt_dlp.YoutubeDL  # isort: split
-from yt_dlp.extractor import get_info_extractor
-from yt_dlp.networking.exceptions import HTTPError, TransportError
-from yt_dlp.utils import (
+import yt_dude.YoutubeDL  # isort: split
+from yt_dude.extractor import get_info_extractor
+from yt_dude.networking.exceptions import HTTPError, TransportError
+from yt_dude.utils import (
     DownloadError,
     ExtractorError,
     UnavailableVideoError,
@@ -39,7 +39,7 @@ from yt_dlp.utils import (
 RETRIES = 3
 
 
-class YoutubeDL(yt_dlp.YoutubeDL):
+class YoutubeDL(yt_dude.YoutubeDL):
     def __init__(self, *args, **kwargs):
         self.to_stderr = self.to_screen
         self.processed_info_dicts = []
@@ -83,7 +83,7 @@ def generator(test_case, tname):
         if self.COMPLETED_TESTS.get(tname):
             return
         self.COMPLETED_TESTS[tname] = True
-        ie = yt_dlp.extractor.get_info_extractor(test_case['name'])()
+        ie = yt_dude.extractor.get_info_extractor(test_case['name'])()
         other_ies = [get_info_extractor(ie_key)() for ie_key in test_case.get('add_ie', [])]
         is_playlist = any(k.startswith('playlist') for k in test_case)
         test_cases = test_case.get(

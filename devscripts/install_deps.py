@@ -17,7 +17,7 @@ from devscripts.utils import read_file
 
 
 def parse_args():
-    parser = argparse.ArgumentParser(description='Install dependencies for yt-dlp')
+    parser = argparse.ArgumentParser(description='Install dependencies for yt-dude')
     parser.add_argument(
         'input', nargs='?', metavar='TOMLFILE', default=Path(__file__).parent.parent / 'pyproject.toml',
         help='input file (default: %(default)s)')

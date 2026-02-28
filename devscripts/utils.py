@@ -15,14 +15,14 @@ def write_file(fname, content, mode='w'):
         return f.write(content)
 
 
-def read_version(fname='yt_dlp/version.py', varname='__version__'):
+def read_version(fname='yt_dude/version.py', varname='__version__'):
     """Get the version without importing the package"""
     items = {}
     exec(compile(read_file(fname), fname, 'exec'), items)
     return items[varname]
 
 
-def calculate_version(version=None, fname='yt_dlp/version.py'):
+def calculate_version(version=None, fname='yt_dude/version.py'):
     if version and '.' in version:
         return version
 

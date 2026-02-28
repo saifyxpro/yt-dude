@@ -8,8 +8,8 @@ import unittest
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-from yt_dlp.extractor import gen_extractor_classes
-from yt_dlp.extractor.common import InfoExtractor
+from yt_dude.extractor import gen_extractor_classes
+from yt_dude.extractor.common import InfoExtractor
 
 NO_LOGIN = InfoExtractor._perform_login
 

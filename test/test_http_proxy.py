@@ -15,9 +15,9 @@ import pytest
 from test.helper import http_server_port, verify_address_availability
 from test.test_networking import TEST_DIR
 from test.test_socks import IPv6ThreadingTCPServer
-from yt_dlp.dependencies import urllib3
-from yt_dlp.networking import Request
-from yt_dlp.networking.exceptions import HTTPError, ProxyError, SSLError
+from yt_dude.dependencies import urllib3
+from yt_dude.networking import Request
+from yt_dude.networking.exceptions import HTTPError, ProxyError, SSLError
 
 
 class HTTPProxyAuthMixin:

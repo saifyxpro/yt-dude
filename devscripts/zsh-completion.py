@@ -7,9 +7,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-import yt_dlp
+import yt_dude
 
-ZSH_COMPLETION_FILE = 'completions/zsh/_yt-dlp'
+ZSH_COMPLETION_FILE = 'completions/zsh/_yt-dude'
 ZSH_COMPLETION_TEMPLATE = 'devscripts/zsh-completion.in'
 
 
@@ -53,5 +53,5 @@ def build_completion(opt_parser):
         f.write(template)
 
 
-parser = yt_dlp.parseOpts(ignore_config_files=True)[0]
+parser = yt_dude.parseOpts(ignore_config_files=True)[0]
 build_completion(parser)

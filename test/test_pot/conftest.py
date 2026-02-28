@@ -2,12 +2,12 @@ import collections
 
 import pytest
 
-from yt_dlp import YoutubeDL
-from yt_dlp.cookies import YoutubeDLCookieJar
-from yt_dlp.extractor.common import InfoExtractor
-from yt_dlp.extractor.youtube.pot._provider import IEContentProviderLogger
-from yt_dlp.extractor.youtube.pot.provider import PoTokenRequest, PoTokenContext
-from yt_dlp.utils.networking import HTTPHeaderDict
+from yt_dude import YoutubeDL
+from yt_dude.cookies import YoutubeDLCookieJar
+from yt_dude.extractor.common import InfoExtractor
+from yt_dude.extractor.youtube.pot._provider import IEContentProviderLogger
+from yt_dude.extractor.youtube.pot.provider import PoTokenRequest, PoTokenContext
+from yt_dude.utils.networking import HTTPHeaderDict
 
 
 class MockLogger(IEContentProviderLogger):

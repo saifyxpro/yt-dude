@@ -1,26 +1,26 @@
 import pytest
 
-from yt_dlp.extractor.youtube.pot._provider import IEContentProvider, configuration_arg
-from yt_dlp.cookies import YoutubeDLCookieJar
-from yt_dlp.utils.networking import HTTPHeaderDict
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.extractor.youtube.pot._provider import IEContentProvider, configuration_arg
+from yt_dude.cookies import YoutubeDLCookieJar
+from yt_dude.utils.networking import HTTPHeaderDict
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenRequest,
     PoTokenContext,
     ExternalRequestFeature,
 
 )
 
-from yt_dlp.extractor.youtube.pot.cache import (
+from yt_dude.extractor.youtube.pot.cache import (
     PoTokenCacheProvider,
     PoTokenCacheSpec,
     PoTokenCacheSpecProvider,
     CacheProviderWritePolicy,
 )
 
-import yt_dlp.extractor.youtube.pot.cache as cache
+import yt_dude.extractor.youtube.pot.cache as cache
 
-from yt_dlp.networking import Request
-from yt_dlp.extractor.youtube.pot.provider import (
+from yt_dude.networking import Request
+from yt_dude.extractor.youtube.pot.provider import (
     PoTokenResponse,
     PoTokenProvider,
     PoTokenProviderRejectedRequest,
@@ -29,7 +29,7 @@ from yt_dlp.extractor.youtube.pot.provider import (
     register_preference,
 )
 
-from yt_dlp.extractor.youtube.pot._registry import _pot_providers, _ptp_preferences, _pot_pcs_providers, _pot_cache_providers, _pot_cache_provider_preferences
+from yt_dude.extractor.youtube.pot._registry import _pot_providers, _ptp_preferences, _pot_pcs_providers, _pot_cache_providers, _pot_cache_provider_preferences
 
 
 class ExamplePTP(PoTokenProvider):

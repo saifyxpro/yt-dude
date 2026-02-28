@@ -13,7 +13,7 @@ import re
 
 from devscripts.utils import compose_functions, read_file, write_file
 
-VERSION_FILE = 'yt_dlp/version.py'
+VERSION_FILE = 'yt_dude/version.py'
 
 
 def parse_options():

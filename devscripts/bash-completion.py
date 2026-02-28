@@ -7,9 +7,9 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 
-import yt_dlp
+import yt_dude
 
-BASH_COMPLETION_FILE = 'completions/bash/yt-dlp'
+BASH_COMPLETION_FILE = 'completions/bash/yt-dude'
 BASH_COMPLETION_TEMPLATE = 'devscripts/bash-completion.in'
 
 
@@ -27,5 +27,5 @@ def build_completion(opt_parser):
         f.write(filled_template)
 
 
-parser = yt_dlp.parseOpts(ignore_config_files=True)[0]
+parser = yt_dude.parseOpts(ignore_config_files=True)[0]
 build_completion(parser)

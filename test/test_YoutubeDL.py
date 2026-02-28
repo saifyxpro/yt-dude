@@ -6,7 +6,7 @@ import sys
 import unittest
 from unittest.mock import patch
 
-from yt_dlp.globals import all_plugins_loaded
+from yt_dude.globals import all_plugins_loaded
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
@@ -16,17 +16,17 @@ import copy
 import json
 
 from test.helper import FakeYDL, assertRegexpMatches, try_rm
-from yt_dlp import YoutubeDL
-from yt_dlp.extractor.common import InfoExtractor
-from yt_dlp.postprocessor.common import PostProcessor
-from yt_dlp.utils import (
+from yt_dude import YoutubeDL
+from yt_dude.extractor.common import InfoExtractor
+from yt_dude.postprocessor.common import PostProcessor
+from yt_dude.utils import (
     ExtractorError,
     LazyList,
     OnDemandPagedList,
     int_or_none,
     match_filter_func,
 )
-from yt_dlp.utils.traversal import traverse_obj
+from yt_dude.utils.traversal import traverse_obj
 
 TEST_URL = 'http://localhost/sample.mp4'
 
@@ -142,7 +142,7 @@ class TestFormatSelection(unittest.TestCase):
         test('example-with-dashes', 'example-with-dashes')
         test('all', '2', '47', '45', 'example-with-dashes', '35')
         test('mergeall', '2+47+45+example-with-dashes+35', multi=True)
-        # See: https://github.com/yt-dlp/yt-dlp/pulls/8797
+        # See: https://github.com/yt-dude/yt-dude/pulls/8797
         test('7_a/worst', '35')
 
     def test_format_selection_audio(self):
@@ -482,7 +482,7 @@ class TestFormatSelection(unittest.TestCase):
         downloaded_ids = [info['format_id'] for info in ydl.downloaded_info_dicts]
         self.assertEqual(downloaded_ids, ['E', 'D', 'C', 'B'])
 
-    @patch('yt_dlp.postprocessor.ffmpeg.FFmpegMergerPP.available', False)
+    @patch('yt_dude.postprocessor.ffmpeg.FFmpegMergerPP.available', False)
     def test_default_format_spec_without_ffmpeg(self):
         ydl = YDL({})
         self.assertEqual(ydl._default_format_spec({}), 'best/bestvideo+bestaudio')
@@ -503,8 +503,8 @@ class TestFormatSelection(unittest.TestCase):
         self.assertEqual(ydl._default_format_spec({}), 'best/bestvideo+bestaudio')
         self.assertEqual(ydl._default_format_spec({'is_live': True}), 'best/bestvideo+bestaudio')
 
-    @patch('yt_dlp.postprocessor.ffmpeg.FFmpegMergerPP.available', True)
-    @patch('yt_dlp.postprocessor.ffmpeg.FFmpegMergerPP.can_merge', lambda _: True)
+    @patch('yt_dude.postprocessor.ffmpeg.FFmpegMergerPP.available', True)
+    @patch('yt_dude.postprocessor.ffmpeg.FFmpegMergerPP.can_merge', lambda _: True)
     def test_default_format_spec_with_ffmpeg(self):
         ydl = YDL({})
         self.assertEqual(ydl._default_format_spec({}), 'bestvideo*+bestaudio/best')
@@ -841,8 +841,8 @@ class TestYoutubeDL(unittest.TestCase):
         # test('%(foo|)s', ('', '_'))  # FIXME: ?
 
         # Environment variable expansion for prepare_filename
-        os.environ['__yt_dlp_var'] = 'expanded'
-        envvar = '%__yt_dlp_var%' if os.name == 'nt' else '$__yt_dlp_var'
+        os.environ['__yt_dude_var'] = 'expanded'
+        envvar = '%__yt_dude_var%' if os.name == 'nt' else '$__yt_dude_var'
         test(envvar, (envvar, 'expanded'))
         if os.name == 'nt':
             test('%s%', ('%s%', '%s%'))
@@ -1070,8 +1070,8 @@ class TestYoutubeDL(unittest.TestCase):
         test_selection({'playlist_items': '2-4,3-4,3'}, [2, 3, 4])
         test_selection({'playlist_items': '4,2'}, [4, 2])
 
-        # Tests for https://github.com/yt-dlp/yt-dlp/issues/720
-        # https://github.com/yt-dlp/yt-dlp/issues/302
+        # Tests for https://github.com/yt-dude/yt-dude/issues/720
+        # https://github.com/yt-dude/yt-dude/issues/302
         test_selection({'playlistreverse': True}, INDICES[::-1])
         test_selection({'playliststart': 2, 'playlistreverse': True}, INDICES[:0:-1])
         test_selection({'playlist_items': '2,4', 'playlistreverse': True}, [4, 2])

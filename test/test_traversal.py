@@ -4,7 +4,7 @@ import xml.etree.ElementTree
 
 import pytest
 
-from yt_dlp.utils import (
+from yt_dude.utils import (
     ExtractorError,
     determine_ext,
     dict_get,
@@ -12,7 +12,7 @@ from yt_dlp.utils import (
     join_nonempty,
     str_or_none,
 )
-from yt_dlp.utils.traversal import (
+from yt_dude.utils.traversal import (
     find_element,
     find_elements,
     require,

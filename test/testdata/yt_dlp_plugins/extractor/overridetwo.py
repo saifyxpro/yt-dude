@@ -1,4 +1,4 @@
-from yt_dlp.extractor.generic import GenericIE
+from yt_dude.extractor.generic import GenericIE
 
 
 class _UnderscoreOverrideGenericIE(GenericIE, plugin_name='underscore-override'):
